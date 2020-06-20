@@ -1,0 +1,87 @@
+/* single room*/
+.single-room {
+  margin-top: 160px;
+}
+.book-container {
+  display: flex;
+}
+.book-card {
+  margin-left: 100px;
+  height: 450px;
+  width: 350px;
+  border: 1px solid #dfe1e5;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.09);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #f3f3f3;
+}
+.ad-img {
+  height: 200px;
+  width: 280px;
+  margin-bottom: 80px;
+}
+.book-btn {
+  height: 40px;
+  margin-bottom: 50px;
+}
+.room-images-banner {
+  width: 50%;
+  margin-left: 190px;
+  margin-bottom: 70px;
+}
+.single-room-images {
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 50px;
+}
+.single-room-images img {
+  width: 80%;
+  display: inline-block;
+}
+
+.single-room-info {
+  width: 80%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 300px;
+  margin: 50px auto;
+}
+.desc h3 {
+  font-size: 30px;
+  text-transform: capitalize;
+}
+.desc p {
+  margin-top: 20px;
+  font-size: 20px;
+  line-height: 30px;
+}
+.info h3 {
+  font-size: 30px;
+  text-transform: capitalize;
+}
+.info p {
+  margin-top: 20px;
+  font-size: 20px;
+  line-height: 8px;
+}
+.room-extras {
+  width: 80%;
+  margin: 100px auto;
+}
+.room-extras h6 {
+  font-size: 30px;
+  text-transform: capitalize;
+  margin-bottom: 30px;
+}
+.extras {
+  font-size: 20px;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 2rem;
+  grid-row-gap: 1rem;
+}

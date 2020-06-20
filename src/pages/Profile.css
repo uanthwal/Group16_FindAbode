@@ -1,0 +1,20 @@
+/* profile */
+.profile-container {
+  margin-top: 100px;
+}
+.profile-card {
+  display: flex;
+  justify-content: center;
+}
+.profile-title {
+  text-align: center;
+}
+.profile-primary-btn {
+  margin: 40px;
+  display: flex;
+  justify-content: center;
+}
+.update-container {
+  display: flex;
+  justify-content: center;
+}

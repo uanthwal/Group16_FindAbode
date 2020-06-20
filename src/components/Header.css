@@ -1,0 +1,62 @@
+.header-container {
+  display: flex;
+  margin: 0 10%;
+  margin-bottom: 20px;
+  margin-top: 130px;
+  justify-content: center;
+  padding: 30px;
+}
+
+.header-text {
+  margin-right: 50px;
+  margin-top: 30px;
+  max-width: 400px;
+}
+
+.header-text h1 {
+  font-size: 50px;
+}
+
+.square {
+  height: 12px;
+  width: 12px;
+  display: inline-block;
+  background-color: black;
+  margin: 15px 0;
+}
+.common-btn {
+  margin-top: 30px;
+  margin-left: -5px;
+  padding: 15px 35px;
+  background: transparent;
+  outline: none;
+  color: rgb(139, 187, 178);
+  border: 2px solid rgb(139, 187, 178);
+  font-weight: bold;
+  cursor: pointer;
+}
+.launch {
+  margin-left: -40px;
+  min-width: 400px;
+  width: 60%;
+  height: 60%;
+}
+.header-text button {
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+@media screen and (max-width: 500px) {
+  .header-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10%;
+    margin-bottom: 20px;
+    margin-top: 130px;
+    justify-content: center;
+    padding: 30px;
+  }
+  .launch {
+    width: 60%;
+    height: 60%;
+  }
+}
