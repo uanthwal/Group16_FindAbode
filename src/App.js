@@ -9,6 +9,8 @@ import ScrollToTop from './components/ScrollToTop';
 import './App.css';
 import Navbar from './components/Navbar';
 import UserContextProvider from './contexts/UserContext'
+import Search from './components/Search';
+import SearchResults from './components/SearchResults';
 
 class App extends Component {
   render() {
@@ -24,7 +26,8 @@ class App extends Component {
             <Route exact path="/signin" component={SignIn} />
             <Route exact path="/profile" component={Profile} />
 
-            <Route exact path="/search" />
+            <Route exact path="/search" component={Search} />
+            <Route exact path="/search-results" component={SearchResults} />
             <Route exact path="/blog" />
             <Route exact path="/favorite" />
             <Route exact path="/about" />
