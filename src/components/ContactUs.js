@@ -164,9 +164,10 @@ const emailRegex = RegExp(
                 </div>
               </div>
               <br/>
+          
+          </div>
           <Links />
           <Footer />
-          </div>
           </>
         )
     }
