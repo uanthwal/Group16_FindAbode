@@ -11,6 +11,8 @@ import Navbar from './components/Navbar';
 import UserContextProvider from './contexts/UserContext'
 import Search from './components/Search';
 import SearchResults from './components/SearchResults';
+import ContactUs from './pages/ContactUs';
+import Blogs from './pages/Blogs';
 
 class App extends Component {
   render() {
@@ -28,10 +30,10 @@ class App extends Component {
 
             <Route exact path="/search" component={Search} />
             <Route exact path="/search-results" component={SearchResults} />
-            <Route exact path="/blog" />
+            <Route exact path="/blog" component={Blogs}/>
             <Route exact path="/favorite" />
             <Route exact path="/about" />
-            <Route exact path="/contact" />
+            <Route exact path="/contact" component={ContactUs} />
             <Route exact path="/faq" />
             <Redirect to="/" />
           </Switch>
