@@ -8,9 +8,12 @@ import DetailRoom from './components/property_components/DetailRoom';
 import ScrollToTop from './components/ScrollToTop';
 import './App.css';
 import Navbar from './components/Navbar';
-import UserContextProvider from './contexts/UserContext'
+import UserContextProvider from './contexts/UserContext';
 import Search from './components/property_components/SearchLocation';
 import SearchResults from './components/property_components/ApartmentSearchResults';
+
+import ContactUs from './components/ContactUs';
+import Blogs from './components/Blogs';
 
 class App extends Component {
   render() {
@@ -28,10 +31,10 @@ class App extends Component {
 
             <Route exact path="/search" component={Search} />
             <Route exact path="/search-results" component={SearchResults} />
-            <Route exact path="/blog" />
+            <Route exact path="/blog" component={Blogs}/>
             <Route exact path="/favorite" />
             <Route exact path="/about" />
-            <Route exact path="/contact" />
+            <Route exact path="/contact" component={ContactUs} />
             <Route exact path="/faq" />
             <Redirect to="/" />
           </Switch>

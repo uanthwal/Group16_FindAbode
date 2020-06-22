@@ -1,0 +1,29 @@
+
+.about-section {
+	padding: 50px;
+	text-align: center;
+}
+
+.outerform{
+
+max-width:65%;
+margin: auto;
+padding-top: 40px;
+}
+
+@media only screen and (max-width: 600px) {
+	.outerform{
+		max-width: 100%;
+	}
+  }
+
+.contact-card {
+	border: 1px solid black;
+	padding: 5px;
+}
+
+.errorMessage{
+	color:red;
+	font-size: 0.75em;
+	display: relative;
+  }
