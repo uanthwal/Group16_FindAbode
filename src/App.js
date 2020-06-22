@@ -14,6 +14,7 @@ import SearchResults from './components/property_components/ApartmentSearchResul
 
 import ContactUs from './components/ContactUs';
 import Blogs from './components/Blogs';
+import NeedHelp from './components/help_components/NeedHelp';
 
 class App extends Component {
   render() {
@@ -35,7 +36,7 @@ class App extends Component {
             <Route exact path="/favorite" />
             <Route exact path="/about" />
             <Route exact path="/contact" component={ContactUs} />
-            <Route exact path="/faq" />
+            <Route exact path="/faq" component={NeedHelp}/>
             <Redirect to="/" />
           </Switch>
         </UserContextProvider>

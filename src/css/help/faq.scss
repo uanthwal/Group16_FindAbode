@@ -1,0 +1,77 @@
+body {
+	height: 100%;
+}
+
+.faqPage {
+	width: 100%;
+	height: 100%;
+	background-color: rgb(139, 187, 178);
+
+	.faqBody {
+		margin-top: 10px;
+		height: 70%;
+		background-color: rgb(139, 187, 178);
+		margin-bottom: 5%;
+		min-height: 600;
+		.carrerHeading {
+			margin-top: 2%;
+			height: 6%;
+			h3 {
+				margin: 0;
+				padding: 0;
+				line-height: 0.5em;
+			}
+		}
+
+		.openPostionsLayer {
+			margin: 1% 6% 0% 6%;
+			min-width: 80%;
+			min-height: 650px;
+			width: 88%;
+			height: 80%;
+			padding: 3% 0 0 0;
+			display: flex;
+			flex-direction: row;
+			background-color: white;
+			border-radius: 2px;
+
+			.departments {
+				margin-left: 5%;
+				width: 22%;
+				background-color: #ecf1f8;
+				ul {
+					padding-left: 5%;
+					margin-top: 8%;
+					list-style: none;
+					display: flex;
+					flex-direction: column;
+
+					li {
+						padding-top: 6%;
+						padding-bottom: 6%;
+						padding-left: 3%;
+						display: flex;
+						justify-content: center;
+						cursor: pointer;
+						a {
+							color: black;
+							font-weight: 600;
+							font-size: 1.1rem;
+							text-decoration: none;
+							cursor: pointer;
+						}
+
+						&:hover {
+							background-color: white;
+							text-decoration: none;
+							cursor: pointer;
+						}
+					}
+					.selected {
+						background-color: white;
+					}
+				}
+			}
+		}
+	}
+}
