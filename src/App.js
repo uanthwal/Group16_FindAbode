@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
 import { Route, Switch, Redirect } from 'react-router-dom';
-import SignUp from './pages/SignUp';
-import SignIn from './pages/SignIn';
-import Profile from './pages/Profile';
-import Home from './pages/Home';
-import DetailRoom from './pages/DetailRoom';
+import SignUp from './components/login_signup_components/SignUp';
+import SignIn from './components/login_signup_components/SignIn';
+import Profile from './components/profile_components/Profile';
+import Home from './components/Home';
+import DetailRoom from './components/property_components/DetailRoom';
 import ScrollToTop from './components/ScrollToTop';
 import './App.css';
 import Navbar from './components/Navbar';
 import UserContextProvider from './contexts/UserContext'
-import Search from './components/Search';
-import SearchResults from './components/SearchResults';
+import Search from './components/property_components/SearchLocation';
+import SearchResults from './components/property_components/ApartmentSearchResults';
 
 class App extends Component {
   render() {

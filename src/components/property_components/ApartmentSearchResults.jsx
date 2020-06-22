@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import "./SearchResults.scss";
 import { withRouter } from "react-router-dom";
+
+import '../../css/search/SearchResults.css';
 
 class SearchResultComponent extends Component {
   constructor(props) {

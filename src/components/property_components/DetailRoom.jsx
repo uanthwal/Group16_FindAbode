@@ -1,9 +1,10 @@
-import React, { Component } from 'react'
-import Links from '../components/Links'
-import Footer from '../components/Footer'
-import launch from '../images/launch.png'
-import ad from '../images/ad.jpg'
-import './DetailRoom.css'
+import React, { Component } from 'react';
+
+import Links from '../../components/Links';
+import Footer from '../../components/Footer';
+import launch from '../../images/launch.png';
+import ad from '../../images/ad.jpg';
+import '../../css/apartment/DetailRoom.css';
 
 const details = {
   name: "single economy",
