@@ -1,0 +1,98 @@
+body {
+  height: 100%;
+}
+
+.careerPage {
+  width: 100%;
+  height: 100%;
+  background-color: #8bbbb2;
+}
+
+.careerPage .careersBody {
+  margin-top: 10px;
+  height: 70%;
+  background-color: #8bbbb2;
+  margin-bottom: 5%;
+  min-height: 600;
+}
+
+.careerPage .careersBody .carrerHeading {
+  margin-top: 2%;
+  height: 6%;
+}
+
+.careerPage .careersBody .carrerHeading h3 {
+  margin: 0;
+  padding: 0;
+  line-height: 0.5em;
+}
+
+.careerPage .careersBody .openPostionsLayer {
+  position: absolute;
+  margin: 1% 6% 0% 6%;
+  min-width: 80%;
+  min-height: 650px;
+  width: 88%;
+  height: 80%;
+  padding: 3% 0 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: white;
+  border-radius: 2px;
+}
+
+.careerPage .careersBody .openPostionsLayer .departments {
+  margin-left: 5%;
+  width: 22%;
+  background-color: #ecf1f8;
+}
+
+.careerPage .careersBody .openPostionsLayer .departments ul {
+  padding-left: 5%;
+  margin-top: 8%;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.careerPage .careersBody .openPostionsLayer .departments ul li {
+  padding-top: 6%;
+  padding-bottom: 6%;
+  padding-left: 3%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+}
+
+.careerPage .careersBody .openPostionsLayer .departments ul li a {
+  color: black;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.careerPage .careersBody .openPostionsLayer .departments ul li:hover {
+  background-color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.careerPage .careersBody .openPostionsLayer .departments ul .selected {
+  background-color: white;
+}
+/*# sourceMappingURL=careers.css.map */

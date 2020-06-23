@@ -6,7 +6,7 @@
   .home-comp-container {
     height: 400px;
     width: 80%;
-    margin: 10px auto;
+    margin: 100px auto;
     border: 1px solid black;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -102,7 +102,6 @@
     display: block;
     font-weight: 500;
     font-size: 11px;
-    margin-bottom: 15px;
   }
   .grid-item .cntnt-blck .place-book {
     -webkit-box-pack: center;

@@ -17,6 +17,7 @@ import ContactUs from './components/ContactUs';
 import Blogs from './components/Blogs';
 import NeedHelp from './components/help_components/NeedHelp';
 import AboutUs from "./components/AboutUs";
+import Careers from './components/career_components/Careers';
 
 class App extends Component {
   render() {
@@ -39,6 +40,7 @@ class App extends Component {
             <Route exact path="/about" component={AboutUs}/>
             <Route exact path="/contact" component={ContactUs} />
             <Route exact path="/faq" component={NeedHelp}/>
+            <Route exact path="/careers" component={Careers}/>
             <Redirect to="/" />
           </Switch>
         </UserContextProvider>

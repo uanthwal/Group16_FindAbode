@@ -42,7 +42,7 @@ class Links extends Component {
 							<h2>Company</h2>
 						</li>
 						<li>
-							<Link to="" className="footer-link">
+							<Link to="/careers" className="footer-link">
 								Careers
 							</Link>
 						</li>
@@ -72,7 +72,7 @@ class Links extends Component {
 							<h2>Company</h2>
 						</li>
 						<li>
-							<Link to="" className="footer-link">
+							<Link to="/careers" className="footer-link">
 								Careers
 							</Link>
 						</li>
@@ -102,7 +102,7 @@ class Links extends Component {
 							<h2>Company</h2>
 						</li>
 						<li>
-							<Link to="" className="footer-link">
+							<Link to="/careers" className="footer-link">
 								Careers
 							</Link>
 						</li>
