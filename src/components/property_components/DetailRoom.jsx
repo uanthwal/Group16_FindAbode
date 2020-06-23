@@ -44,6 +44,9 @@ class DetailRoom extends Component {
               <button className="book-btn">Book Appointment</button>
             </div>
           </div>
+          {/* <div className="fav-card"> */}
+              <button className="fav-btn">Add to Favourites</button>
+            {/* </div> */}
           <div className="single-room-info">
             <div className="desc">
               <h3>details</h3>

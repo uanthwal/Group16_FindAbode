@@ -27,8 +27,8 @@ class Navbar extends Component {
 								</Link>
 							</li>
 							<li>
-								<Link className="link" to="/favorite">
-									Favorite
+								<Link className="link" to="/favourite">
+									Favourite
 								</Link>
 							</li>
 							<li>

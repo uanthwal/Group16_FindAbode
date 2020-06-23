@@ -17,6 +17,19 @@
   align-items: center;
   background-color: #f3f3f3;
 }
+.fav-card {
+  margin-left: 100px;
+  height: 150px;
+  width: 350px;
+  border: 1px solid #dfe1e5;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.09);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #f3f3f3;
+  outline: none;
+}
 .ad-img {
   height: 200px;
   width: 280px;
@@ -24,6 +37,12 @@
 }
 .book-btn {
   height: 40px;
+  margin-bottom: 50px;
+}
+.fav-btn {
+  margin-left: 200px;
+  height: 40px;
+  width: auto;
   margin-bottom: 50px;
 }
 .room-images-banner {

@@ -11,6 +11,7 @@ import Navbar from './components/Navbar';
 import UserContextProvider from './contexts/UserContext';
 import Search from './components/property_components/SearchLocation';
 import SearchResults from './components/property_components/ApartmentSearchResults';
+import Favourites from './components/Favourites';
 
 import ContactUs from './components/ContactUs';
 import Blogs from './components/Blogs';
@@ -34,7 +35,7 @@ class App extends Component {
             <Route exact path="/search" component={Search} />
             <Route exact path="/search-results" component={SearchResults} />
             <Route exact path="/blog" component={Blogs}/>
-            <Route exact path="/favorite" />
+            <Route exact path="/favourite" component={Favourites} />
             <Route exact path="/about" component={AboutUs}/>
             <Route exact path="/contact" component={ContactUs} />
             <Route exact path="/faq" component={NeedHelp}/>
