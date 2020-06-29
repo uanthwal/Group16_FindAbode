@@ -26,7 +26,7 @@ class Profile extends Component {
 
 	async componentDidMount() {
 		const { email } = this.context;
-		const { data } = await axios.get('https://a2-ruize-nie.herokuapp.com/signup/' + email);
+		const { data } = await axios.get('https://project-group16.herokuapp.com/signup/' + email);
 		// const { data } = await axios.get('http://localhost:5000/signup/' + email)
 		this.setState({ detail: data[0] });
 	}
@@ -55,7 +55,7 @@ class Profile extends Component {
 				green: true
 			});
 			const user = { username, password };
-			await axios.post('https://a2-ruize-nie.herokuapp.com/signup/' + email, user);
+			await axios.post('https://project-group16.herokuapp.com/signup/' + email, user);
 			// await axios.post('http://localhost:5000/signup/' + email, user)
 		} else {
 			this.setState({
@@ -68,7 +68,7 @@ class Profile extends Component {
 	onDelete = async () => {
 		const { email, credential } = this.context;
 		credential('');
-		await axios.delete('https://a2-ruize-nie.herokuapp.com/signup/' + email);
+		await axios.delete('https://project-group16.herokuapp.com/signup/' + email);
 		// await axios.delete('http://localhost:5000/signup/' + email)
 	};
 

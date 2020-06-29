@@ -12,6 +12,8 @@ import UserContextProvider from './contexts/UserContext';
 import Search from './components/property_components/SearchLocation';
 import SearchResults from './components/property_components/ApartmentSearchResults';
 import Favourites from './components/Favourites';
+import DiscussionForum from './components/discussion_forum_components/DiscussionForum'
+import ViewDiscussion from './components/discussion_forum_components/ViewDiscussion';
 
 import ContactUs from './components/ContactUs';
 import Blogs from './components/Blogs';
@@ -41,6 +43,8 @@ class App extends Component {
             <Route exact path="/contact" component={ContactUs} />
             <Route exact path="/faq" component={NeedHelp}/>
             <Route exact path="/careers" component={Careers}/>
+            <Route exact path="/discussionforum" component={DiscussionForum}/>
+            <Route exact path="/discussionforum/:topic" component={ViewDiscussion}/>
             <Redirect to="/" />
           </Switch>
         </UserContextProvider>

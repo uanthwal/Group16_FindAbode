@@ -46,6 +46,11 @@ class Navbar extends Component {
 									FAQ
 								</Link>
 							</li>
+							<li>
+								<Link className="link" to="/discussionforum">
+									Discussion forum
+								</Link>
+							</li>
 							{!login && (
 								<li>
 									<Link className="link" to="/signin">
