@@ -7,7 +7,7 @@ import { UserContext } from '../../contexts/UserContext';
 
 const Question = props => (
     <tr>
-      <td><Link to={'discussionforum/'+props.question.topic}>{props.question.topic}</Link></td>
+      <td><Link to={'discussionforum1/'+props.question.topic}>{props.question.topic}</Link></td>
       <td>{props.question.user}</td>
     </tr>
   )

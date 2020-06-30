@@ -43,8 +43,8 @@ class App extends Component {
             <Route exact path="/contact" component={ContactUs} />
             <Route exact path="/faq" component={NeedHelp}/>
             <Route exact path="/careers" component={Careers}/>
-            <Route exact path="/discussionforum" component={DiscussionForum}/>
-            <Route exact path="/discussionforum/:topic" component={ViewDiscussion}/>
+            <Route exact path="/discussionforum1" component={DiscussionForum}/>
+            <Route exact path="/discussionforum1/:topic" component={ViewDiscussion}/>
             <Redirect to="/" />
           </Switch>
         </UserContextProvider>
