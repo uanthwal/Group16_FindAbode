@@ -1,4 +1,21 @@
 @media screen and (min-width: 760px) {
+  .delete-icon {
+    display: flex;
+    position: absolute;
+    right: -16px;
+    top: -10px;
+    background: red;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    .fa {
+      font-size: 22px;
+      color: white;
+    }
+  }
     .search-r-container {
       display: flex;
       margin: 5%;
@@ -114,7 +131,7 @@
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         transition: 0.3s;
         border-radius: 5px;
-        height: 245px;
+        height: 295px;
         -ms-flex: auto;
         width: 48%;
         position: relative;

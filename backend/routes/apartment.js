@@ -31,4 +31,24 @@ router.route("/search-apartments").post((req, res) => {
   );
 });
 
+router.route("/all-apartments").post((req, res) => {
+  var resp_data = [];
+  Apartment.find({}, function (err, data) {
+    resp_data = data;
+    if (err) {
+      res.send({
+        code: 500,
+        message: "Something went wrong. Please try after sometime.",
+        data: [],
+      });
+    } else {
+      res.send({
+        code: 200,
+        message: resp_data.length + " Apartment(s) Found",
+        data: resp_data,
+      });
+    }
+  });
+});
+
 module.exports = router;

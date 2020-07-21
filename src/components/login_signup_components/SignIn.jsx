@@ -70,9 +70,15 @@ class SignIn extends Component {
 								result: ''
 							});
 							credential(email);
-							this.props.history.push({
-								pathname: '/'
-							});
+							if(res.data[0]['user_type'] && res.data[0]['user_type'] == 'A') {
+								this.props.history.push({
+									pathname: '/admin-home'
+								});
+							} else {
+								this.props.history.push({
+									pathname: '/'
+								});
+							}
 						} else {
 							this.setState({
 								result: "The password doesn't match"

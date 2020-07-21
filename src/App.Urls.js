@@ -5,7 +5,9 @@ export var APP_URL_CONFIG = {
   SIGNUP_DETAILS: '/signup',
   DISCUSSION_FORUM:'/discussionforum/',
   ADD_TOPIC:'/discussionforum/addtopic/',
-  VIEW_DISCUSSION: '/discussionforum/'
+  VIEW_DISCUSSION: '/discussionforum/',
+  GET_ALL_PLACES:'/apartments/all-apartments',
+  DELETE_APARTMENT: '/apartments/delete'
 };
 
 export function getConfigs() {

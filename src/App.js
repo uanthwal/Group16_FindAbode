@@ -4,7 +4,6 @@ import SignUp from './components/login_signup_components/SignUp';
 import SignIn from './components/login_signup_components/SignIn';
 import Profile from './components/profile_components/Profile';
 import Home from './components/Home';
-import DetailRoom from './components/property_components/DetailRoom';
 import ScrollToTop from './components/ScrollToTop';
 import './App.css';
 import Navbar from './components/Navbar';
@@ -14,13 +13,13 @@ import SearchResults from './components/property_components/ApartmentSearchResul
 import Favourites from './components/Favourites';
 import DiscussionForum from './components/discussion_forum_components/DiscussionForum'
 import ViewDiscussion from './components/discussion_forum_components/ViewDiscussion';
-
 import ContactUs from './components/ContactUs';
 import Blogs from './components/Blogs';
 import NeedHelp from './components/help_components/NeedHelp';
 import AboutUs from "./components/AboutUs";
 import Careers from './components/career_components/Careers';
 import ApartmentDetail from './components/property_components/DetailRoom';
+import AdminHomeComponent from './components/admin_panel_components/AdminHome';
 
 class App extends Component {
   render() {
@@ -45,6 +44,7 @@ class App extends Component {
             <Route exact path="/careers" component={Careers}/>
             <Route exact path="/discussionforum1" component={DiscussionForum}/>
             <Route exact path="/discussionforum1/:topic" component={ViewDiscussion}/>
+            <Route exact path="/admin-home" component={AdminHomeComponent}/>
             <Redirect to="/" />
           </Switch>
         </UserContextProvider>
