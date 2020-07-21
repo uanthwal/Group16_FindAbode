@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import axios from 'axios';
 import { UserContext } from '../../contexts/UserContext';
+import { APP_URL_CONFIG } from '../../App.Urls';
 
 const emailRegex = RegExp(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);
 
@@ -55,8 +56,7 @@ class SignIn extends Component {
 
 		if (this.formValid(this.state)) {
 			await axios
-				.get('https://project-group16.herokuapp.com/signup/' + email)
-			//	.get('http://localhost:5000/signup/' + email)
+				.get(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.SIGNUP + email)
 				.then((res) => {
 					if (res.data.length === 0) {
 						this.setState({
@@ -82,7 +82,7 @@ class SignIn extends Component {
 				});
 		} else {
 			this.setState({
-				result: 'Please fill out all the entry and make sure you meet all the requirement'
+				result: 'Please fill out all the entry and make sure you meet all the requirement.'
 			});
 		}
 	};

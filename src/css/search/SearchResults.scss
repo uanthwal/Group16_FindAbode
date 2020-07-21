@@ -11,24 +11,21 @@
           text-align: center;
         }
       }
-  
       .grid-row {
         display: flex;
         flex-flow: row wrap;
         justify-content: flex-start;
         margin: 0px 5%;
       }
-  
       .grid-item {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         transition: 0.3s;
         border-radius: 5px;
-        height: 245px;
+        height: 290px;
         flex-basis: 20%;
         -ms-flex: auto;
         width: 259px;
         position: relative;
-  
         margin: 2%;
         box-sizing: border-box;
         &:hover {
@@ -57,10 +54,11 @@
           .place-desc {
             font-size: 11px;
             display: -webkit-box;
-            -webkit-line-clamp: 2;
+            -webkit-line-clamp: 1;
             -webkit-box-orient: vertical;
             overflow: hidden;
             text-overflow: ellipsis;
+            margin-bottom: 5px;
           }
           .place-province {
             display: block;

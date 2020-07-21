@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const answerSchema = new mongoose.Schema({
   topic: {
@@ -7,8 +7,9 @@ const answerSchema = new mongoose.Schema({
   },
   ans: {
     type: String,
-    required:true,
-  },email: {
+    required: true,
+  },
+  email: {
     type: String,
     required: true,
   },
@@ -18,6 +19,6 @@ const answerSchema = new mongoose.Schema({
   },
 });
 
-const Answer = mongoose.model('Answer', answerSchema);
+const Answer = mongoose.model("Answer", answerSchema);
 
 module.exports = Answer;

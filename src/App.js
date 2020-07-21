@@ -20,6 +20,7 @@ import Blogs from './components/Blogs';
 import NeedHelp from './components/help_components/NeedHelp';
 import AboutUs from "./components/AboutUs";
 import Careers from './components/career_components/Careers';
+import ApartmentDetail from './components/property_components/DetailRoom';
 
 class App extends Component {
   render() {
@@ -30,11 +31,10 @@ class App extends Component {
           <Navbar />
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/search/:result" component={DetailRoom} />
+            <Route exact path="/search/:result" component={ApartmentDetail} />
             <Route exact path="/signup" component={SignUp} />
             <Route exact path="/signin" component={SignIn} />
             <Route exact path="/profile" component={Profile} />
-
             <Route exact path="/search" component={Search} />
             <Route exact path="/search-results" component={SearchResults} />
             <Route exact path="/blog" component={Blogs}/>
