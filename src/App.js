@@ -9,7 +9,7 @@ import CreateBlog from './components/CreateBlog';
 import './App.css';
 import Navbar from './components/Navbar';
 import UserContextProvider from './contexts/UserContext';
-import Search from './components/property_components/SearchLocation';
+import SearchApartment from './components/property_components/SearchApartment';
 import SearchResults from './components/property_components/ApartmentSearchResults';
 import Favourites from './components/Favourites';
 import DiscussionForum from './components/discussion_forum_components/DiscussionForum'
@@ -19,7 +19,7 @@ import Blogs from './components/Blogs';
 import NeedHelp from './components/help_components/NeedHelp';
 import AboutUs from "./components/AboutUs";
 import Careers from './components/career_components/Careers';
-import ApartmentDetail from './components/property_components/DetailRoom';
+import ApartmentDetail from './components/property_components/ApartmentDetail';
 import AdminHomeComponent from './components/admin_panel_components/AdminHome';
 
 class App extends Component {
@@ -35,7 +35,7 @@ class App extends Component {
             <Route exact path="/signup" component={SignUp} />
             <Route exact path="/signin" component={SignIn} />
             <Route exact path="/profile" component={Profile} />
-            <Route exact path="/search" component={Search} />
+            <Route exact path="/search-apartment" component={SearchApartment} />
             <Route exact path="/search-results" component={SearchResults} />
             <Route exact path="/blog" component={Blogs}/>
             <Route exact path="/favourite" component={Favourites} />

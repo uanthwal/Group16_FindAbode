@@ -31,7 +31,7 @@ router.route("/search-apartments").post((req, res) => {
   );
 });
 
-router.route("/all-apartments").post((req, res) => {
+router.route("/get-featured").post((req, res) => {
   var resp_data = [];
   Apartment.find({}, function (err, data) {
     resp_data = data;
@@ -50,5 +50,7 @@ router.route("/all-apartments").post((req, res) => {
     }
   });
 });
+
+
 
 module.exports = router;

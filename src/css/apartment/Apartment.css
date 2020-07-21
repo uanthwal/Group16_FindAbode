@@ -1,5 +1,5 @@
 .section-apartments {
-  margin: 150px 277px;
+  margin: 5%;
   text-align: center;
 }
 .apartments-containers {
@@ -50,7 +50,6 @@
   border-radius: 10px;
   width: auto;
   max-width: 300px;
-  text-align: left;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.089);
   transition: transform 200ms ease-in-out;
   cursor: pointer;

@@ -79,6 +79,8 @@ class AdminHomeComponent extends Component {
                         RATING: {element.rating}
                       </span>
                       <span className="place-book">
+                        
+
                         <button
                           onClick={this.onClickExplorePlace.bind(
                             this,
