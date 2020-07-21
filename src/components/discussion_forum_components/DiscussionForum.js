@@ -32,7 +32,7 @@ export default class DiscussionForum extends Component {
 
   componentDidMount() {
     axios
-      .get(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.DISCUSSION_FORM)
+      .get(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.DISCUSSION_FORUM)
       .then((response) => {
         this.setState({ questions: response.data });
       })
