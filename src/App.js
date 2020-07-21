@@ -5,6 +5,7 @@ import SignIn from './components/login_signup_components/SignIn';
 import Profile from './components/profile_components/Profile';
 import Home from './components/Home';
 import ScrollToTop from './components/ScrollToTop';
+import CreateBlog from './components/CreateBlog';
 import './App.css';
 import Navbar from './components/Navbar';
 import UserContextProvider from './contexts/UserContext';
@@ -44,6 +45,7 @@ class App extends Component {
             <Route exact path="/careers" component={Careers}/>
             <Route exact path="/discussionforum1" component={DiscussionForum}/>
             <Route exact path="/discussionforum1/:topic" component={ViewDiscussion}/>
+            <Route exact path="/createblog" component={CreateBlog}/>
             <Route exact path="/admin-home" component={AdminHomeComponent}/>
             <Redirect to="/" />
           </Switch>

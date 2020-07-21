@@ -7,7 +7,9 @@ export var APP_URL_CONFIG = {
   ADD_TOPIC:'/discussionforum/addtopic/',
   VIEW_DISCUSSION: '/discussionforum/',
   GET_ALL_PLACES:'/apartments/all-apartments',
-  DELETE_APARTMENT: '/apartments/delete'
+  DELETE_APARTMENT: '/apartments/delete',
+  ADD_BLOG: '/blog/addblog/',
+  ALL_BLOGS: '/blog'
 };
 
 export function getConfigs() {
