@@ -11,7 +11,8 @@ export var APP_URL_CONFIG = {
   ADD_BLOG: '/blog/addblog/',
   ALL_BLOGS: '/blog',
   GET_FEATURED_APARTMENTS: '/apartments/get-featured',
-  PROPERTY_DETAILS: '/apartments/get-apartment-details'
+  PROPERTY_DETAILS: '/apartments/get-apartment-details',
+  CONTACT_US: '/contact/'
 };
 
 export function getConfigs() {

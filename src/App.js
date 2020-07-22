@@ -14,7 +14,7 @@ import SearchResults from './components/property_components/ApartmentSearchResul
 import Favourites from './components/Favourites';
 import DiscussionForum from './components/discussion_forum_components/DiscussionForum'
 import ViewDiscussion from './components/discussion_forum_components/ViewDiscussion';
-import ContactUs from './components/ContactUs';
+import ContactUs from './components/information_management/ContactUs';
 import Blogs from './components/Blogs';
 import NeedHelp from './components/help_components/NeedHelp';
 import AboutUs from "./components/AboutUs";
