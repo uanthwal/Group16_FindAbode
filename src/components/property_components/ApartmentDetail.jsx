@@ -1,10 +1,14 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 import axios from "axios";
 import Links from "../../components/Links";
 import Footer from "../../components/Footer";
-import ad from "../../images/ad.jpg";
 import "../../css/apartment/DetailRoom.css";
 import { APP_URL_CONFIG } from "../../App.Urls";
+import Calendar from "react-calendar";
+import Modal from "react-modal";
+import "react-calendar/dist/Calendar.css";
+import { UserContext } from "../../contexts/UserContext";
 
 class ApartmentDetail extends Component {
   constructor(props) {
@@ -12,8 +16,45 @@ class ApartmentDetail extends Component {
     this.state = {
       apartmentId: this.props.match.params.result,
       apartmentDetails: null,
+      date: new Date(),
+      modalIsOpen: false,
+      select: "spot1",
     };
   }
+
+  openModal = () => {
+    this.setState({ modalIsOpen: true });
+  };
+
+  closeModal = () => {
+    this.setState({ modalIsOpen: false });
+  };
+
+  onDateChange = (date) => this.setState({ date });
+
+  handleBookAppointment = (login) => {
+    if (login) {
+      this.openModal();
+    } else {
+      this.props.history.push({
+        pathname: "/signin",
+      });
+    }
+  };
+
+  handleSelect = (e) => {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
+  };
+
+  handleTimeSpot = (e) => {
+    e.preventDefault();
+    const { date, select } = this.state;
+    // insert into mongoDB
+    console.log(date);
+    console.log(select);
+    this.closeModal();
+  };
 
   getApartmentDetails = async () => {
     await axios
@@ -34,7 +75,19 @@ class ApartmentDetail extends Component {
     this.getApartmentDetails();
   }
 
+  static contextType = UserContext;
   render() {
+    Modal.setAppElement("#root");
+    const { login } = this.context;
+    const customStyles = {
+      content: {
+        top: "50%",
+        left: "50%",
+        right: "auto",
+        bottom: "auto",
+        transform: "translate(-50%, -50%)",
+      },
+    };
     return (
       <>
         {" "}
@@ -145,8 +198,36 @@ class ApartmentDetail extends Component {
                   </a>
                 </div>
                 <div className="book-card">
-                  <img className="ad-img" src={ad} alt="image not found" />
-                  <button className="book-btn">Book Appointment</button>
+                  <Calendar
+                    onChange={this.onDateChange}
+                    value={this.state.date}
+                  />
+                  <button
+                    className="book-btn"
+                    onClick={() => this.handleBookAppointment(login)}
+                  >
+                    Book Appointment
+                  </button>
+                  <Modal
+                    isOpen={this.state.modalIsOpen}
+                    onRequestClose={this.closeModal}
+                    style={customStyles}
+                    contentLabel="Example Modal"
+                  >
+                    <h2>Pick a Time Spot</h2>
+                    <form onSubmit={(e) => this.handleTimeSpot(e)}>
+                      <select
+                        name="select"
+                        onChange={this.handleSelect}
+                        value={this.state.select}
+                      >
+                        <option value="spot1">9am - 11am</option>
+                        <option value="spot2">1pm - 3pm</option>
+                        <option value="spot3">5pm - 7pm</option>
+                      </select>
+                      <input className="button" type="submit" value="Confirm" />
+                    </form>
+                  </Modal>
                 </div>
               </div>
               <div className="property-name">
@@ -208,4 +289,4 @@ class ApartmentDetail extends Component {
   }
 }
 
-export default ApartmentDetail;
+export default withRouter(ApartmentDetail);
