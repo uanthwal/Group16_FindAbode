@@ -12,7 +12,10 @@ export var APP_URL_CONFIG = {
   ALL_BLOGS: '/blog/',
   EDIT_BLOG: '/blog/modifyblog/',
   GET_ONE_BLOG: '/blog/oneblog/',
-  DELETE_BLOG: '/blog/deleteblog/'
+  DELETE_BLOG: '/blog/deleteblog/',
+  ALL_BLOGS: '/blog',
+  GET_FEATURED_APARTMENTS: '/apartments/get-featured',
+  PROPERTY_DETAILS: '/apartments/get-apartment-details'
 };
 
 export function getConfigs() {
