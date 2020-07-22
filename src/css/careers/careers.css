@@ -28,7 +28,6 @@ body {
 }
 
 .careerPage .careersBody .openPostionsLayer {
-  position: absolute;
   margin: 1% 6% 0% 6%;
   min-width: 80%;
   min-height: 650px;

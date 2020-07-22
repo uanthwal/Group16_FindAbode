@@ -1,0 +1,104 @@
+body {
+  height: 100%;
+  background-color: #8bbbb2;
+}
+
+.applyPage {
+  width: 100%;
+  height: 100%;
+  background-color: #8bbbb2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.applyPage .title {
+  margin-top: 2%;
+  height: 6%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.applyPage .jobApplyBody {
+  background-color: #8bbbb2;
+  height: 100%;
+  min-height: 650px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.applyPage .jobApplyBody .layer {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: teal;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: white;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.applyPage .jobApplyBody .layer .applyForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.applyPage .jobApplyBody .layer .applyForm label {
+  margin-left: 2%;
+}
+
+.applyPage .jobApplyBody .layer .applyForm .personInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.applyPage .jobApplyBody .layer .applyForm .required {
+  color: red;
+}
+
+.applyPage .jobApplyBody .layer .applyForm .applyBtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: auto;
+  width: 50%;
+}
+/*# sourceMappingURL=apply.css.map */

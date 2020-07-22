@@ -21,6 +21,7 @@ import AboutUs from "./components/AboutUs";
 import Careers from './components/career_components/Careers';
 import ApartmentDetail from './components/property_components/DetailRoom';
 import AdminHomeComponent from './components/admin_panel_components/AdminHome';
+import Apply from './components/career_components/Apply';
 
 class App extends Component {
   render() {
@@ -47,6 +48,7 @@ class App extends Component {
             <Route exact path="/discussionforum1/:topic" component={ViewDiscussion}/>
             <Route exact path="/createblog" component={CreateBlog}/>
             <Route exact path="/admin-home" component={AdminHomeComponent}/>
+            <Route exact path="/job/apply" component={Apply} />
             <Redirect to="/" />
           </Switch>
         </UserContextProvider>
