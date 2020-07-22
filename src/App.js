@@ -28,35 +28,35 @@ import EditApartmentComponent from './components/admin_panel_components/EditApar
 class App extends Component {
   render() {
     return (
-      <>
-        <UserContextProvider>
-          <ScrollToTop />
-          <Navbar />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/search/:result" component={ApartmentDetail} />
-            <Route exact path="/signup" component={SignUp} />
-            <Route exact path="/signin" component={SignIn} />
-            <Route exact path="/profile" component={Profile} />
-            <Route exact path="/search-apartment" component={SearchApartment} />
-            <Route exact path="/search-results" component={SearchResults} />
-            <Route exact path="/blog" component={Blogs}/>
-            <Route exact path="/favourite" component={Favourites} />
-            <Route exact path="/about" component={AboutUs}/>
-            <Route exact path="/contact" component={ContactUs} />
-            <Route exact path="/faq" component={NeedHelp}/>
-            <Route exact path="/careers" component={Careers}/>
-            <Route exact path="/discussionforum1" component={DiscussionForum}/>
-            <Route exact path="/discussionforum1/:topic" component={ViewDiscussion}/>
-            <Route exact path="/createblog" component={CreateBlog}/>
-            <Route exact path="/blogadmin" component={BlogsAdmin}/>
-            <Route exact path="/editblog/:topic" component={EditBlog}/>
-            <Route exact path="/admin-home" component={AdminHomeComponent}/>
-            <Route exact path="/edit-apartment/:id" component={EditApartmentComponent}/>
-            <Redirect to="/" />
-          </Switch>
-        </UserContextProvider>
-      </>
+        <>
+          <UserContextProvider>
+            <ScrollToTop />
+            <Navbar />
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/search/:result" component={ApartmentDetail} />
+              <Route exact path="/signup" component={SignUp} />
+              <Route exact path="/signin" component={SignIn} />
+              <Route exact path="/profile" component={Profile} />
+              <Route exact path="/search-apartment" component={SearchApartment} />
+              <Route exact path="/search-results" component={SearchResults} />
+              <Route exact path="/blog" component={Blogs}/>
+              <Route exact path="/favourite" component={Favourites} />
+              <Route exact path="/about" component={AboutUs}/>
+              <Route exact path="/contact" component={ContactUs} />
+              <Route exact path="/faq" component={NeedHelp}/>
+              <Route exact path="/careers" component={Careers}/>
+              <Route exact path="/discussionforum1" component={DiscussionForum}/>
+              <Route exact path="/discussionforum1/:topic" component={ViewDiscussion}/>
+              <Route exact path="/createblog" component={CreateBlog}/>
+              <Route exact path="/blogadmin" component={BlogsAdmin}/>
+              <Route exact path="/editblog/:topic" component={EditBlog}/>
+              <Route exact path="/admin-home" component={AdminHomeComponent}/>
+              <Route exact path="/edit-apartment/:id" component={EditApartmentComponent}/>
+              <Redirect to="/" />
+            </Switch>
+          </UserContextProvider>
+        </>
     );
   }
 }

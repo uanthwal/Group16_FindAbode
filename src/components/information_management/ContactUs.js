@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Links from "../Links";
 import Footer from "../Footer";
-import { Link } from "react-router-dom";
 import axios from "axios";
 import { APP_URL_CONFIG } from "../../App.Urls";
 import "../../css/ContactUs.css";

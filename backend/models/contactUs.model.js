@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-
+//creating contactus table schema
 const contactSchema = new mongoose.Schema({
     f_name: {
         type: String,
