@@ -12,10 +12,12 @@ import UserContextProvider from './contexts/UserContext';
 import SearchApartment from './components/property_components/SearchApartment';
 import SearchResults from './components/property_components/ApartmentSearchResults';
 import Favourites from './components/Favourites';
+import EditBlog from './components/EditBlog';
 import DiscussionForum from './components/discussion_forum_components/DiscussionForum'
 import ViewDiscussion from './components/discussion_forum_components/ViewDiscussion';
 import ContactUs from './components/ContactUs';
 import Blogs from './components/Blogs';
+import BlogsAdmin from './components/BlogsAdmin'
 import NeedHelp from './components/help_components/NeedHelp';
 import AboutUs from "./components/AboutUs";
 import Careers from './components/career_components/Careers';
@@ -47,6 +49,8 @@ class App extends Component {
             <Route exact path="/discussionforum1" component={DiscussionForum}/>
             <Route exact path="/discussionforum1/:topic" component={ViewDiscussion}/>
             <Route exact path="/createblog" component={CreateBlog}/>
+            <Route exact path="/blogadmin" component={BlogsAdmin}/>
+            <Route exact path="/editblog/:topic" component={EditBlog}/>
             <Route exact path="/admin-home" component={AdminHomeComponent}/>
             <Route exact path="/edit-apartment/:id" component={EditApartmentComponent}/>
             <Redirect to="/" />
