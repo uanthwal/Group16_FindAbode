@@ -5,11 +5,13 @@ import Links from "../components/Links";
 import Footer from "../components/Footer";
 import { APP_URL_CONFIG } from "../App.Urls";
 
-export default class CreateBlog extends Component {
+
+export default class EditBlog extends Component {
 
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.deleteBlog = this.deleteBlog.bind(this);
     this.handleChange = this.handleChange.bind(this);
     
     this.state = {
@@ -29,13 +31,39 @@ export default class CreateBlog extends Component {
     });
   }
 
+  deleteBlog(){
+    axios
+          .post(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.DELETE_BLOG, {
+            topic: this.state.topic
+          })
+          .then((res) => console.log(res.data));
+          alert("Blog has been deleted successfully");
+  }
+
+  componentDidMount() {
+    //	this.setState({blogs:tempblogs});
+        axios
+          .get(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.GET_ONE_BLOG +this.props.match.params.topic)
+          .then((response) => {
+            this.setState({ topic: response.data[0].topic,
+                p1: response.data[0].p1,
+                p2:response.data[0].p2
+            });
+            console.log(response.data);
+            let a=this.state.p1
+            console.log(a);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+    }
+
   async handleSubmit(e) {
     e.preventDefault();
-    
       if (this.state.p1 != "" && this.state.p2 != "" && this.state.topic!="") {
 
         axios
-          .post(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.ADD_BLOG, {
+          .post(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.EDIT_BLOG, {
             topic: this.state.topic,
             p1: this.state.p1,
             p2: this.state.p2,
@@ -50,7 +78,7 @@ export default class CreateBlog extends Component {
   render() {
     return (
       <div style={{ marginTop: 65 }}>
-        <h3 class="text-center">Create new blog</h3>
+        <h3 class="text-center">Edit blog</h3>
           <form onSubmit={this.handleSubmit}>
             <div class="m-5">
             <textarea
@@ -74,10 +102,12 @@ export default class CreateBlog extends Component {
                 value={this.state.p2}
                 onChange={this.handleChange}
               ></textarea>
-              <button>Create new blog</button>
+              <button type="submit">Update</button>
+              <button type="button" onClick={this.deleteBlog}>Delete</button>
             </div>
             
           </form>
+          
         <Links />
         <Footer />
       </div>

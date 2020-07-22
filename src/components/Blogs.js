@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { APP_URL_CONFIG } from '../App.Urls';
 import axios from 'axios';
 
@@ -7,7 +6,6 @@ import blogimg from '../images/landingpage_sub.jpg';
 
 import Links from './Links';
 import Footer from './Footer';
-import { PromiseProvider } from 'mongoose';
 
 const Blog = (props) => (
 	<div>
@@ -51,6 +49,7 @@ class Blogs extends Component {
 				console.log(error);
 			});
 	}
+
 	blogList() {
 		return this.state.blogs.map((currentblog) => {
 			return <Blog blog={currentblog} key={currentblog.topic} />;
@@ -61,7 +60,6 @@ class Blogs extends Component {
 		return (
 			<div style={{ marginTop: 65 }}>
 				<h2 class="text-center">Blogs</h2>
-				<Link to="createblog">Create new blog</Link>
 				<br />
 				<div>{this.blogList()}</div>
 				<Links />

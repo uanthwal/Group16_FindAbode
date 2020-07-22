@@ -1,5 +1,5 @@
 .section-apartments {
-  margin: 150px 277px;
+  margin: 5%;
   text-align: center;
 }
 .apartments-containers {
@@ -50,7 +50,6 @@
   border-radius: 10px;
   width: auto;
   max-width: 300px;
-  text-align: left;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.089);
   transition: transform 200ms ease-in-out;
   cursor: pointer;
@@ -85,4 +84,229 @@
 .text-review {
   color: green;
   font-weight: 500;
+}
+
+/* single room*/
+.single-room {
+  margin-top: 160px;
+}
+.property-name {
+  font-size: 26px !important;
+  line-height:  30px !important;
+  font-weight:  600 !important;
+}
+.property-name-details {
+  font-size: 1.75rem;
+  margin-left: 315px;
+}
+
+.property-address-details {
+  font-size: 1.25rem;
+  margin-left: 20px;
+}
+
+.property-listing-details {
+  -webkit-box-align: baseline !important;
+  align-items: baseline !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  color: #777777;
+}
+
+.rating {
+  -webkit-box-align: center !important;
+  align-items: center !important;
+  display: inline-flex !important;
+  min-width: 0px !important;
+  margin-top: 8px !important;
+}
+
+.occupancy_list {
+  -webkit-box-align: center !important;
+  align-items: center !important;
+  display: inline-flex !important;
+  min-width: 0px !important;
+  margin-top: 8px !important;
+  font-size: 1.25rem;
+  margin-left: 315px;
+  display: block;
+}
+
+.rating-symbol{
+  font-size: 18px !important;
+  margin-right: 4px !important;
+  color: darkred !important;
+}
+
+.rating-symbol-color {
+  font-family: Airmoji_Standalone !important;
+  font-weight: normal !important;
+}
+
+.rating-symbol-position {
+  font-size: 1.25rem;
+  margin-left: 315px;
+}
+
+.rating-symbol-data{
+  font-size: 18px !important;
+  margin-right: 4px !important;
+  color: darkred !important;
+}
+
+.property-rating {
+  cursor: pointer !important;
+  position: relative !important;
+  border-color: black !important;
+  touch-action: manipulation !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+  font-weight: inherit !important;
+  border-radius: 0px !important;
+  border-width: 1px !important;
+  outline: none !important;
+  transition: box-shadow 0.2s ease, transform 0.1s ease !important;
+  background: transparent !important;
+  border: none !important;
+  color: inherit !important;
+  display: block !important;
+  margin: 0px !important;
+  padding: 0px !important;
+  text-align: inherit !important;
+  text-decoration: none !important;
+  height: 100% !important;
+}
+
+.occupancy_logos {
+  margin-left: 10px;
+}
+
+.guests {
+  font-size: 1.25rem;
+  margin-left: 10px;
+}
+
+.bedroom {
+  font-size: 1.25rem;
+  margin-left: 10px;
+}
+
+.beds {
+  font-size: 1.25rem;
+  margin-left: 10px;
+}
+
+.baths {
+  font-size: 1.25rem;
+  margin-left: 10px;
+}
+.book-container {
+  display: flex;
+  justify-content: center;
+}
+.book-card {
+  margin-left: 100px;
+  height: 450px;
+  width: 350px;
+  border: 1px solid #dfe1e5;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.09);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #f3f3f3;
+}
+.fav-card {
+  margin-left: 100px;
+  height: 150px;
+  width: 350px;
+  border: 1px solid #dfe1e5;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.09);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #f3f3f3;
+  outline: none;
+}
+.ad-img {
+  height: 200px;
+  width: 280px;
+  margin-bottom: 80px;
+}
+.book-btn {
+  height: 40px;
+  margin-bottom: 50px;
+}
+.fav-btn {
+  margin-left: 300px;
+  height: 40px;
+  width: auto;
+  margin-bottom: 50px;
+}
+.room-images-banner {
+  width: 50%;
+  margin-left: 190px;
+  margin-bottom: 70px;
+}
+.single-room-images {
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 50px;
+}
+.single-room-images img {
+  width: 80%;
+  display: inline-block;
+}
+
+.single-room-info {
+  width: 80%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 300px;
+  margin: 50px auto;
+}
+.desc h3 {
+  font-size: 30px;
+  text-transform: capitalize;
+}
+.desc p {
+  margin-top: 20px;
+  font-size: 20px;
+  line-height: 30px;
+}
+.info h3 {
+  font-size: 30px;
+  text-transform: capitalize;
+}
+.info p {
+  margin-top: 20px;
+  font-size: 20px;
+  line-height: 8px;
+}
+.room-extras {
+  width: 80%;
+  margin: 100px auto;
+}
+.room-extras h6 {
+  font-size: 30px;
+  text-transform: capitalize;
+  margin-bottom: 30px;
+}
+.extras {
+  font-size: 20px;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 2rem;
+  grid-row-gap: 1rem;
+}
+
+.amenities {
+  font-size: 20px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
 }

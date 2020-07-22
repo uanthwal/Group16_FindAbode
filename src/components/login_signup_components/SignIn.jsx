@@ -70,7 +70,7 @@ class SignIn extends Component {
 								result: ''
 							});
 							credential(email);
-							if(res.data[0]['user_type'] && res.data[0]['user_type'] == 'A') {
+							if(res.data[0]['userType'] && res.data[0]['userType'] == 'A') {
 								this.props.history.push({
 									pathname: '/admin-home'
 								});
