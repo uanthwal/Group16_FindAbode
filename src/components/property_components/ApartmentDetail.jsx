@@ -47,12 +47,17 @@ class ApartmentDetail extends Component {
     this.setState({ [name]: value });
   };
 
-  handleTimeSpot = (e) => {
+  handleTimeSpot = async (e) => {
     e.preventDefault();
-    const { date, select } = this.state;
+    const { date, select, apartmentId } = this.state;
+    const { email } = this.context;
     // insert into mongoDB
-    console.log(date);
-    console.log(select);
+    await axios.post("https://project-group16.herokuapp.com/appointment", {
+      email,
+      apartmentId,
+      date,
+      time: select,
+    });
     this.closeModal();
   };
 
@@ -221,9 +226,9 @@ class ApartmentDetail extends Component {
                         onChange={this.handleSelect}
                         value={this.state.select}
                       >
-                        <option value="spot1">9am - 11am</option>
-                        <option value="spot2">1pm - 3pm</option>
-                        <option value="spot3">5pm - 7pm</option>
+                        <option value="9am - 11am">9am - 11am</option>
+                        <option value="1pm - 3pm">1pm - 3pm</option>
+                        <option value="5pm - 7pm">5pm - 7pm</option>
                       </select>
                       <input className="button" type="submit" value="Confirm" />
                     </form>
