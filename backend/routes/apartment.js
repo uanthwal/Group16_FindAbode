@@ -31,6 +31,26 @@ router.route("/search-apartments").post((req, res) => {
     );
 });
 
+router.route("/all-apartments").post((req, res) => {
+  var resp_data = [];
+  Apartment.find({}, function (err, data) {
+    resp_data = data;
+    if (err) {
+      res.send({
+        code: 500,
+        message: "Something went wrong. Please try after sometime.",
+        data: [],
+      });
+    } else {
+      res.send({
+        code: 200,
+        message: resp_data.length + " Apartment(s) Found",
+        data: resp_data,
+      });
+    }
+  });
+});
+
 router.route("/get-featured").post((req, res) => {
     var resp_data = [];
     Apartment.find({}, function (err, data) {
@@ -51,31 +71,24 @@ router.route("/get-featured").post((req, res) => {
     });
 });
 
-
-// Adding new method to add details of property
 router.route("/get-apartment-details").post((req, res) => {
-    let apartment_id = req.body.place_id;
-    let resp_data = {};
-    Apartment.find(
-        {
-            "_id": apartment_id
-        },
-        function (err, data) {
-            resp_data = data[0];
-            if (err) {
-                res.send({
-                    code: 500,
-                    message: "Something went wrong. Please try after sometime.",
-                    data: {},
-                });
-            } else {
-                res.send({
-                    code: 200,
-                    data: resp_data,
-                });
-            }
-        }
-    );
+  var apartment_id = req.body.apartment_id;
+  var resp_data = {};
+  Apartment.find({"_id": apartment_id}, function (err, data) {
+    resp_data = data[0];
+    if (err) {
+      res.send({
+        code: 500,
+        message: "Something went wrong. Please try after sometime.",
+        data: {},
+      });
+    } else {
+      res.send({
+        code: 200,
+        data: resp_data,
+      });
+    }
+  });
 });
 
 module.exports = router;
