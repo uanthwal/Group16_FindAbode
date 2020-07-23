@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
 import Links from "../components/Links";
 import Footer from "../components/Footer";
@@ -41,7 +41,8 @@ export default class CreateBlog extends Component {
             p2: this.state.p2,
           })
           .then((res) => console.log(res.data));
-        window.location.reload();
+          setTimeout(()=>{this.setState({allBlogs:"temp"});},1000);
+        console.log(this.state.allBlogs);
       } else {
         alert("Please fill all the fields");
       }
@@ -49,7 +50,8 @@ export default class CreateBlog extends Component {
 
   render() {
     return (
-      <div style={{ marginTop: 65 }}>
+      <div style={{ marginTop: 75 }}>
+        {this.state.allBlogs === "temp"? <Redirect to="/blogadmin"/> : null}
         <h3 class="text-center">Create new blog</h3>
           <form onSubmit={this.handleSubmit}>
             <div class="m-5">

@@ -53,13 +53,16 @@ class BlogsAdmin extends Component {
     axios
       .get(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.ALL_BLOGS)
       .then((response) => {
-        this.setState({ blogs: response.data });
+		this.setState({ blogs: response.data });
+		console.log(response.data);
       })
       .catch((error) => {
         console.log(error);
-      });
+	  });
+	  
 	  }
 	blogList() {
+		console.log(this.state.blogs)
 		return this.state.blogs.map((currentblog) => {
 		return (
 			<Blog blog={currentblog} key={currentblog.topic} />
@@ -71,9 +74,11 @@ class BlogsAdmin extends Component {
 
 	render() {
 		return (
-			<div style={{ marginTop: 65 }}>
-				<h2 class="text-center">Blogs</h2>
-				<Link to="createblog" className="m-5">Create a new blog</Link>
+			<div style={{ marginTop: 75 }}>
+				<h2 className="text-center">Blogs</h2>
+				<div class="text-center">
+				<Link to="createblog" className="text-center">Create a new blog</Link>
+				</div>
 				<br/>
 				<div>
 				{this.blogList()}

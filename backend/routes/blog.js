@@ -3,7 +3,10 @@ let Blog = require('../models/blog.model');
 
 router.route('/').get((req, res) => {
     Blog.find({ })
-      .then(blog => res.json(blog))
+      .then(blog => {
+        console.log(blog);
+        res.json(blog);
+      })
       .catch(err => res.status(400).json('Error: ' + err));
   });
 

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
 import Links from "../components/Links";
 import Footer from "../components/Footer";
@@ -38,10 +38,10 @@ export default class EditBlog extends Component {
           })
           .then((res) => console.log(res.data));
           alert("Blog has been deleted successfully");
+          setTimeout(()=>{this.setState({allBlogs:"temp"});},1000);
   }
 
   componentDidMount() {
-    //	this.setState({blogs:tempblogs});
         axios
           .get(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.GET_ONE_BLOG +this.props.match.params.topic)
           .then((response) => {
@@ -58,26 +58,34 @@ export default class EditBlog extends Component {
           });
     }
 
-  async handleSubmit(e) {
+  handleSubmit = (e) =>{
     e.preventDefault();
       if (this.state.p1 != "" && this.state.p2 != "" && this.state.topic!="") {
+        console.log("aaaaaaàa");
 
-        axios
+       axios
           .post(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.EDIT_BLOG, {
             topic: this.state.topic,
             p1: this.state.p1,
             p2: this.state.p2,
           })
-          .then((res) => console.log(res.data));
-        window.location.reload();
+          .then((res) => {
+            console.log(res.data);
+          }).catch(err => console.log(err));
+         
+         setTimeout(()=>{this.setState({allBlogs:"temp"});},1000);
+      //    this.setState({allBlogs:"temp"});
+          //console.log("aaaaaaàa");
       } else {
         alert("Please fill all the fields");
       }
     }
+    
 
   render() {
     return (
-      <div style={{ marginTop: 65 }}>
+      <div style={{ marginTop: 75 }}>
+        {this.state.allBlogs === "temp"? <Redirect to="/blogadmin"/> : null}
         <h3 class="text-center">Edit blog</h3>
           <form onSubmit={this.handleSubmit}>
             <div class="m-5">
@@ -87,18 +95,19 @@ export default class EditBlog extends Component {
                 style={({ height: "170px" }, { width: "100%" })}
                 value={this.state.topic}
                 onChange={this.handleChange}
+                disabled="disabled"
               ></textarea>
             <textarea
                 id="p1" name="p1"
                 placeholder="Write paragraph 1 of a blog.."
-                style={({ height: "170px" }, { width: "100%" })}
+                style={({ height: "300px" }, { width: "100%" })}
                 value={this.state.p1}
                 onChange={this.handleChange}
               ></textarea> 
               <textarea
                 id="p2" name="p2"
                 placeholder="Write paragraph 2 of a blog.."
-                style={({ height: "170px" }, { width: "100%" })}
+                style={({ height: "300px" }, { width: "100%" })}
                 value={this.state.p2}
                 onChange={this.handleChange}
               ></textarea>

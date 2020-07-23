@@ -96,7 +96,7 @@ export default class ViewDiscussion extends Component {
 
   render() {
     return (
-      <div style={{ marginTop: 65 }}>
+      <div style={{ marginTop: 75 }}>
         <h3 class="text-center">Topic: {this.props.match.params.topic}</h3>
         <div class="m-5">
           {this.answerList()}

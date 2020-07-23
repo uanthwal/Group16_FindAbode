@@ -90,7 +90,7 @@ export default class DiscussionForum extends Component {
 
   render() {
     return (
-      <div style={{ marginTop: 65 }}>
+      <div style={{ marginTop: 75 }}>
         <h3 class="text-center">Discussions</h3>
         <table className="table">
           <thead className="thead-light">
