@@ -65,7 +65,7 @@ class Blogs extends Component {
 	  
 	render() {
 		return (
-			<div style={{ marginTop: 65 }}>
+			<div style={{ marginTop: 75 }}>
 				<h2 class="text-center">Blogs</h2>
 				<br/>
 				<div>
