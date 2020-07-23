@@ -53,6 +53,7 @@ class App extends Component {
             <Route exact path="/editblog/:topic" component={EditBlog}/>
             <Route exact path="/admin-home" component={AdminHomeComponent}/>
             <Route exact path="/edit-apartment/:id" component={EditApartmentComponent}/>
+            <Route exact path="/add-apartment" component={EditApartmentComponent}/>
             <Redirect to="/" />
           </Switch>
         </UserContextProvider>

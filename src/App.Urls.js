@@ -15,7 +15,8 @@ export var APP_URL_CONFIG = {
   DELETE_BLOG: '/blog/deleteblog/',
   ALL_BLOGS: '/blog',
   GET_FEATURED_APARTMENTS: '/apartments/get-featured',
-  GET_APARTMENT_DETAILS_BY_ID: '/apartments/get-apartment-details'
+  GET_APARTMENT_DETAILS_BY_ID: '/apartments/get-apartment-details',
+  UPDATE_APARTMENT_DETAILS: '/apartments/update-apartment-details'
 };
 
 export function getConfigs() {

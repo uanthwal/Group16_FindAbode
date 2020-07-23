@@ -19,9 +19,10 @@ class ApartmentCardComponent extends Component {
   onClickDeleteIcon = async (id) => {
     await Axios.post(
       APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.DELETE_APARTMENT,
-      { place_id: id }
+      { apartment_id: id }
     ).then((res) => {
-      this.getAllPlaces();
+      alert(res['data']['message']);
+      this.props.onDeleteHandler();
     });
   };
 
@@ -80,7 +81,7 @@ class ApartmentCardComponent extends Component {
                 >
                   <i className="fa fa-edit"></i>
                 </button>
-                <button
+                <button className="delete"
                   onClick={this.onClickDeleteIcon.bind(
                     this,
                     this.state.cardContent._id

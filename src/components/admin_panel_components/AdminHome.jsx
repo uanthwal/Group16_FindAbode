@@ -13,7 +13,8 @@ class AdminHomeComponent extends Component {
       placesData: [],
       searchText: this.props.location.params,
     };
-    this.onClickExplorePlace = this.onClickExplorePlace.bind(this);
+    this.onClickBlogs = this.onClickBlogs.bind(this);
+    this.onClickAddApartment = this.onClickAddApartment.bind(this);
   }
 
   getAllPlaces = async () => {
@@ -30,17 +31,38 @@ class AdminHomeComponent extends Component {
     this.getAllPlaces();
   }
 
-  onClickExplorePlace(id) {
+  onClickBlogs(id) {
     this.props.history.push({
       pathname: "/search/" + id,
+      apartmentDetails: {}
     });
+  }
+
+  onClickAddApartment() {
+    this.props.history.push({
+      pathname: "/add-apartment",
+      apartmentDetails: {}
+    });
+  }
+
+  onDeleteHandler = async() => {
+    await axios
+      .post(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.GET_ALL_PLACES, {})
+      .then((res) => {
+        this.setState({
+          placesData: res.data["data"],
+        });
+      });
   }
 
   render() {
     return (
       <div>
         <div className="search-r-container">
-          <div></div>
+          <div className="action-btn">
+            <button onClick={this.onClickAddApartment}> Add Apartment </button>
+            <button onClick={this.onClickAddApartment}> Create Blog </button>
+          </div>
           <div className="search-results-section">
             <span className="search-r-txt-header">
               Results({this.state.placesData.length})
@@ -48,7 +70,12 @@ class AdminHomeComponent extends Component {
             <div className="searched-place-holder">
               <div className="grid-row">
                 {this.state.placesData.map((element) => (
-                  <ApartmentCardComponent cardLoadReqFrom="A" cardContent={element} key={element._id}/>
+                  <ApartmentCardComponent
+                    cardLoadReqFrom="A"
+                    cardContent={element}
+                    key={element._id}
+                    onDeleteHandler={this.onDeleteHandler}
+                  />
                 ))}
               </div>
             </div>
