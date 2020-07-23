@@ -20,6 +20,7 @@ export var APP_URL_CONFIG = {
   CONTACT_US: "/contact/",
   JOB_DEPARTMENTS: "/job/departments",
   JOB_LIST: "/jobdetails/job",
+  ADD_APARTMENT:"/apartments/add-apartment"
 };
 
 export function getConfigs() {
