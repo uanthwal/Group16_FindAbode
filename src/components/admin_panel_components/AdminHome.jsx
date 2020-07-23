@@ -33,8 +33,7 @@ class AdminHomeComponent extends Component {
 
   onClickBlogs(id) {
     this.props.history.push({
-      pathname: "/search/" + id,
-      apartmentDetails: {}
+      pathname: "/blogadmin"
     });
   }
 
@@ -61,7 +60,7 @@ class AdminHomeComponent extends Component {
         <div className="search-r-container">
           <div className="action-btn">
             <button onClick={this.onClickAddApartment}> Add Apartment </button>
-            <button onClick={this.onClickAddApartment}> Create Blog </button>
+            <button onClick={this.onClickBlogs}> Create Blog </button>
           </div>
           <div className="search-results-section">
             <span className="search-r-txt-header">
