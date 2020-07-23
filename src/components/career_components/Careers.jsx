@@ -1,27 +1,69 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 import '../../css/careers/careers.css';
 import OpenPosition from './OpenPositions';
 import Departments from './Departments';
+import Links from '../Links';
+import Footer from '../Footer';
+import { APP_URL_CONFIG } from '../../App.Urls';
 
 export default class Careers extends Component {
 	state = {
 		departments: [
-			{
-				key: 'it_dept',
-				name: 'IT Department',
-				classes: 'selected',
-				selected: true
-			},
-			{
-				key: 'sales_dept',
-				name: 'Sales Department',
-				classes: '',
-				selected: false
-			}
+			// {
+			// 	key: 'it_dept',
+			// 	name: 'IT Department',
+			// 	classes: 'selected',
+			// 	selected: true
+			// },
+			// {
+			// 	key: 'sales_dept',
+			// 	name: 'Sales Department',
+			// 	classes: '',
+			// 	selected: false
+			// }
 		],
-		selectDept: 'it_dept',
+		selectDept: -1,
 		sideBarVisible: false
+	};
+
+	getAllDepartments = async () => {
+		await axios.get(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.JOB_DEPARTMENTS, {}).then((res) => {
+			console.log(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.JOB_DEPARTMENTS);
+			console.log('Data received');
+			let departments = res.data;
+			let selectedDept = -1;
+			//console.log(departments);
+
+			let jobDepartment = [];
+			for (let i = 0; i < departments.length; i++) {
+				jobDepartment[i] = {
+					key: departments[i].deptId,
+					selected: false,
+					classes: '',
+					name: departments[i].name
+				};
+			}
+
+			this.setState({
+				departments: jobDepartment
+			});
+		});
+	};
+
+	getDepartmentJobs = async () => {
+		if (this.state.departments.length > 0) {
+			await axios
+				.get(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.JOB_LIST + '?deptId=' + this.state.departments[0].key, {})
+				.then((res) => {
+					console.log('Data received for department');
+				});
+		}
+	};
+
+	componentDidMount = () => {
+		this.getAllDepartments();
 	};
 
 	handleDeptClick = (deptKey) => {
@@ -37,19 +79,15 @@ export default class Careers extends Component {
 				departmentList[i].classes = '';
 			}
 		}
-		this.setState({ departments: departmentList, selectDept: selectedDept });
-	};
-	sidebarButtonClickHandler = () => {
-		this.setState((previousState) => {
-			return { sideBarVisible: !previousState.sideBarVisible };
+		this.setState(() => {
+			return { departments: departmentList, selectDept: selectedDept };
 		});
-	};
-	outSideOfSideBarClicked = () => {
-		this.setState({ sideBarVisible: false });
+		console.log('Selected Dept is ' + this.state.selectDept);
 	};
 
 	render() {
 		let deptList = this.state.departments;
+
 		return (
 			<div style={{ paddingTop: 65 }} className="careerPage">
 				<div className="careersBody">
@@ -67,6 +105,7 @@ export default class Careers extends Component {
 										departmentName={dept.name}
 										index={dept.key}
 										selected={dept.selected}
+										key={dept.key}
 									/>
 								))}
 							</ul>
@@ -74,6 +113,8 @@ export default class Careers extends Component {
 						<OpenPosition selectedDept={this.state.selectDept} />
 					</div>
 				</div>
+				<Links />
+				<Footer />
 			</div>
 		);
 	}

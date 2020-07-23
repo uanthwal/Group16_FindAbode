@@ -1,14 +1,15 @@
 import React, { Component } from "react";
-import Links from "./Links";
-import Footer from "./Footer";
-
-import "../css/ContactUs.css";
+import Links from "../Links";
+import Footer from "../Footer";
+import axios from "axios";
+import { APP_URL_CONFIG } from "../../App.Urls";
+import "../../css/ContactUs.css";
+import {withRouter} from "react-router-dom";
 
 const emailRegex = RegExp(
   /^[a-zA-Z0-9.!#$%&â€™*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 );
 
-//const passwordRegex = RegExp(/^(?:(?=.*[a-z])(?:(?=.*[A-Z])(?=.*[\d\W])|(?=.*\W)(?=.*\d))|(?=.*\W)(?=.*[A-Z])(?=.*\d)).{8,}$/);
 const formValid = ({ formErrors, ...rest }) => {
   let valid = true;
 
@@ -26,16 +27,16 @@ const formValid = ({ formErrors, ...rest }) => {
 };
 
 class ContactUs extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      lastname: "",
       firstname: "",
+      lastname: "",
       email: "",
       query: "",
       formErrors: {
-        lastname: "",
         firstname: "",
+        lastname: "",
         email: "",
         query: "",
       },
@@ -46,22 +47,35 @@ class ContactUs extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    const { f_name, l_name, email, query } = this.state;
     if (formValid(this.state)) {
       console.log("The form was submitted with the following data:");
       console.log(this.state);
+
+      let contactInfo = {
+        f_name: this.state.firstname,
+        l_name: this.state.lastname,
+        email: this.state.email,
+        query: this.state.query,
+      };
+
+      axios
+          .post(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.CONTACT_US, contactInfo)
+          .then((res) => console.log(res.data));
       this.setState({
-        lastname: "",
-        firstname: "",
-        email: "",
-        query: "",
+        f_name,
+        l_name,
+        email,
+        query,
         formErrors: {
-          lastname: "",
-          firstname: "",
-          email: "",
-          query: "",
-        },
+              lastname: "",
+              firstname: "",
+              email: "",
+              query: "",
+            },
       });
       alert("You submitted the form.");
+      window.location.reload();
     } else {
       console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
       alert("Form is invalid.");
@@ -173,7 +187,7 @@ class ContactUs extends Component {
                 height="170px"
                 value={this.state.query}
                 onChange={this.handleChange}
-              ></textarea>
+              />
               {formErrors.query.length > 0 && (
                 <span className="errorMessage">
                   <br />
@@ -196,15 +210,15 @@ class ContactUs extends Component {
         <div className="container">
           <div className="row">
             <div className="contact-card col-sm-4 text-center">
-              <i className="fa fa-map-marker"></i>
+              <i className="fa fa-map-marker"/>
               1333 South Park Street, Halifax, NS
             </div>
             <div className="contact-card col-sm-4 text-center">
-              <i className="fa fa-phone"></i>
+              <i className="fa fa-phone"/>
               <a href="tel:+19998888881">+1 999 8888881</a>
             </div>
             <div className="contact-card col-sm-4 text-center">
-              <i className="fa fa-envelope"></i>
+              <i className="fa fa-envelope"/>
               <a href="mailto:contact@findadobe.com">contact@findadobe.com</a>
             </div>
           </div>
@@ -217,4 +231,4 @@ class ContactUs extends Component {
   }
 }
 
-export default ContactUs;
+export default withRouter(ContactUs);
