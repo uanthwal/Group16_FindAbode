@@ -18,7 +18,8 @@ export var APP_URL_CONFIG = {
 	GET_APARTMENT_DETAILS_BY_ID: '/apartments/get-apartment-details',
 	CONTACT_US: '/contact/',
 	JOB_DEPARTMENTS: '/job/departments',
-	JOB_LIST: '/jobdetails/job'
+	JOB_LIST: '/jobdetails/job',
+	APPLY_JOB: '/jobdetails/apply'
 };
 
 export function getConfigs() {

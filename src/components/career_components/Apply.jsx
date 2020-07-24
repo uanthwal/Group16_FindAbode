@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import ContactInfo from './ContactInfo';
+import { APP_URL_CONFIG } from '../../App.Urls';
 import '../../css/careers/apply.css';
 
 export default class Apply extends Component {
@@ -7,17 +9,58 @@ export default class Apply extends Component {
 		open: this.props.open,
 		content: this.props.content,
 		title: this.props.title,
-		key: this.props.key
+		key: this.props.key,
+		selectedFile: null
 	};
 
-	handleSubmit = (event) => {
+	handleSubmit = async (event) => {
 		event.preventDefault();
 		console.log('Checking');
+		const query = new URLSearchParams(this.props.location.search);
+		let jobId = query.get('jobId');
+		const data = new FormData(event.target);
+		let jsonData = new FormData();
+		console.log(this.state.selectedFile);
+		jsonData.append('file', this.state.selectedFile);
+		jsonData.append('name', data.get('name'));
+		jsonData.append('email', data.get('email'));
+		jsonData.append('mobile', data.get('mobile'));
+		jsonData.append('coverLetter', data.get('coverletter'));
+		jsonData.append('currentCity', data.get('city'));
+		jsonData.append('experience', data.get('experience'));
+		jsonData.append('college', data.get('college'));
+		jsonData.append('ctc', data.get('ctc'));
+		jsonData.append('organization', data.get('organization'));
+		jsonData.append('jobId', jobId);
+
+		await axios
+			.post(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.APPLY_JOB, jsonData, {
+				headers: {
+					Accept: 'application/json'
+				}
+			})
+			.then((response) => {
+				console.log('Saved');
+			});
+	};
+
+	onChangeHandler = (event) => {
+		let file = event.target.files[0];
+		let fileExten = file.name.split('.');
+		if (fileExten[1] !== 'pdf') {
+			alert('Kindly uplaod pdf file only');
+			event.target.value = null;
+		} else {
+			this.setState({
+				selectedFile: file
+			});
+		}
 	};
 	render() {
 		const query = new URLSearchParams(this.props.location.search);
 		let jobId = query.get('jobId');
 		let title = query.get('title');
+
 		return (
 			<div style={{ paddingTop: 65 }} className="applyPage">
 				<h3 className="title">Applying to {title} position</h3>
@@ -73,6 +116,7 @@ export default class Apply extends Component {
 										title="Uplpad your resume"
 										name="resume"
 										class="form-control"
+										onChange={this.onChangeHandler}
 									/>
 								</div>
 								<div className="form-group">
@@ -82,6 +126,7 @@ export default class Apply extends Component {
 										name="coverletter"
 										rows="3"
 										placeholder="Cover Letter"
+										required
 									/>
 								</div>
 								<label>
@@ -104,7 +149,7 @@ export default class Apply extends Component {
 											className="form-control"
 											id="experience"
 											name="experience"
-											placeholder="Relevant number of experience"
+											placeholder="Relevant no. of experience in months"
 											required
 										/>
 									</div>
