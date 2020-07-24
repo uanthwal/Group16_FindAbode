@@ -3,6 +3,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import SignUp from "./components/login_signup_components/SignUp";
 import SignIn from "./components/login_signup_components/SignIn";
 import Profile from "./components/profile_components/Profile";
+import Appointment from "./components/appointment_components/Appointment";
 import Home from "./components/Home";
 import ScrollToTop from "./components/ScrollToTop";
 import CreateBlog from "./components/CreateBlog";
@@ -38,6 +39,7 @@ class App extends Component {
             <Route exact path="/search/:result" component={ApartmentDetail} />
             <Route exact path="/signup" component={SignUp} />
             <Route exact path="/signin" component={SignIn} />
+            <Route exact path="/appointment/:email" component={Appointment} />
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/search-apartment" component={SearchApartment} />
             <Route exact path="/search-results" component={SearchResults} />
