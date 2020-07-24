@@ -7,9 +7,9 @@ import Footer from "../../components/Footer";
 import { APP_URL_CONFIG } from "../../App.Urls";
 
 const Answer = (props) => (
-  <div class="card mb-3">
-    <h5 class="card-title">{props.answer.user}</h5>
-    <p class="card-text">{props.answer.ans}</p>
+  <div className="card mb-3">
+    <h5 className="card-title">{props.answer.user}</h5>
+    <p className="card-text">{props.answer.ans}</p>
   </div>
 );
 
@@ -97,8 +97,8 @@ export default class ViewDiscussion extends Component {
   render() {
     return (
       <div style={{ marginTop: 75 }}>
-        <h3 class="text-center">Topic: {this.props.match.params.topic}</h3>
-        <div class="m-5">
+        <h3 className="text-center">Topic: {this.props.match.params.topic}</h3>
+        <div className="m-5">
           {this.answerList()}
           <div>
             <form onSubmit={this.handleSubmit}>

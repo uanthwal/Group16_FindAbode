@@ -1,6 +1,7 @@
 const router = require("express").Router();
 let ContactUsModel = require("../models/contactUs.model");
-//creating routes for contactUs table to query the db
+
+// creating routes for contactUs table to query the db
 router.route("/").post((req, res) => {
     const f_name = req.body.f_name;
     const l_name = req.body.l_name;

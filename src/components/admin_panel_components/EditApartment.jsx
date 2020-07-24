@@ -3,8 +3,10 @@ import { withRouter } from "react-router-dom";
 import axios from "axios";
 import "../../css/admin/Admin.scss";
 import { APP_URL_CONFIG } from "../../App.Urls";
+import { UserContext } from "../../contexts/UserContext";
 
 class EditApartmentComponent extends Component {
+  static contextType = UserContext;
   constructor(props) {
     super(props);
     this.state = {
@@ -43,6 +45,13 @@ class EditApartmentComponent extends Component {
   };
 
   componentDidMount() {
+    let { login } = this.context;
+    if (login == false) {
+      this.props.history.push({
+        pathname: "/signin/",
+      });
+      return;
+    }
     if (this.props.location.pathname === "/add-apartment") {
       this.setState({
         apartmentDetails: {

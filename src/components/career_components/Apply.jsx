@@ -72,7 +72,7 @@ export default class Apply extends Component {
 										required
 										title="Uplpad your resume"
 										name="resume"
-										class="form-control"
+										className="form-control"
 									/>
 								</div>
 								<div className="form-group">

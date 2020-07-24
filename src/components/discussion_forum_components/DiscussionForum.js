@@ -62,13 +62,12 @@ export default class DiscussionForum extends Component {
     e.preventDefault();
     let { login } = this.context;
     const { email } = this.context;
-    let usrdata = [];
-    if (login == false) {
+    if (login === false) {
       this.props.history.push({
         pathname: "/signin/",
       });
     } else {
-      if (this.state.newques != "") {
+      if (this.state.newques !== "") {
         let detail = {};
         const { data } = await axios.get(
           APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.SIGNUP + email
@@ -91,7 +90,7 @@ export default class DiscussionForum extends Component {
   render() {
     return (
       <div style={{ marginTop: 75 }}>
-        <h3 class="text-center">Discussions</h3>
+        <h3 className="text-center">Discussions</h3>
         <table className="table">
           <thead className="thead-light">
             <tr>
@@ -101,7 +100,7 @@ export default class DiscussionForum extends Component {
           </thead>
           <tbody>{this.questionList()}</tbody>
         </table>
-        <div class="m-5">
+        <div className="m-5">
           <form onSubmit={this.handleSubmit}>
             <div>
               <textarea

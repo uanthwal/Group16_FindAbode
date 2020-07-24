@@ -7,30 +7,29 @@ import blogimg from '../images/landingpage_sub.jpg';
 
 import Links from './Links';
 import Footer from './Footer';
-import { PromiseProvider } from 'mongoose';
 
 const Blog = (props) => (
 	<div>
-	<div class="card bg-light border-dark mx-auto" style={{ width: '80%' }}>
+	<div className="card bg-light border-dark mx-auto" style={{ width: '80%' }}>
 					<img
-						class="card-img-top mx-auto rounded d-block"
+						className="card-img-top mx-auto rounded d-block"
 						src={blogimg}
 						style={{ width: '70%' }}
 						alt="profile image"
 					/>
-					<div class="card-body">
-						<h2 class="card-title text-center">
+					<div className="card-body">
+						<h2 className="card-title text-center">
 							<kbd>{props.blog.topic}</kbd>
 						</h2>
-						<p class="card-text text-justify ">
+						<p className="card-text text-justify ">
 							{props.blog.p1}
 						</p>
-						<p class="card-text text-justify ">
+						<p className="card-text text-justify ">
 							{props.blog.p2}
 						</p>
 					</div>
 				</div>
-                <div class="text-center">
+                <div className="text-center">
                 <Link to={"editblog/"+ props.blog.topic} >Edit blog</Link>
 				</div>
                 <br />
@@ -76,7 +75,7 @@ class BlogsAdmin extends Component {
 		return (
 			<div style={{ marginTop: 75 }}>
 				<h2 className="text-center">Blogs</h2>
-				<div class="text-center">
+				<div className="text-center">
 				<Link to="createblog" className="text-center">Create a new blog</Link>
 				</div>
 				<br/>

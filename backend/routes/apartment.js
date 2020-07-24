@@ -1,11 +1,13 @@
 const router = require("express").Router();
-let Apartment = require("../models/apartment.model");
+const Apartment = require("../models/apartment.model");
 const MostExploredPlaces = require("../models/mostexploredplaces.model");
 
+// An endpoint to search an apartment by name, description, and address
 router.route("/search-apartments").post((req, res) => {
   var search_text = req.body.search_text;
   var resp_data = [];
-  cursor = Apartment.find(
+  // Search is performed on the keyword entered by the user; it looks for case-insensitive presence in name, description, and address
+  Apartment.find(
     {
       $or: [
         { name: { $regex: ".*" + search_text + ".*", $options: "i" } },
@@ -32,6 +34,7 @@ router.route("/search-apartments").post((req, res) => {
   );
 });
 
+// An endpoint to get the list of all the apartments listed on the platform
 router.route("/all-apartments").post((req, res) => {
   var resp_data = [];
   Apartment.find({}, function (err, data) {
@@ -52,6 +55,7 @@ router.route("/all-apartments").post((req, res) => {
   });
 });
 
+// An endpoint to get the most explored places
 router.route("/get-featured").post((req, res) => {
   MostExploredPlaces.aggregate(
     [
@@ -66,7 +70,6 @@ router.route("/get-featured").post((req, res) => {
       }
       Apartment.find({ _id: { $in: apartment_ids } }, function (err, data) {
         if (err) {
-          console.log("err: ", err);
           return null;
         } else {
           if (null != data) {
@@ -82,24 +85,23 @@ router.route("/get-featured").post((req, res) => {
   );
 });
 
+// An endpoint for adding new apartment to the platform
 router.route("/add-apartment").post((req, res) => {
-  
   var apartment_info = req.body.apartment_info;
   const newApartment = new Apartment(apartment_info);
-  console.log(newApartment);
   newApartment
     .save()
     .then(() => {
-      res.json("done")
-      // res.send({
-      //   code: 200,
-      //   message: "Apartment added successfully!",
-      //   data: {},
-      // });
+      res.send({
+        code: 200,
+        message: "Apartment added successfully!",
+        data: {},
+      });
     })
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
+// An endpoint to get an apartment details by id
 router.route("/get-apartment-details").post((req, res) => {
   var apartment_id = req.body.apartment_id;
   var reqFrom = req.body.reqFrom;
@@ -113,6 +115,7 @@ router.route("/get-apartment-details").post((req, res) => {
         data: {},
       });
     } else {
+      // If the apartment is explored by the users and not the admin; the details are saved in mostexploredplaces schema
       if (reqFrom === "APARTMENT_DETAIL") {
         const newSearch = new MostExploredPlaces({ apartment_id });
         newSearch
@@ -128,6 +131,7 @@ router.route("/get-apartment-details").post((req, res) => {
   });
 });
 
+// An endpoint to update an apartment details
 router.route("/update-apartment-details").post((req, res) => {
   var apartment_info = req.body.apartment_info;
   var resp_data = {};
@@ -153,6 +157,7 @@ router.route("/update-apartment-details").post((req, res) => {
   );
 });
 
+// An endpoint to remove the apartment from the database
 router.route("/delete").post((req, res) => {
   var apartment_id = req.body.apartment_id;
   var resp_data = {};

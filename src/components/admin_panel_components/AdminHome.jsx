@@ -4,8 +4,10 @@ import axios from "axios";
 import "../../css/search/SearchResults.scss";
 import { APP_URL_CONFIG } from "../../App.Urls";
 import ApartmentCardComponent from "../property_components/ApartmentCard";
+import { UserContext } from "../../contexts/UserContext";
 
 class AdminHomeComponent extends Component {
+  static contextType = UserContext;
   constructor(props) {
     super(props);
     this.state = {
@@ -28,23 +30,30 @@ class AdminHomeComponent extends Component {
   };
 
   componentDidMount() {
+    let { login } = this.context;
+    if (login == false) {
+      this.props.history.push({
+        pathname: "/signin/",
+      });
+      return;
+    }
     this.getAllPlaces();
   }
 
   onClickBlogs(id) {
     this.props.history.push({
-      pathname: "/blogadmin"
+      pathname: "/blogadmin",
     });
   }
 
   onClickAddApartment() {
     this.props.history.push({
       pathname: "/add-apartment",
-      apartmentDetails: {}
+      apartmentDetails: {},
     });
   }
 
-  onDeleteHandler = async() => {
+  onDeleteHandler = async () => {
     await axios
       .post(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.GET_ALL_PLACES, {})
       .then((res) => {
@@ -52,7 +61,7 @@ class AdminHomeComponent extends Component {
           placesData: res.data["data"],
         });
       });
-  }
+  };
 
   render() {
     return (

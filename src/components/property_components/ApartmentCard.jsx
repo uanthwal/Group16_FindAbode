@@ -62,7 +62,7 @@ class ApartmentCardComponent extends Component {
             RATING: {this.state.cardContent.rating}
           </span>
           <span className="place-book">
-            {this.state.cardLoadReqFrom == "R" ? (
+            {this.state.cardLoadReqFrom === "R" ? (
               <button
                 onClick={this.onClickExplorePlace.bind(
                   this,

@@ -9,21 +9,21 @@ import Footer from './Footer';
 
 const Blog = (props) => (
     <div>
-    <div class="card bg-light border-dark mx-auto" style={{ width: '80%' }}>
+    <div className="card bg-light border-dark mx-auto" style={{ width: '80%' }}>
                     <img
-                        class="card-img-top mx-auto rounded d-block"
+                        className="card-img-top mx-auto rounded d-block"
                         src={blogimg}
                         style={{ width: '70%' }}
                         alt="profile image"
                     />
-                    <div class="card-body">
-                        <h2 class="card-title text-center">
+                    <div className="card-body">
+                        <h2 className="card-title text-center">
                             <kbd>{props.blog.topic}</kbd>
                         </h2>
-                        <p class="card-text text-justify ">
+                        <p className="card-text text-justify ">
                             {props.blog.p1}
                         </p>
-                        <p class="card-text text-justify ">
+                        <p className="card-text text-justify ">
                             {props.blog.p2}
                         </p>
                     </div>
@@ -66,7 +66,7 @@ class Blogs extends Component {
     render() {
         return (
             <div style={{ marginTop: 75 }}>
-                <h2 class="text-center">Blogs</h2>
+                <h2 className="text-center">Blogs</h2>
                 <br/>
                 <div>
                 {this.blogList()}

@@ -52,9 +52,9 @@ export default class CreateBlog extends Component {
     return (
       <div style={{ marginTop: 75 }}>
         {this.state.allBlogs === "temp"? <Redirect to="/blogadmin"/> : null}
-        <h3 class="text-center">Create new blog</h3>
+        <h3 className="text-center">Create new blog</h3>
           <form onSubmit={this.handleSubmit}>
-            <div class="m-5">
+            <div className="m-5">
             <textarea
                 id="topic" name="topic"
                 placeholder="Write the title of a blog.."
