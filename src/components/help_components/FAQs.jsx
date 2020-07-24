@@ -2,35 +2,37 @@ import React, { Component } from 'react';
 
 import '../../css/help/faq_questions.css';
 import CollapseQuestion from './CollapseQuestion';
+import axios from "axios";
+import {APP_URL_CONFIG} from "../../App.Urls";
+import ApartmentCardComponent from "../property_components/ApartmentCard";
 
 export default class FAQs extends Component {
-	state = {
-		open: false,
-		toggleMenu: this.toggleMenu,
-		faqsList: [
-			{
-				key: 1,
-				open: false,
-				title: 'How to Book Appointment?',
-				content:
-					"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-			},
-			{
-				key: 2,
-				open: false,
-				title: 'How to cancel appointment?',
-				content:
-					"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-			},
-			{
-				key: 3,
-				open: false,
-				title: 'How to view your shortlisted flats?',
-				content:
-					"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-			}
-		]
+	constructor(props) {
+		super(props);
+		this.state = {
+			open: false,
+			toggleMenu: this.toggleMenu,
+			faqsList: []
+		};
+	}
+
+	getFAQs = async () => {
+		console.log("URL ", APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.FAQ);
+		await axios
+			.get(
+				APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.FAQ,
+				{}
+			)
+			.then((res) => {
+				this.setState({
+					faqsList: res.data["data"],
+				});
+			});
 	};
+
+	componentDidMount() {
+		this.getFAQs();
+	}
 
 	render() {
 		const positionList = this.state.faqsList;

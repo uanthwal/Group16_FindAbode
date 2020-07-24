@@ -13,6 +13,7 @@ const apartmentRouter = require(__dirname + "/backend/routes/apartment.js");
 const blogRouter = require(__dirname + "/backend/routes/blog.js");
 const appointmentRouter = require(__dirname + "/backend/routes/appointment.js");
 const contactRouter = require(__dirname + "/backend/routes/contactUs.js");
+const faqRouter = require(__dirname + "/backend/routes/faq.js");
 
 //Career Routes
 const jobDeptRouter = require(__dirname +
@@ -39,6 +40,7 @@ app.use("/appointment", appointmentRouter);
 app.use("/contact", contactRouter);
 app.use("/job", jobDeptRouter);
 app.use("/jobdetails", jobsRouter);
+app.use("/faq", faqRouter);
 
 app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname + "/build/index.html"));

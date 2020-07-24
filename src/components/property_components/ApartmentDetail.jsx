@@ -166,7 +166,7 @@ class ApartmentDetail extends Component {
                         return (
                           <div className="carousel-item" key={key}>
                             <img
-                              className="d-block w-100"
+                              className="d-block w-100 h-100"
                               src={item}
                               alt={`Image ${key}`}
                               title={`Image ${key}`}
