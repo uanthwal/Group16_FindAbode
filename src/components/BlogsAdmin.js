@@ -4,6 +4,7 @@ import { APP_URL_CONFIG } from "../App.Urls";
 import axios from "axios";
 
 import blogimg from '../images/landingpage_sub.jpg';
+import { UserContext } from "../contexts/UserContext";
 
 import Links from './Links';
 import Footer from './Footer';
@@ -37,8 +38,9 @@ const Blog = (props) => (
 );
 
 class BlogsAdmin extends Component {
-
+	static contextType = UserContext;
 	constructor(props) {
+		
 		super(props);
 	//	this.handleSubmit = this.handleSubmit.bind(this);
         this.blogList = this.blogList.bind(this);
@@ -49,6 +51,13 @@ class BlogsAdmin extends Component {
 	
 	componentDidMount() {
 //	this.setState({blogs:tempblogs});
+	let { login } = this.context;
+    if (login == false) {
+      this.props.history.push({
+        pathname: "/signin/",
+      });
+      return;
+    }	
     axios
       .get(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.ALL_BLOGS)
       .then((response) => {

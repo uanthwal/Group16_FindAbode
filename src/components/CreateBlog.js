@@ -4,9 +4,11 @@ import axios from "axios";
 import Links from "../components/Links";
 import Footer from "../components/Footer";
 import { APP_URL_CONFIG } from "../App.Urls";
+import { UserContext } from "../contexts/UserContext";
+
 
 export default class CreateBlog extends Component {
-
+static contextType = UserContext;
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -17,6 +19,16 @@ export default class CreateBlog extends Component {
       p1:"",
       p2:""
     };
+  }
+
+  componentDidMount(){
+    let { login } = this.context;
+    if (login == false) {
+      this.props.history.push({
+        pathname: "/signin/",
+      });
+      return;
+    }
   }
 
   handleChange(e) {

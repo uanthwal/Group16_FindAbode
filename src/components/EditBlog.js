@@ -4,10 +4,12 @@ import axios from "axios";
 import Links from "../components/Links";
 import Footer from "../components/Footer";
 import { APP_URL_CONFIG } from "../App.Urls";
+import { UserContext } from "../contexts/UserContext";
+
 
 
 export default class EditBlog extends Component {
-
+  static contextType = UserContext;
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -42,6 +44,13 @@ export default class EditBlog extends Component {
   }
 
   componentDidMount() {
+    let { login } = this.context;
+    if (login == false) {
+      this.props.history.push({
+        pathname: "/signin/",
+      });
+      return;
+    }
         axios
           .get(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.GET_ONE_BLOG +this.props.match.params.topic)
           .then((response) => {
