@@ -128,7 +128,7 @@ router.route("/get-apartment-details").post((req, res) => {
         data: resp_data,
       });
     }
-  });
+  }).catch((err) => res.status(400).json("Error: " + err));
 });
 
 // An endpoint to update an apartment details
