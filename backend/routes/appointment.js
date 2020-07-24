@@ -26,6 +26,9 @@ router.route("/").post(async (req, res) => {
       user: "5308sdc@gmail.com",
       pass: "sdc.group21",
     },
+    tls: {
+      rejectUnauthorized: false,
+    },
   });
 
   const mailOptions = {
