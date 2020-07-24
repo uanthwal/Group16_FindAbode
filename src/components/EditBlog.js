@@ -1,3 +1,5 @@
+//Author: Simranbanu Roshansha Diwan (B00833562)
+
 import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
@@ -7,7 +9,7 @@ import { APP_URL_CONFIG } from "../App.Urls";
 import { UserContext } from "../contexts/UserContext";
 
 
-
+//EditBlog class component
 export default class EditBlog extends Component {
   static contextType = UserContext;
   constructor(props) {
@@ -23,6 +25,7 @@ export default class EditBlog extends Component {
     };
   }
 
+  //method for handling changes in form inputs
   handleChange(e) {
     let target = e.target;
     let name = target.id;
@@ -33,6 +36,8 @@ export default class EditBlog extends Component {
     });
   }
 
+  //method for deleting blogs by making a backend request to delete the blog from the database
+  //After successful deletion, redirect admin to View all blogs page.
   deleteBlog(){
     axios
           .post(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.DELETE_BLOG, {
@@ -43,6 +48,7 @@ export default class EditBlog extends Component {
           setTimeout(()=>{this.setState({allBlogs:"temp"});},1000);
   }
 
+  //Method to  fetch data from the backend and set the state for the specific blog on which admin wants to perform editing
   componentDidMount() {
     let { login } = this.context;
     if (login == false) {
@@ -67,6 +73,7 @@ export default class EditBlog extends Component {
           });
     }
 
+  //Handle submit method for submitting updates to the backend and update content in the database
   handleSubmit = (e) =>{
     e.preventDefault();
       if (this.state.p1 != "" && this.state.p2 != "" && this.state.topic!="") {
@@ -83,14 +90,12 @@ export default class EditBlog extends Component {
           }).catch(err => console.log(err));
          
          setTimeout(()=>{this.setState({allBlogs:"temp"});},1000);
-      //    this.setState({allBlogs:"temp"});
-          //console.log("aaaaaaàa");
       } else {
         alert("Please fill all the fields");
       }
     }
     
-
+//render method to render the component
   render() {
     return (
       <div style={{ marginTop: 75 }}>

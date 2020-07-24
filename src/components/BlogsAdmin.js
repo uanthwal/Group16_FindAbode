@@ -1,3 +1,5 @@
+//Author: Simranbanu Roshansha Diwan (B00833562)
+
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { APP_URL_CONFIG } from "../App.Urls";
@@ -9,6 +11,7 @@ import { UserContext } from "../contexts/UserContext";
 import Links from './Links';
 import Footer from './Footer';
 
+//resuable blogs component which is iterated as per number of blogs while rendering 
 const Blog = (props) => (
 	<div>
 	<div className="card bg-light border-dark mx-auto" style={{ width: '80%' }}>
@@ -37,12 +40,13 @@ const Blog = (props) => (
 			</div>
 );
 
+//Class for blogsAdmin component
+
 class BlogsAdmin extends Component {
 	static contextType = UserContext;
 	constructor(props) {
 		
 		super(props);
-	//	this.handleSubmit = this.handleSubmit.bind(this);
         this.blogList = this.blogList.bind(this);
 		this.state = {
 		  blogs:[],
@@ -50,14 +54,15 @@ class BlogsAdmin extends Component {
 	  }
 	
 	componentDidMount() {
-//	this.setState({blogs:tempblogs});
+	//Checking if admin has logged in or not
 	let { login } = this.context;
     if (login == false) {
       this.props.history.push({
         pathname: "/signin/",
       });
       return;
-    }	
+	}	
+	//fetching all the blogs from the backend
     axios
       .get(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.ALL_BLOGS)
       .then((response) => {
@@ -69,6 +74,8 @@ class BlogsAdmin extends Component {
 	  });
 	  
 	  }
+
+	//Creating a list of blogs
 	blogList() {
 		console.log(this.state.blogs)
 		return this.state.blogs.map((currentblog) => {
@@ -78,8 +85,7 @@ class BlogsAdmin extends Component {
 		});
 	}
      
-    
-
+    //Render method for rendering a component
 	render() {
 		return (
 			<div style={{ marginTop: 75 }}>
