@@ -1,3 +1,4 @@
+//Author: Simranbanu Roshansha Diwan (B00833562)
 import React, { Component } from 'react';
 import { APP_URL_CONFIG } from "../App.Urls";
 import axios from "axios";
@@ -7,6 +8,7 @@ import blogimg from '../images/landingpage_sub.jpg';
 import Links from './Links';
 import Footer from './Footer';
 
+//resuable blogs component which is iterated as per number of blogs while rendering 
 const Blog = (props) => (
     <div>
     <div className="card bg-light border-dark mx-auto" style={{ width: '80%' }}>
@@ -32,19 +34,19 @@ const Blog = (props) => (
             </div>
 );
 
+//Class for blogs component
 class Blogs extends Component {
 
     constructor(props) {
         super(props);
-    //  this.handleSubmit = this.handleSubmit.bind(this);
         this.blogList = this.blogList.bind(this);
         this.state = {
           blogs:[],
         };
       }
-    
+
+    //fetching data before rendering a component  
     componentDidMount() {
-//  this.setState({blogs:tempblogs});
     axios
       .get(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.ALL_BLOGS)
       .then((response) => {
@@ -54,7 +56,8 @@ class Blogs extends Component {
         console.log(error);
       });
       }
-      
+    
+    //Creating a list of blogs
     blogList() {
         return this.state.blogs.map((currentblog) => {
         return (
@@ -62,7 +65,8 @@ class Blogs extends Component {
         );
         });
     }
-      
+     
+    //main render method to render all the blogs
     render() {
         return (
             <div style={{ marginTop: 75 }}>

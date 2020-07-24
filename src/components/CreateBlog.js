@@ -1,3 +1,5 @@
+//Author: Simranbanu Roshansha Diwan (B00833562)
+
 import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
@@ -6,7 +8,7 @@ import Footer from "../components/Footer";
 import { APP_URL_CONFIG } from "../App.Urls";
 import { UserContext } from "../contexts/UserContext";
 
-
+//Class for component CreateBlog
 export default class CreateBlog extends Component {
 static contextType = UserContext;
   constructor(props) {
@@ -20,7 +22,7 @@ static contextType = UserContext;
       p2:""
     };
   }
-
+//Check if the admin has logged in or not
   componentDidMount(){
     let { login } = this.context;
     if (login == false) {
@@ -31,6 +33,7 @@ static contextType = UserContext;
     }
   }
 
+  //handling change in form inputs
   handleChange(e) {
     let target = e.target;
     let name = target.id;
@@ -41,6 +44,8 @@ static contextType = UserContext;
     });
   }
 
+  //handleSubmit method when admin hits submit for creating new blogs
+  //Add that blog to the database and redirect admin to All blogs page
   async handleSubmit(e) {
     e.preventDefault();
     
@@ -60,6 +65,7 @@ static contextType = UserContext;
       }
     }
 
+  //render method for rendering the component
   render() {
     return (
       <div style={{ marginTop: 75 }}>
