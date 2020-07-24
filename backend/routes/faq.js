@@ -1,7 +1,7 @@
 const router = require("express").Router();
 let faqModel = require("../models/faq.model");
 
-// creating routes for faq table to query the db
+// creating routes for faqs table to query the db
 router.route("/").get((req, res) => {
 
     let resp_data = [];

@@ -4,7 +4,6 @@ import '../../css/help/faq_questions.css';
 import CollapseQuestion from './CollapseQuestion';
 import axios from "axios";
 import {APP_URL_CONFIG} from "../../App.Urls";
-import ApartmentCardComponent from "../property_components/ApartmentCard";
 
 export default class FAQs extends Component {
 	constructor(props) {

@@ -17,6 +17,7 @@ export var APP_URL_CONFIG = {
 	GET_APARTMENT_DETAILS_BY_ID: '/apartments/get-apartment-details',
 	UPDATE_APARTMENT_DETAILS: '/apartments/update-apartment-details',
 	CONTACT_US: '/contact/',
+	FAQ: "/faq",
 	JOB_DEPARTMENTS: '/job/departments',
 	JOB_LIST: '/jobdetails/job',
 	ADD_APARTMENT: '/apartments/add-apartment',

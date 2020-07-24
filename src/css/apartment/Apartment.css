@@ -174,7 +174,7 @@
   padding: 0px !important;
   text-align: inherit !important;
   text-decoration: none !important;
-  height: 100% !important;
+  height: 100%;
 }
 
 .occupancy_logos {

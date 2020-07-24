@@ -1,6 +1,7 @@
 // import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
 //
+//neglecting page as query system is already added in contactUs page
 // export default class Query extends Component {
 // 	render() {
 // 		return (

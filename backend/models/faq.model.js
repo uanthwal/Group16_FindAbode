@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+//Creating FQA Schema
 const faqSchema = new mongoose.Schema({
     key: {
         type: Number,
