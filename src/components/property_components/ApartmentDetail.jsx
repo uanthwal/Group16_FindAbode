@@ -18,7 +18,7 @@ class ApartmentDetail extends Component {
       apartmentDetails: null,
       date: new Date(),
       modalIsOpen: false,
-      select: "spot1",
+      select: "9am - 11am",
     };
   }
 
@@ -67,6 +67,7 @@ class ApartmentDetail extends Component {
         APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.GET_APARTMENT_DETAILS_BY_ID,
         {
           apartment_id: this.state.apartmentId,
+          reqFrom: "APARTMENT_DETAIL",
         }
       )
       .then((res) => {

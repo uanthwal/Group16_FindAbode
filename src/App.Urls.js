@@ -13,12 +13,13 @@ export var APP_URL_CONFIG = {
 	EDIT_BLOG: '/blog/modifyblog/',
 	GET_ONE_BLOG: '/blog/oneblog/',
 	DELETE_BLOG: '/blog/deleteblog/',
-	ALL_BLOGS: '/blog',
 	GET_FEATURED_APARTMENTS: '/apartments/get-featured',
 	GET_APARTMENT_DETAILS_BY_ID: '/apartments/get-apartment-details',
+	UPDATE_APARTMENT_DETAILS: '/apartments/update-apartment-details',
 	CONTACT_US: '/contact/',
 	JOB_DEPARTMENTS: '/job/departments',
 	JOB_LIST: '/jobdetails/job',
+	ADD_APARTMENT: '/apartments/add-apartment',
 	APPLY_JOB: '/jobdetails/apply'
 };
 

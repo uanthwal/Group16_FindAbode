@@ -117,6 +117,7 @@ export default class Apply extends Component {
 										name="resume"
 										class="form-control"
 										onChange={this.onChangeHandler}
+										className="form-control"
 									/>
 								</div>
 								<div className="form-group">

@@ -6,13 +6,13 @@ export default class Query extends Component {
 		return (
 			<div className="openings">
 				<form className="form">
-					<div class="form-group">
+					<div className="form-group">
 						<label>Title</label>
-						<input type="text" class="form-control" placeholder="Enter title" />
+						<input type="text" className="form-control" placeholder="Enter title" />
 					</div>
-					<div class="form-group">
+					<div className="form-group">
 						<label for="exampleFormControlTextarea1">Query</label>
-						<textarea class="form-control" rows="3" />
+						<textarea className="form-control" rows="3" />
 					</div>
 					<button className="btn">
 						<Link to="/">Send Query</Link>

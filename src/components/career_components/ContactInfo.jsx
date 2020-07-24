@@ -50,7 +50,7 @@ export default class ContactInfo extends Component {
 					<div className="form-group col-md-6" />
 				</div>
 				<div className="form-group file">
-					<input type="file" required placeholder="Uplpad File" name="resume" class="form-control" />
+					<input type="file" required placeholder="Uplpad File" name="resume" className="form-control" />
 				</div>
 				<div className="form-group">
 					<textarea

@@ -9,19 +9,19 @@ class AboutUs extends Component {
     render() {
         return (
             <div style={{backgroundColor:"ThreeDHighlight"}}>
-                <h2 class="text-center mt-5 p-4 mx-auto">About Us</h2>
-                <div class="card bg-light mt-5 p-4 border-dark mx-auto" style={{ width: '80%'}}>
+                <h2 className="text-center mt-5 p-4 mx-auto">About Us</h2>
+                <div className="card bg-light mt-5 p-4 border-dark mx-auto" style={{ width: '80%'}}>
                     <img
-                        class="card-img-top mx-auto rounded d-block"
+                        className="card-img-top mx-auto rounded d-block"
                         src={AboutUsImg}
                         style={{ width: '90%' }}
                         alt="profile image"
                     />
-                    <div class="card-body">
-                        <h2 class="card-title text-center">
+                    <div className="card-body">
+                        <h2 className="card-title text-center">
                             <span style={{backgroundColor:"turquoise",textDecorationStyle:"wavy",color:"AppWorkspace",fontWeight:"bold"}}>Our Team!</span>
                         </h2>
-                        <p class="card-text text-justify " style={{color:"brown",fontWeight:"italic"}}>
+                        <p className="card-text text-justify " style={{color:"brown",fontWeight:"italic"}}>
                             Our home-solutions firm, FindAbode, was established in Halifax by team
                             members of 6 people, namely Ruize Nie, Simranbanu, Parsad Upendra, Ruminder Singh, Prerna Jain, and
                             Souvik Das in May 2020. All six founders had experienced a common problem – finding an abode in

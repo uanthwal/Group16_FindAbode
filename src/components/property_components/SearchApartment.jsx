@@ -55,7 +55,7 @@ class SearchApartmentComponent extends Component {
           <div className="search-results-section">
             <span className="search-r-txt-header">
               <i className="fa fa-line-chart fa-icon" aria-hidden="true" />
-              Featured Places
+              Most Explored Places
             </span>
             <div className="searched-place-holder">
               <div className="grid-row ">

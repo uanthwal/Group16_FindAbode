@@ -1,3 +1,5 @@
+//Author: Simranbanu Roshansha Diwan (B00833562)
+
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../contexts/UserContext";
@@ -6,13 +8,15 @@ import Links from "../../components/Links";
 import Footer from "../../components/Footer";
 import { APP_URL_CONFIG } from "../../App.Urls";
 
+//Reusable Answer component
 const Answer = (props) => (
-  <div class="card mb-3">
-    <h5 class="card-title">{props.answer.user}</h5>
-    <p class="card-text">{props.answer.ans}</p>
+  <div className="card mb-3">
+    <h5 className="card-title">{props.answer.user}</h5>
+    <p className="card-text">{props.answer.ans}</p>
   </div>
 );
 
+//class component for ViewDiscussion
 export default class ViewDiscussion extends Component {
   static contextType = UserContext;
 
@@ -27,6 +31,7 @@ export default class ViewDiscussion extends Component {
     };
   }
 
+  //fething data from the backend
   componentDidMount() {
     axios
       .get(
@@ -44,12 +49,14 @@ export default class ViewDiscussion extends Component {
       });
   }
 
+  //generating UI for list of answers
   answerList() {
     return this.state.answers.map((currentanswer) => {
       return <Answer answer={currentanswer} key={currentanswer._id} />;
     });
   }
 
+  //handling change in input field of form
   handleChange(e) {
     let target = e.target;
     let value = target.value;
@@ -59,8 +66,10 @@ export default class ViewDiscussion extends Component {
     });
   }
 
+  //submitting data to the backend
   async handleSubmit(e) {
     e.preventDefault();
+    //checking user login
     let { login } = this.context;
     const { email } = this.context;
     let usrdata = [];
@@ -75,6 +84,7 @@ export default class ViewDiscussion extends Component {
          APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.SIGNUP + email
         );
         detail = data[0];
+        //sending data to backend
         axios
           .post(
            APP_URL_CONFIG.BASE_URL +  APP_URL_CONFIG.DISCUSSION_FORUM +
@@ -94,11 +104,12 @@ export default class ViewDiscussion extends Component {
     }
   }
 
+  //render method to render the component
   render() {
     return (
-      <div style={{ marginTop: 65 }}>
-        <h3 class="text-center">Topic: {this.props.match.params.topic}</h3>
-        <div class="m-5">
+      <div style={{ marginTop: 75 }}>
+        <h3 className="text-center">Topic: {this.props.match.params.topic}</h3>
+        <div className="m-5">
           {this.answerList()}
           <div>
             <form onSubmit={this.handleSubmit}>

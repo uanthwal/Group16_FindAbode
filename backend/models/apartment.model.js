@@ -42,6 +42,12 @@ const apartmentSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  amenities: {
+    type: Array
+  },
+  images: {
+    type: Array
+  }
 });
 
 const Apartment = mongoose.model('Apartment', apartmentSchema);

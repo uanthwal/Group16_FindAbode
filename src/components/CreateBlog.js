@@ -1,12 +1,16 @@
+//Author: Simranbanu Roshansha Diwan (B00833562)
+
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
 import Links from "../components/Links";
 import Footer from "../components/Footer";
 import { APP_URL_CONFIG } from "../App.Urls";
+import { UserContext } from "../contexts/UserContext";
 
+//Class for component CreateBlog
 export default class CreateBlog extends Component {
-
+static contextType = UserContext;
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -18,7 +22,18 @@ export default class CreateBlog extends Component {
       p2:""
     };
   }
+//Check if the admin has logged in or not
+  componentDidMount(){
+    let { login } = this.context;
+    if (login == false) {
+      this.props.history.push({
+        pathname: "/signin/",
+      });
+      return;
+    }
+  }
 
+  //handling change in form inputs
   handleChange(e) {
     let target = e.target;
     let name = target.id;
@@ -29,6 +44,8 @@ export default class CreateBlog extends Component {
     });
   }
 
+  //handleSubmit method when admin hits submit for creating new blogs
+  //Add that blog to the database and redirect admin to All blogs page
   async handleSubmit(e) {
     e.preventDefault();
     
@@ -41,18 +58,21 @@ export default class CreateBlog extends Component {
             p2: this.state.p2,
           })
           .then((res) => console.log(res.data));
-        window.location.reload();
+          setTimeout(()=>{this.setState({allBlogs:"temp"});},1000);
+        console.log(this.state.allBlogs);
       } else {
         alert("Please fill all the fields");
       }
     }
 
+  //render method for rendering the component
   render() {
     return (
-      <div style={{ marginTop: 65 }}>
-        <h3 class="text-center">Create new blog</h3>
+      <div style={{ marginTop: 75 }}>
+        {this.state.allBlogs === "temp"? <Redirect to="/blogadmin"/> : null}
+        <h3 className="text-center">Create new blog</h3>
           <form onSubmit={this.handleSubmit}>
-            <div class="m-5">
+            <div className="m-5">
             <textarea
                 id="topic" name="topic"
                 placeholder="Write the title of a blog.."

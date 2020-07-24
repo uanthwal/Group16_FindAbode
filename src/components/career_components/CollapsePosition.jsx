@@ -33,7 +33,7 @@ export default class CollapsePosition extends Component {
 				</div>
 				<div className={'card-body collapse' + show} id="demo">
 					<ul>{jobRequirements}</ul>
-					<Link class="btn btn-primary" to={`/job/apply?jobId=${jobId}&title=${title}`}>
+					<Link className="btn btn-primary" to={`/job/apply?jobId=${jobId}&title=${title}`}>
 						Apply
 					</Link>
 				</div>
