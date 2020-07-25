@@ -91,9 +91,9 @@
   margin-top: 160px;
 }
 .property-name {
-  font-size: 26px !important;
-  line-height:  30px !important;
-  font-weight:  600 !important;
+  font-size: 26px;
+  font-weight:  600;
+  line-height:  30px;
 }
 .property-name-details {
   font-size: 1.75rem;
@@ -106,41 +106,42 @@
 }
 
 .property-listing-details {
-  -webkit-box-align: baseline !important;
-  align-items: baseline !important;
-  display: flex !important;
-  flex-wrap: wrap !important;
+  -webkit-box-align: baseline;
+  display: flex;
+  align-items: baseline;
   color: #777777;
+  flex-wrap: wrap;
 }
 
 .rating {
-  -webkit-box-align: center !important;
-  align-items: center !important;
-  display: inline-flex !important;
-  min-width: 0px !important;
-  margin-top: 8px !important;
+  -webkit-box-align: center;
+  display: inline-flex;
+  align-items: center;
+  margin-top: 8px;
+  min-width: 0px;
+
 }
 
 .occupancy_list {
-  -webkit-box-align: center !important;
-  align-items: center !important;
-  display: inline-flex !important;
-  min-width: 0px !important;
-  margin-top: 8px !important;
+  -webkit-box-align: center;
+  min-width: 0px;
+  display: inline-flex;
   font-size: 1.25rem;
+  margin-top: 8px;
   margin-left: 315px;
   display: block;
+  align-items: center;
 }
 
 .rating-symbol{
-  font-size: 18px !important;
-  margin-right: 4px !important;
-  color: darkred !important;
+  font-size: 18px;
+  color: darkred;
+  margin-right: 4px;
 }
 
 .rating-symbol-color {
-  font-family: Airmoji_Standalone !important;
-  font-weight: normal !important;
+  font-weight: normal;
+  font-family: Airmoji_Standalone;
 }
 
 .rating-symbol-position {
@@ -149,31 +150,31 @@
 }
 
 .rating-symbol-data{
-  font-size: 18px !important;
-  margin-right: 4px !important;
-  color: darkred !important;
+  margin-right: 4px;
+  font-size: 18px;
+  color: darkred;
 }
 
 .property-rating {
-  cursor: pointer !important;
-  position: relative !important;
-  border-color: black !important;
-  touch-action: manipulation !important;
-  font-size: inherit !important;
-  line-height: inherit !important;
-  font-weight: inherit !important;
-  border-radius: 0px !important;
-  border-width: 1px !important;
-  outline: none !important;
-  transition: box-shadow 0.2s ease, transform 0.1s ease !important;
-  background: transparent !important;
-  border: none !important;
-  color: inherit !important;
-  display: block !important;
-  margin: 0px !important;
-  padding: 0px !important;
-  text-align: inherit !important;
-  text-decoration: none !important;
+  touch-action: manipulation;
+  cursor: pointer;
+  font-size: inherit;
+  position: relative;
+  font-weight: inherit;
+  line-height: inherit;
+  border: none;
+  border-radius: 0px;
+  border-color: black;
+  border-width: 1px;
+  transition: box-shadow 0.2s ease, transform 0.1s ease;
+  outline: none;
+  background: transparent;
+  display: block;
+  color: inherit;
+  padding: 0px;
+  margin: 0px;
+  text-decoration: none;
+  text-align: inherit;
   height: 100%;
 }
 
