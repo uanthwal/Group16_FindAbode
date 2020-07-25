@@ -4,7 +4,6 @@
 
 import React, { Component } from 'react';
 import axios from 'axios';
-import ContactInfo from './ContactInfo';
 import { APP_URL_CONFIG } from '../../App.Urls';
 import '../../css/careers/apply.css';
 
