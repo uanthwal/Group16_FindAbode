@@ -1,3 +1,7 @@
+/**
+ * @author by Souvik Das(Souvik.das@dal.ca)
+ * BANNER ID: B00847127
+ */
 import React, {Component} from 'react';
 
 import AboutUsImg from '../../images/AboutUs.jpg';
@@ -5,6 +9,7 @@ import AboutUsImg from '../../images/AboutUs.jpg';
 import Links from '../Links';
 import Footer from '../Footer';
 
+//Class for AboutUs component
 class AboutUs extends Component {
     render() {
         return (

@@ -1,11 +1,15 @@
+/**
+ * @author by Souvik Das(Souvik.das@dal.ca)
+ * BANNER ID: B00847127
+ */
 import React, {Component} from 'react';
-import '../../css/help/faq.css';
+import '../../../css/help/faq.css';
 import HelpOptions from './HelpOptions';
 import FAQs from './FAQs';
-import Links from '../Links';
-import Footer from '../Footer';
+import Links from '../../Links';
+import Footer from '../../Footer';
 
-// Main Component
+// Main Component which performs FAQ section selection
 export default class NeedHelp extends Component {
     state = {
         faq_sections: [
@@ -20,6 +24,7 @@ export default class NeedHelp extends Component {
         sideBarVisible: false
     };
 
+    //Based on Department Selection the faqSection gets activated
     handleDeptClick = (deptKey) => {
         const faqSections = this.state.faq_sections;
         const selectedDept = deptKey;
@@ -35,15 +40,16 @@ export default class NeedHelp extends Component {
         }
         this.setState({faq_sections: faqSections, selectDept: selectedDept});
     };
-    sidebarButtonClickHandler = () => {
-        this.setState((previousState) => {
-            return {sideBarVisible: !previousState.sideBarVisible};
-        });
-    };
-    outSideOfSideBarClicked = () => {
-        this.setState({sideBarVisible: false});
-    };
+    // sidebarButtonClickHandler = () => {
+    //     this.setState((previousState) => {
+    //         return {sideBarVisible: !previousState.sideBarVisible};
+    //     });
+    // };
+    // outSideOfSideBarClicked = () => {
+    //     this.setState({sideBarVisible: false});
+    // };
 
+    //rendering the FAQ selection page
     render() {
         let deptList = this.state.faq_sections;
         let querySection = null;
