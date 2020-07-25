@@ -1,12 +1,14 @@
-import React, { Component } from "react";
+/**
+ * @author by Parsad Upendra(upendra@dal.ca)
+ * BANNER ID: B00838095
+ */
+
+ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import axios from "axios";
 import "../../css/search/SearchResults.scss";
 import { APP_URL_CONFIG } from "../../App.Urls";
 import ApartmentCardComponent from "../../components/property_components/ApartmentCard";
-
-// created by Parsad Upendra(upendra@dal.ca)
-// BANNER ID: B00838095
 
 class SearchResultComponent extends Component {
   constructor(props) {

@@ -1,12 +1,14 @@
-import React, { Component } from "react";
+/**
+ * @author by Parsad Upendra(upendra@dal.ca)
+ * BANNER ID: B00838095
+ */
+
+ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import axios from "axios";
 import "../../css/admin/Admin.scss";
 import { APP_URL_CONFIG } from "../../App.Urls";
 import { UserContext } from "../../contexts/UserContext";
-
-// created by Parsad Upendra(upendra@dal.ca)
-// BANNER ID: B00838095
 
 class ApartmentManagementComponent extends Component {
   static contextType = UserContext;
