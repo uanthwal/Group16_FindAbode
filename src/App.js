@@ -26,6 +26,7 @@ import ApartmentDetail from "./components/property_components/ApartmentDetail";
 import AdminHomeComponent from "./components/admin_panel_components/AdminHome";
 import Apply from "./components/career_components/Apply";
 import EditApartmentComponent from "./components/admin_panel_components/EditApartment";
+import Survey from "./components/survey_form_components/SurveyForm";
 
 class App extends Component {
   render() {
@@ -50,6 +51,7 @@ class App extends Component {
             <Route exact path="/faq" component={NeedHelp} />
             <Route exact path="/careers" component={Careers} />
             <Route exact path="/discussionforum1" component={DiscussionForum} />
+            <Route exact path="/survey" component={Survey} />
             <Route
               exact
               path="/discussionforum1/:topic"
