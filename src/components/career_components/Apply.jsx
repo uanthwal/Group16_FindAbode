@@ -1,3 +1,7 @@
+/**
+ * @author Ruminder Singh <ruminder.singh@dal.ca>
+ */
+
 import React, { Component } from 'react';
 import axios from 'axios';
 import ContactInfo from './ContactInfo';
