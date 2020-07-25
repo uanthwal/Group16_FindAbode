@@ -5,10 +5,13 @@ import "../css/navbar/Navbar.scss";
 
 class Navbar extends Component {
   static contextType = UserContext;
+
   render() {
-    const { login } = this.context;
+    const email = localStorage.getItem("email");
+    const login = localStorage.getItem("login") == "true";
+
     return (
-       <nav className="navbar navbar-expand-md">
+      <nav className="navbar navbar-expand-md">
         <Link className="navbar-brand link" to="/">
           <h1 className="nav-logo"> FindAbode</h1>
         </Link>
@@ -70,9 +73,16 @@ class Navbar extends Component {
                 <button>Sign Up</button>
               </Link>
             ) : (
-              <Link className="link sign-up" to="/profile">
-                <button>Profile</button>
-              </Link>
+              <>
+                <li className="nav-item">
+                  <Link className="link" to={`/appointment/${email}`}>
+                    Appointment
+                  </Link>
+                </li>
+                <Link className="link sign-up" to="/profile">
+                  <button>Profile</button>
+                </Link>
+              </>
             )}
           </ul>
         </div>

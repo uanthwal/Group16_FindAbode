@@ -1,0 +1,36 @@
+.apart-main-container {
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.apart-container {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  background-color: white;
+  padding: 10px;
+  width: 1000px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.09);
+  margin-bottom: 30px;
+}
+.apart-container:last-child {
+  margin-bottom: 300px;
+}
+.search-apart-container {
+  padding-top: 10px;
+  margin-left: 20px;
+}
+.btn-below {
+  margin-top: 40px;
+}
+.text-price {
+  margin-left: 20px;
+}
+
+.cancle {
+  margin-top: 75px;
+}
+
+.message {
+  margin-bottom: 100px;
+}

@@ -51,14 +51,17 @@ class ApartmentDetail extends Component {
     e.preventDefault();
     const { date, select, apartmentId } = this.state;
     const { email } = this.context;
-    // insert into mongoDB
-    await axios.post("https://project-group16.herokuapp.com/appointment", {
-      email,
-      apartmentId,
-      date,
-      time: select,
-    });
-    this.closeModal();
+    if (date <= new Date()) {
+      alert("Can not book the appointment at that date");
+    } else {
+      await axios.post(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.APPOINTMENT, {
+        email,
+        apartmentId,
+        date: date.toJSON().slice(0, 10),
+        time: select,
+      });
+      this.closeModal();
+    }
   };
 
   getApartmentDetails = async () => {
@@ -82,6 +85,7 @@ class ApartmentDetail extends Component {
   }
 
   static contextType = UserContext;
+
   render() {
     Modal.setAppElement("#root");
     const { login } = this.context;
@@ -166,7 +170,7 @@ class ApartmentDetail extends Component {
                         return (
                           <div className="carousel-item" key={key}>
                             <img
-                              className="d-block w-100"
+                              className="d-block w-100 h-100"
                               src={item}
                               alt={`Image ${key}`}
                               title={`Image ${key}`}

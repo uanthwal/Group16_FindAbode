@@ -16,12 +16,6 @@ export default class NeedHelp extends Component {
 				name: 'FAQs',
 				classes: 'selected',
 				selected: true
-			},
-			{
-				key: 'otherQuery',
-				name: 'Have other Query',
-				classes: '',
-				selected: false
 			}
 		],
 		selectDept: 'faqs',
