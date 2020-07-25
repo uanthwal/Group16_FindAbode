@@ -3,6 +3,7 @@ const multer = require('multer');
 const nodemailer = require('nodemailer');
 let Jobs = require('../../models/careers/Job');
 let Application = require('../../models/careers/Application');
+let Department = require('../../models/careers/Deparments');
 const e = require('cors');
 
 router.route('/job').get((req, res) => {
@@ -94,6 +95,41 @@ router.route('/apply').post(async (req, res) => {
 			console.log('Error occured while saving application');
 		}
 	});
+});
+
+router.route('/add').post(async (req, res) => {
+	console.log(req.body.jobId);
+	Jobs.find({ jobId: req.body.jobId })
+		.then((result) => {
+			console.log(result);
+			if (result !== null && result.length > 0) {
+				console.log('JobId already present');
+				return res.status(202).send('JobId already present');
+			} else {
+				Department.find({ deptId: req.body.deptId }).then((departments) => {
+					console.log(departments);
+					if (departments != null && departments.length > 0) {
+						const job = new Jobs({
+							deptId: req.body.deptId,
+							title: req.body.title,
+							desc: req.body.desc,
+							jobId: req.body.jobId
+						});
+						job.save().then((result) => {
+							console.log(result);
+							return res.status(200).send('New job added to database');
+						});
+					} else {
+						console.log('No such department exist');
+						return res.status(202).send('Kindly check the department id');
+					}
+				});
+			}
+		})
+		.catch((err) => {
+			console.log('Not found');
+			return false;
+		});
 });
 
 sendEmail = (userEmail, jobId, name) => {

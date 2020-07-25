@@ -13,30 +13,25 @@ body {
 }
 
 .careerPage .jobPortal {
-  padding-bottom: 3.5%;
-  margin-bottom: 0%;
-}
-
-.careerPage .careersBody {
   margin-top: 10px;
   height: 70%;
   background-color: #8bbbb2;
-  margin-bottom: 4%;
+  padding-bottom: 3.5%;
   min-height: 600;
 }
 
-.careerPage .careersBody .carrerHeading {
+.careerPage .jobPortal .carrerHeading {
   margin-top: 2%;
   height: 6%;
 }
 
-.careerPage .careersBody .carrerHeading h3 {
+.careerPage .jobPortal .carrerHeading h3 {
   margin: 0;
   padding: 0;
   line-height: 0.5em;
 }
 
-.careerPage .careersBody .openPostionsLayer {
+.careerPage .jobPortal .openPostionsLayer {
   margin: 1% 6% 0% 6%;
   min-width: 80%;
   min-height: 650px;
@@ -54,13 +49,13 @@ body {
   border-radius: 2px;
 }
 
-.careerPage .careersBody .openPostionsLayer .departments {
+.careerPage .jobPortal .openPostionsLayer .departments {
   margin-left: 5%;
   width: 22%;
   background-color: #ecf1f8;
 }
 
-.careerPage .careersBody .openPostionsLayer .departments ul {
+.careerPage .jobPortal .openPostionsLayer .departments ul {
   padding-left: 5%;
   margin-top: 8%;
   list-style: none;
@@ -73,7 +68,7 @@ body {
           flex-direction: column;
 }
 
-.careerPage .careersBody .openPostionsLayer .departments ul li {
+.careerPage .jobPortal .openPostionsLayer .departments ul li {
   padding-top: 6%;
   padding-bottom: 6%;
   padding-left: 3%;
@@ -86,7 +81,7 @@ body {
   cursor: pointer;
 }
 
-.careerPage .careersBody .openPostionsLayer .departments ul li a {
+.careerPage .jobPortal .openPostionsLayer .departments ul li a {
   color: black;
   font-weight: 600;
   font-size: 1.1rem;
@@ -94,13 +89,13 @@ body {
   cursor: pointer;
 }
 
-.careerPage .careersBody .openPostionsLayer .departments ul li:hover {
+.careerPage .jobPortal .openPostionsLayer .departments ul li:hover {
   background-color: white;
   text-decoration: none;
   cursor: pointer;
 }
 
-.careerPage .careersBody .openPostionsLayer .departments ul .selected {
+.careerPage .jobPortal .openPostionsLayer .departments ul .selected {
   background-color: white;
 }
-/*# sourceMappingURL=careers.css.map */
+/*# sourceMappingURL=adminjob.css.map */

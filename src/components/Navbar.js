@@ -87,6 +87,11 @@ class Navbar extends Component {
                     Manage Blogs
                   </Link>
                 </li>
+                <li className="nav-item">
+                  <Link className="link" to="/admin/job">
+                    Jobs
+                  </Link>
+                </li>
               </>
             )}
 
