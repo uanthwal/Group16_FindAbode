@@ -20,7 +20,7 @@ import ContactUs from "./components/information_management/ContactUs";
 import Blogs from "./components/Blogs";
 import BlogsAdmin from "./components/BlogsAdmin";
 import NeedHelp from "./components/help_components/NeedHelp";
-import AboutUs from "./components/AboutUs";
+import AboutUs from "./components/information_management/AboutUs";
 import Careers from "./components/career_components/Careers";
 import ApartmentDetail from "./components/property_components/ApartmentDetail";
 import AdminHomeComponent from "./components/admin_panel_components/AdminHome";
