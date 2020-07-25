@@ -5,8 +5,11 @@ import "../css/navbar/Navbar.scss";
 
 class Navbar extends Component {
   static contextType = UserContext;
+
   render() {
-    const { login, email } = this.context;
+    const email = localStorage.getItem("email");
+    const login = localStorage.getItem("login") == "true";
+
     return (
       <nav className="navbar navbar-expand-md">
         <Link className="navbar-brand link" to="/">
