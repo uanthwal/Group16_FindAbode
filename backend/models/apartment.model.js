@@ -1,5 +1,9 @@
-const mongoose = require('mongoose');
+/**
+ * @author Parsad Upendra(upendra@dal.ca)
+ * BANNER ID: B00838095
+ */
 
+const mongoose = require("mongoose");
 const apartmentSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -8,48 +12,48 @@ const apartmentSchema = new mongoose.Schema({
   },
   description: {
     type: String,
-    required: true
+    required: true,
   },
   address: {
     type: String,
-    required: true
+    required: true,
   },
   city: {
     type: String,
-    required: true
+    required: true,
   },
   postal_code: {
     type: String,
-    required: true
+    required: true,
   },
-  price:{
+  price: {
     type: String,
-    required: true
+    required: true,
   },
-  number_of_guests:{
+  number_of_guests: {
     type: String,
-    required: true
+    required: true,
   },
-  number_of_bedroom:{
+  number_of_bedroom: {
     type: String,
-    required: true
+    required: true,
   },
-  number_of_beds:{
+  number_of_beds: {
     type: String,
-    required: true
+    required: true,
   },
-  number_of_baths:{
+  number_of_baths: {
     type: String,
-    required: true
+    required: true,
   },
   amenities: {
-    type: Array
+    type: Array,
   },
   images: {
-    type: Array
-  }
+    type: Array,
+  },
 });
 
-const Apartment = mongoose.model('Apartment', apartmentSchema);
+const Apartment = mongoose.model("Apartment", apartmentSchema);
 
 module.exports = Apartment;

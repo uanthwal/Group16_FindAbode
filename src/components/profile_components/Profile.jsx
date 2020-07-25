@@ -25,6 +25,12 @@ class Profile extends Component {
   }
 
   async componentDidMount() {
+    if (!this.context.isUserLoggedIn()) {
+      this.props.history.push({
+        pathname: "/signin/",
+      });
+      return;
+    }
     const email = this.context.userCredentials("email");
     const { data } = await axios.get(
       APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.SIGNUP + email

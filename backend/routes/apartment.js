@@ -1,3 +1,8 @@
+/**
+ * @author Parsad Upendra(upendra@dal.ca)
+ * BANNER ID: B00838095
+ */
+
 const router = require("express").Router();
 const Apartment = require("../models/apartment.model");
 const MostExploredPlaces = require("../models/mostexploredplaces.model");

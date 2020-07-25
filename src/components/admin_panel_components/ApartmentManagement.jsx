@@ -1,9 +1,9 @@
 /**
- * @author by Parsad Upendra(upendra@dal.ca)
+ * @author Parsad Upendra(upendra@dal.ca)
  * BANNER ID: B00838095
- */
+*/
 
- import React, { Component } from "react";
+import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import axios from "axios";
 import "../../css/admin/Admin.scss";
@@ -23,6 +23,7 @@ class ApartmentManagementComponent extends Component {
     this.onChangeImageData = this.onChangeImageData.bind(this);
   }
 
+  // This method is for the preview of the image URL entered by the user
   onChangeImageData() {
     let tempApartmentDetails = this.state.apartmentDetails;
     tempApartmentDetails["images"] = this.state.updatedData.images.value.split(
@@ -33,6 +34,11 @@ class ApartmentManagementComponent extends Component {
     });
   }
 
+  /**
+   * Method to fetch the apartment details by an id
+   * variable @reqFrom is used to identify if the apartment details are fetched by the admin
+   * or an end-user clicked on EXPLORE button to fetch the apartment details
+   */ 
   getApartmentDetailsById = async () => {
     await axios
       .post(

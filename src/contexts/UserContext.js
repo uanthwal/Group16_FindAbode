@@ -3,9 +3,11 @@ import React, { createContext, Component } from "react";
 export const UserContext = createContext();
 
 class UserContextProvider extends Component {
+  
   state = {
     isUserLoggedIn: false,
   };
+
   setUserCredentials = (email, userType) => {
     localStorage.setItem("email", email);
     localStorage.setItem("userType", userType);

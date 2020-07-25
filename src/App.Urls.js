@@ -1,3 +1,8 @@
+/**
+ * @author Parsad Upendra(upendra@dal.ca)
+ * BANNER ID: B00838095
+ */
+
 export var APP_URL_CONFIG = {
   BASE_URL: getConfigs()["BASE_URL"],
   SEARCH: "/apartments/search-apartments",
@@ -24,8 +29,12 @@ export var APP_URL_CONFIG = {
   ADD_APARTMENT: "/apartments/add-apartment",
   APPLY_JOB: "/jobdetails/apply",
   SURVEY_QUESTION: "/surveyQuestions/question",
-  SURVEY_ANSWER: "/surveyAnswers/response"
+  SURVEY_ANSWER: "/surveyAnswers/response",
 };
+
+/**
+ * This function was created to avoid changing the URLs while development
+ */
 
 export function getConfigs() {
   let protocol = window.location.protocol + "//" + window.location.host;

@@ -1,9 +1,9 @@
 /**
- * @author by Parsad Upendra(upendra@dal.ca)
+ * @author Parsad Upendra(upendra@dal.ca)
  * BANNER ID: B00838095
  */
 
- import React, { Component } from "react";
+import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import axios from "axios";
 import "../../css/search/SearchResults.scss";
@@ -20,10 +20,9 @@ class AdminHomeComponent extends Component {
       placesData: [],
       searchText: this.props.location.params,
     };
-    this.onClickBlogs = this.onClickBlogs.bind(this);
-    this.onClickAddApartment = this.onClickAddApartment.bind(this);
   }
 
+  // Method to fetch the list of present apartments in the database
   getAllPlaces = async () => {
     await axios
       .post(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.GET_ALL_PLACES, {})
@@ -44,19 +43,7 @@ class AdminHomeComponent extends Component {
     this.getAllPlaces();
   }
 
-  onClickBlogs(id) {
-    this.props.history.push({
-      pathname: "/blogadmin",
-    });
-  }
-
-  onClickAddApartment() {
-    this.props.history.push({
-      pathname: "/add-apartment",
-      apartmentDetails: {},
-    });
-  }
-
+  // Method to refresh the apartment list if an existing apartment is removed from the list
   onDeleteHandler = async () => {
     await axios
       .post(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.GET_ALL_PLACES, {})
