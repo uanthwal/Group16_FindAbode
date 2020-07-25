@@ -23,6 +23,8 @@ export var APP_URL_CONFIG = {
   JOB_LIST: "/jobdetails/job",
   ADD_APARTMENT: "/apartments/add-apartment",
   APPLY_JOB: "/jobdetails/apply",
+  SURVEY_QUESTION: "/surveyQuestions/question",
+  SURVEY_ANSWER: "/surveyAnswers/response"
 };
 
 export function getConfigs() {

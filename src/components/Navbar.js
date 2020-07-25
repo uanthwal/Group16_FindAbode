@@ -60,6 +60,11 @@ class Navbar extends Component {
                 Discussion forum
               </Link>
             </li>
+            <li className="nav-item">
+              <Link className="link" to="/survey">
+                Survey
+              </Link>
+            </li>
 
             {!login && (
               <li>
