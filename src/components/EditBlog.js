@@ -3,8 +3,6 @@
 import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
-import Links from "../components/Links";
-import Footer from "../components/Footer";
 import { APP_URL_CONFIG } from "../App.Urls";
 import { UserContext } from "../contexts/UserContext";
 
@@ -142,9 +140,6 @@ export default class EditBlog extends Component {
             </button>
           </div>
         </form>
-
-        <Links />
-        <Footer />
       </div>
     );
   }

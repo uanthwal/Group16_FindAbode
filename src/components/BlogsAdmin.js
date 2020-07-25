@@ -8,8 +8,6 @@ import axios from "axios";
 import blogimg from "../images/landingpage_sub.jpg";
 import { UserContext } from "../contexts/UserContext";
 
-import Links from "./Links";
-import Footer from "./Footer";
 
 //resuable blogs component which is iterated as per number of blogs while rendering
 const Blog = (props) => (
@@ -88,8 +86,6 @@ class BlogsAdmin extends Component {
         </div>
         <br />
         <div>{this.blogList()}</div>
-        <Links />
-        <Footer />
       </div>
     );
   }
