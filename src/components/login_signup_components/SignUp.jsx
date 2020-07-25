@@ -74,6 +74,8 @@ class SignUp extends Component {
             });
           } else {
             flag = true;
+            localStorage.setItem("email", email);
+            localStorage.setItem("login", true);
             credential(email);
             this.setState({
               result: "",

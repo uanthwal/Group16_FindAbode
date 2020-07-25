@@ -23,7 +23,7 @@ class Review extends Component {
 							Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iste quasi enim suscipit
 							eligendi, modi nam nesciunt, saepe odio sunt eaque earum? Esse alias possimus ipsum vero
 							eligendi voluptas maiores?
-							<cite>Ruize Nie</cite>
+							<cite>Ruminder Singh</cite>
 						</blockquote>
 					</div>
 
@@ -32,7 +32,7 @@ class Review extends Component {
 							Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iste quasi enim suscipit
 							eligendi, modi nam nesciunt, saepe odio sunt eaque earum? Esse alias possimus ipsum vero
 							eligendi voluptas maiores?
-							<cite>Ruize Nie</cite>
+							<cite>Souvik</cite>
 						</blockquote>
 					</div>
 				</div>

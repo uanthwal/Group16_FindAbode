@@ -18,6 +18,23 @@ var storage = multer.memoryStorage();
 
 var upload = multer({ storage: storage }).single('file');
 
+checkIfEmailExist = async (email, jobId) => {
+	console.log(email + ' ' + jobId);
+	Application.find({ email: email, jobId: jobId })
+		.then((result) => {
+			if (result.length > 1) {
+				console.log('Found element');
+				return true;
+			} else {
+				console.log('Not found');
+				return false;
+			}
+		})
+		.catch((err) => {
+			console.log('Not found');
+			return false;
+		});
+};
 router.route('/apply').post(async (req, res) => {
 	console.log('Candiate application received');
 	let resumeBuffer = null;
@@ -42,20 +59,44 @@ router.route('/apply').post(async (req, res) => {
 			resume: resumeBuffer,
 			jobId: jobId
 		});
-		application
-			.save()
-			.then(() => {
-				console.log('Application saved');
-				sendEmail(email, jobId);
-				return res.json('Application saved successfully');
-			})
-			.catch((err) => {
-				return res.status(400).json('Error: ' + err);
+		try {
+			application.save().then((result) => {
+				console.log(result);
+				let id = result.get('_id');
+				console.log(result.get('_id'));
+				Application.find({ email: email, jobId: jobId })
+					.then((result) => {
+						if (result.length > 1) {
+							console.log('Found element');
+							Application.deleteOne({ _id: id })
+								.then((deleteResult) => {
+									console.log('Delete reult: ' + deleteResult);
+									return res.status(202).send('User has already applied for this job');
+								})
+								.catch((err) => {
+									console.log('Error occured while deleting ' + err);
+									return res.status(202).send('User has already applied for this job');
+								});
+						} else {
+							console.log('Not found');
+							sendEmail(email, jobId, name);
+							return res
+								.status(200)
+								.send('Your application is successfull submitted. Kindly check your email');
+						}
+					})
+					.catch((err) => {
+						console.log('Not found');
+						return res.send('Error occured');
+					});
 			});
+		} catch (err) {
+			console.log('Error occured while saving application');
+		}
 	});
 });
 
-sendEmail = (userEmail, jobId) => {
+sendEmail = (userEmail, jobId, name) => {
 	let transporter = nodemailer.createTransport({
 		service: 'gmail',
 		auth: {
@@ -69,7 +110,9 @@ sendEmail = (userEmail, jobId) => {
 		subject: 'FindAbode Talent Acquisition',
 
 		html:
-			'<p>Hello,<p>' +
+			'<p>Hello ' +
+			name +
+			',<p>' +
 			'<p>Thank you very much for the opportunity to consider you as a candidate for the Job id ' +
 			jobId +
 			'</p>' +
