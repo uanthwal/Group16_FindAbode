@@ -8,6 +8,10 @@ const emailRegex = RegExp(
   /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 );
 
+/**
+ * React Class Component to management user log in
+ * @author Ruize Nie
+ */
 class SignUp extends Component {
   static contextType = UserContext;
   constructor(props) {

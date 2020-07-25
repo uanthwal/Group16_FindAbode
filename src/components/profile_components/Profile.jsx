@@ -7,6 +7,10 @@ import Footer from "../../components/Footer";
 import "../../css/Profile.css";
 import { APP_URL_CONFIG } from "../../App.Urls";
 
+/**
+ * React Class Component to management user profile
+ * @author Ruize Nie
+ */
 class Profile extends Component {
   static contextType = UserContext;
   constructor(props) {

@@ -1,7 +1,7 @@
 /**
  * @author Parsad Upendra(upendra@dal.ca)
  * BANNER ID: B00838095
-*/
+ */
 
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
@@ -38,7 +38,8 @@ class ApartmentManagementComponent extends Component {
    * Method to fetch the apartment details by an id
    * variable @reqFrom is used to identify if the apartment details are fetched by the admin
    * or an end-user clicked on EXPLORE button to fetch the apartment details
-   */ 
+   */
+
   getApartmentDetailsById = async () => {
     await axios
       .post(
@@ -69,6 +70,7 @@ class ApartmentManagementComponent extends Component {
           description: "",
           address: "",
           city: "",
+          price: "",
           postal_code: "",
           number_of_guests: "",
           number_of_bedroom: "",

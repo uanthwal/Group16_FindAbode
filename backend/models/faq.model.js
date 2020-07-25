@@ -1,3 +1,7 @@
+/**
+ * @author by Souvik Das(Souvik.das@dal.ca)
+ * BANNER ID: B00847127
+ */
 const mongoose = require("mongoose");
 
 //Creating FQA Schema

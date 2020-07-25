@@ -1,3 +1,6 @@
+/**
+ * @author by Prerna Jain
+ */
 import React, { Component } from "react";
 import Axios from "axios";
 import "../../css/survey/Survey.css";
@@ -21,6 +24,7 @@ class Survey extends Component {
         this.formSubmit = this.formSubmit.bind(this);
     }
 
+    // to fetch the survey questions from the database
     componentWillMount() {
         Axios.get(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.SURVEY_QUESTION)
             .then(res => {
@@ -35,12 +39,14 @@ class Survey extends Component {
             });
     }
 
+    // function to capture the user's response for a particular question
     onValueChange(event) {
         this.setState({
             selectedOption: event.target.value,
         });
     }
 
+    // function to capture the user's response to database
     formSubmit(event) {
         event.preventDefault();
         let k = this.state.i

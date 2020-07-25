@@ -19,7 +19,7 @@ import ViewDiscussion from "./components/discussion_forum_components/ViewDiscuss
 import ContactUs from "./components/information_management/ContactUs";
 import Blogs from "./components/Blogs";
 import BlogsAdmin from "./components/BlogsAdmin";
-import NeedHelp from "./components/help_components/NeedHelp";
+import NeedHelp from "./components/information_management/FAQ/NeedHelp";
 import AboutUs from "./components/information_management/AboutUs";
 import Careers from "./components/career_components/Careers";
 import ApartmentDetail from "./components/property_components/ApartmentDetail";
@@ -46,7 +46,7 @@ class App extends Component {
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/search-apartment" component={SearchApartment} />
             <Route exact path="/search-results" component={SearchResults} />
-            <Route exact path="/blog" component={Blogs} />
+            <Route exact path="/blogs" component={Blogs} />
             <Route exact path="/favourite" component={Favourites} />
             <Route exact path="/about" component={AboutUs} />
             <Route exact path="/contact" component={ContactUs} />

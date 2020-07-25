@@ -2,6 +2,10 @@ const router = require("express").Router();
 let Appointment = require("../models/appointment.model");
 const nodemailer = require("nodemailer");
 
+/**
+ * Express API for appointment management
+ * @author Ruize Nie
+ */
 router.route("/:id").delete((req, res) => {
   Appointment.findOneAndDelete(
     { _id: req.params.id },

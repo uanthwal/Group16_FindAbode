@@ -1,5 +1,9 @@
 const mongoose = require("mongoose");
 
+/**
+ * MongoDB Models to create an user
+ * @author Ruize Nie
+ */
 const userSchema = new mongoose.Schema({
   username: {
     type: String,

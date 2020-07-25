@@ -1,5 +1,10 @@
+/**
+ * @author by Souvik Das(Souvik.das@dal.ca)
+ * BANNER ID: B00847127
+ */
 import React, {Component} from 'react';
 
+//Class for CollapseQuestion  component
 export default class CollapseQuestion extends Component {
     state = {
         open: this.props.open,
@@ -8,12 +13,14 @@ export default class CollapseQuestion extends Component {
         key: this.props.key
     };
 
+    //method which keeps the toggle open once clicked
     toggleCollapseView = () => {
         this.setState((prevState) => {
             return {open: !prevState.open};
         });
     };
 
+    //render method to show a FAQ question card
     render() {
         const show = this.state.open ? 'show' : '';
         return (

@@ -16,10 +16,11 @@ class AdminHomeComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showBlurBg: false,
       placesData: [],
-      searchText: this.props.location.params,
+      placesDataCopy: [],
+      searchIp: "",
     };
+    this.onChangeSearchIp = this.onChangeSearchIp.bind(this);
   }
 
   // Method to fetch the list of present apartments in the database
@@ -29,6 +30,7 @@ class AdminHomeComponent extends Component {
       .then((res) => {
         this.setState({
           placesData: res.data["data"],
+          placesDataCopy: res.data["data"],
         });
       });
   };
@@ -43,7 +45,51 @@ class AdminHomeComponent extends Component {
     this.getAllPlaces();
   }
 
-  // Method to refresh the apartment list if an existing apartment is removed from the list
+  // Method to redirect the user to enable addition of new place
+  onChangeSearchIp() {
+    if (this.state.searchIp.value.trim() != "") {
+      let tempSearchTxt = this.state.searchIp.value;
+      let filteredApartments = this.state.placesDataCopy.filter(function (
+        element
+      ) {
+        if (
+          element.name.toLowerCase().indexOf(tempSearchTxt.toLowerCase()) >
+            -1 ||
+          element.description
+            .toLowerCase()
+            .indexOf(tempSearchTxt.toLowerCase()) > -1 ||
+          element.address.toLowerCase().indexOf(tempSearchTxt.toLowerCase()) >
+            -1 ||
+          element.postal_code
+            .toLowerCase()
+            .indexOf(tempSearchTxt.toLowerCase()) > -1 ||
+          element.price.toLowerCase().indexOf(tempSearchTxt.toLowerCase()) >
+            -1 ||
+          element.number_of_guests
+            .toLowerCase()
+            .indexOf(tempSearchTxt.toLowerCase()) > -1 ||
+          element.number_of_bedroom
+            .toLowerCase()
+            .indexOf(tempSearchTxt.toLowerCase()) > -1 ||
+          element.number_of_baths
+            .toLowerCase()
+            .indexOf(tempSearchTxt.toLowerCase()) > -1 ||
+          element.amenities.indexOf(tempSearchTxt.toLowerCase()) > -1
+        ) {
+          return element;
+        }
+      });
+      this.setState({
+        placesData: JSON.parse(JSON.stringify(filteredApartments)),
+      });
+    } else {
+      this.setState({
+        placesData: JSON.parse(JSON.stringify(this.state.placesDataCopy)),
+      });
+    }
+  }
+
+  // Method to refresh the apartment list once an exisiting apartment is deleted
   onDeleteHandler = async () => {
     await axios
       .post(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.GET_ALL_PLACES, {})
@@ -60,7 +106,12 @@ class AdminHomeComponent extends Component {
         <div className="search-r-container">
           <div className="search-results-section">
             <span className="search-r-txt-header">
-              Apartment List({this.state.placesData.length})
+              <input
+                type="text"
+                placeholder="Filter by name, address, city, description, price"
+                ref={(searchIp) => (this.state.searchIp = searchIp)}
+                onChange={this.onChangeSearchIp}
+              />
             </span>
             <div className="searched-place-holder">
               <div className="grid-row">

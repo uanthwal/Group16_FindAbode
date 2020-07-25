@@ -1,7 +1,11 @@
+/**
+ * @author by Prerna Jain
+ */
 const router = require("express").Router();
 let surveyQuestionModel = require("../models/surveyquestions.model")
 let surveyResponseModel = require("../models/surveyresponse.model")
 
+// POST API to save the survey response provided by the user
 router.route("/response").post((req,res) => {
     surveyResponseModel.create({
         question : req.body.question,
@@ -11,6 +15,7 @@ router.route("/response").post((req,res) => {
     .catch((err) => res.status(400).json("Error: " + err));
 })
 
+// GET API to get the survey questions from the database
 router.route("/question").get((req,res) => {
 
     surveyQuestionModel.find()

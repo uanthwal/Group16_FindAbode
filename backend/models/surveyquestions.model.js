@@ -1,4 +1,8 @@
+/**
+ * @author by Prerna Jain
+ */
 const mongoose = require("mongoose");
+//creating the schema for the survey questions
 const surveyQuestionSchema = new mongoose.Schema({
     question: {
         type: String,

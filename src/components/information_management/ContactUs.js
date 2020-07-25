@@ -1,3 +1,7 @@
+/**
+ * @author by Souvik Das(Souvik.das@dal.ca)
+ * BANNER ID: B00847127
+ */
 import React, {Component} from "react";
 import Links from "../Links";
 import Footer from "../Footer";
@@ -10,6 +14,7 @@ const emailRegex = RegExp(
     /^[a-zA-Z0-9.!#$%&â€™*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 );
 
+//method for form validation
 const formValid = ({formErrors, ...rest}) => {
     let valid = true;
 
@@ -26,6 +31,7 @@ const formValid = ({formErrors, ...rest}) => {
     return valid;
 };
 
+//Class for Contact us component
 class ContactUs extends Component {
     constructor(props) {
         super(props);
@@ -45,6 +51,7 @@ class ContactUs extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    //On Clicking submit button, triggering the backend and calling the contactUs.js file in routes
     handleSubmit(e) {
         e.preventDefault();
         const {f_name, l_name, email, query} = this.state;
@@ -59,6 +66,7 @@ class ContactUs extends Component {
                 query: this.state.query,
             };
 
+            //Method to send a post request by sending all the details fetched by user from front-end to the backend
             axios
                 .post(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.CONTACT_US, contactInfo)
                 .then((res) => console.log(res.data));
@@ -82,6 +90,7 @@ class ContactUs extends Component {
         }
     }
 
+    //performing on change validations of the form
     handleChange(e) {
         let target = e.target;
         let value = target.type === "checkbox" ? target.checked : target.value;
@@ -115,6 +124,7 @@ class ContactUs extends Component {
         });
     }
 
+    //main render method for rendering the component
     render() {
         const {formErrors} = this.state;
         return (
@@ -223,7 +233,7 @@ class ContactUs extends Component {
                             <a href="mailto:contact@findadobe.com">contact@findadobe.com</a>
                         </div>
                     </div>
-                    <br/>ß
+                    <br/>
                 </div>
                 <Links/>
                 <Footer/>
