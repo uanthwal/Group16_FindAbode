@@ -45,7 +45,7 @@ class App extends Component {
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/search-apartment" component={SearchApartment} />
             <Route exact path="/search-results" component={SearchResults} />
-            <Route exact path="/blog" component={Blogs} />
+            <Route exact path="/blogs" component={Blogs} />
             <Route exact path="/favourite" component={Favourites} />
             <Route exact path="/about" component={AboutUs} />
             <Route exact path="/contact" component={ContactUs} />
