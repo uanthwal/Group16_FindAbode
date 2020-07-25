@@ -175,10 +175,13 @@ router.route("/delete").post((req, res) => {
         data: {},
       });
     } else {
-      res.send({
-        code: 200,
-        data: resp_data,
-        message: "Apartment deleted successfully!",
+      MostExploredPlaces.remove({'apartment_id':apartment_id}, function(err, data) {
+        console.log(data);
+        res.send({
+          code: 200,
+          data: resp_data,
+          message: "Apartment deleted successfully!",
+        });
       });
     }
   });
