@@ -1,3 +1,5 @@
+//Author: Simranbanu Roshansha Diwan (B00833562)
+
 const mongoose = require("mongoose");
 
 const answerSchema = new mongoose.Schema({
