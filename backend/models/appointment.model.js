@@ -1,5 +1,9 @@
 const mongoose = require("mongoose");
 
+/**
+ * MongoDB Models to create an appointment
+ * @author Ruize Nie
+ */
 const appointmentSchema = new mongoose.Schema({
   email: {
     type: String,

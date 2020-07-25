@@ -1,6 +1,10 @@
 const router = require("express").Router();
 let User = require("../models/user.model");
 
+/**
+ * Express API for user profile management
+ * @author Ruize Nie
+ */
 router.route("/:email").get((req, res) => {
   User.find({ email: req.params.email })
     .then((user) => res.json(user))

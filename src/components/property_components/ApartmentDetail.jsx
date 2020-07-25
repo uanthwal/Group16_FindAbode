@@ -10,6 +10,11 @@ import Modal from "react-modal";
 import "react-calendar/dist/Calendar.css";
 import { UserContext } from "../../contexts/UserContext";
 
+/**
+ * React Class Component to display the detail of apartment
+ * @author Ruize Nie
+ * @author Souvik
+ */
 class ApartmentDetail extends Component {
   constructor(props) {
     super(props);
