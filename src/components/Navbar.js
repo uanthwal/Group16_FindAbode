@@ -28,7 +28,7 @@ class Navbar extends Component {
 
         <div className="collapse navbar-collapse" id="collapsibleNavbar">
           <ul className="navbar-nav">
-            {(userType == "R" || userType == null) ? (
+            {userType == "R" || userType == null ? (
               <>
                 <li className="nav-item">
                   <Link className="link" to="/search-apartment">
@@ -53,7 +53,11 @@ class Navbar extends Component {
                     Contact
                   </Link>
                 </li>
-
+                <li className="nav-item">
+                  <Link className="link" to="/survey">
+                    Survey
+                  </Link>
+                </li>
                 <li className="nav-item">
                   <Link className="link" to="/faq">
                     FAQ
@@ -94,12 +98,12 @@ class Navbar extends Component {
               </Link>
             ) : (
               <>
-                {userType == 'R' ? (
+                {userType == "R" ? (
                   <li className="nav-item">
-                  <Link className="link" to={`/appointment/${email}`}>
-                    Appointment
-                  </Link>
-                </li>
+                    <Link className="link" to={`/appointment/${email}`}>
+                      Appointment
+                    </Link>
+                  </li>
                 ) : null}
                 <Link className="link sign-up" to="/profile">
                   <button>Profile</button>

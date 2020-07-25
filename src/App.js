@@ -20,12 +20,13 @@ import ContactUs from "./components/information_management/ContactUs";
 import Blogs from "./components/Blogs";
 import BlogsAdmin from "./components/BlogsAdmin";
 import NeedHelp from "./components/help_components/NeedHelp";
-import AboutUs from "./components/AboutUs";
+import AboutUs from "./components/information_management/AboutUs";
 import Careers from "./components/career_components/Careers";
 import ApartmentDetail from "./components/property_components/ApartmentDetail";
 import AdminHomeComponent from "./components/admin_panel_components/AdminHome";
 import Apply from "./components/career_components/Apply";
 import ApartmentManagementComponent from "./components/admin_panel_components/ApartmentManagement";
+import Survey from "./components/survey_form_components/SurveyForm";
 
 class App extends Component {
   static contextType = UserContext;
@@ -51,6 +52,7 @@ class App extends Component {
             <Route exact path="/faq" component={NeedHelp} />
             <Route exact path="/careers" component={Careers} />
             <Route exact path="/discussionforum1" component={DiscussionForum} />
+            <Route exact path="/survey" component={Survey} />
             <Route
               exact
               path="/discussionforum1/:topic"

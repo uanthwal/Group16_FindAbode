@@ -22,8 +22,6 @@ class AdminHomeComponent extends Component {
     this.onClickAddApartment = this.onClickAddApartment.bind(this);
   }
 
-
-
   getAllPlaces = async () => {
     await axios
       .post(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.GET_ALL_PLACES, {})
@@ -71,13 +69,9 @@ class AdminHomeComponent extends Component {
     return (
       <div>
         <div className="search-r-container">
-          <div className="action-btn">
-            <button onClick={this.onClickAddApartment}> Add Apartment </button>
-            <button onClick={this.onClickBlogs}> Create Blog </button>
-          </div>
           <div className="search-results-section">
             <span className="search-r-txt-header">
-              Results({this.state.placesData.length})
+              Apartment List({this.state.placesData.length})
             </span>
             <div className="searched-place-holder">
               <div className="grid-row">
