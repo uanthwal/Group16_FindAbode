@@ -14,16 +14,11 @@ class Appointment extends Component {
     };
   }
 
-  componentDidMount() {
-    this.getAppointment();
-  }
-
-  getAppointment = async () => {
+  async componentDidMount() {
     await axios
+      // .get(`http://localhost:5000/appointment/${this.props.match.params.email}`)
       .get(
-        APP_URL_CONFIG.BASE_URL +
-          APP_URL_CONFIG.APPOINTMENT +
-          this.props.match.params.email
+        `https://project-group16.herokuapp.com/appointment/${this.props.match.params.email}`
       )
       .then((res) => {
         this.setState({ appointments: res.data["data"] });
@@ -41,7 +36,7 @@ class Appointment extends Component {
             });
         });
       });
-  };
+  }
 
   handleCancel = (id) => {
     axios.delete(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.APPOINTMENT + id);
