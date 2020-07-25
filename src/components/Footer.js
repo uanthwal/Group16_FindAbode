@@ -12,7 +12,7 @@ class Footer extends Component {
 					</div>
 					<ul>
 						<li>
-							<Link to="" className="footer-link">
+							<Link to="/contact" className="footer-link">
 								Contact FindAbode
 							</Link>
 						</li>
