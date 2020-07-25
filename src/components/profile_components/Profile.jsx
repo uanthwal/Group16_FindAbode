@@ -7,6 +7,10 @@ import Footer from "../../components/Footer";
 import "../../css/Profile.css";
 import { APP_URL_CONFIG } from "../../App.Urls";
 
+/**
+ * React Class Component to management user profile
+ * @author Ruize Nie
+ */
 class Profile extends Component {
   static contextType = UserContext;
   constructor(props) {
@@ -25,6 +29,12 @@ class Profile extends Component {
   }
 
   async componentDidMount() {
+    if (!this.context.isUserLoggedIn()) {
+      this.props.history.push({
+        pathname: "/signin/",
+      });
+      return;
+    }
     const email = this.context.userCredentials("email");
     const { data } = await axios.get(
       APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.SIGNUP + email

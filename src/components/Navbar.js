@@ -1,7 +1,7 @@
 /**
- * @author by Parsad Upendra(upendra@dal.ca)
+ * @author Parsad Upendra(upendra@dal.ca)
  * BANNER ID: B00838095
- */
+*/
 
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
@@ -18,7 +18,7 @@ class Navbar extends Component {
       <nav className="navbar navbar-expand-md">
         <Link
           className="navbar-brand link"
-          to={userType == "A" ? "/admin-home" : "/"}
+          to={userType === "A" ? "/admin-home" : "/"}
         >
           <h1 className="nav-logo"> FindAbode</h1>
         </Link>
@@ -33,7 +33,7 @@ class Navbar extends Component {
 
         <div className="collapse navbar-collapse" id="collapsibleNavbar">
           <ul className="navbar-nav">
-            {userType == "R" || userType == null ? (
+            {userType === "R" || userType === null ? (
               <>
                 <li className="nav-item">
                   <Link className="link" to="/search-apartment">
@@ -42,8 +42,8 @@ class Navbar extends Component {
                 </li>
 
                 <li className="nav-item">
-                  <Link className="link" to="/blog">
-                    Blog
+                  <Link className="link" to="/blogs">
+                    Blogs
                   </Link>
                 </li>
 
@@ -103,7 +103,7 @@ class Navbar extends Component {
               </Link>
             ) : (
               <>
-                {userType == "R" ? (
+                {userType === "R" ? (
                   <li className="nav-item">
                     <Link className="link" to={`/appointment/${email}`}>
                       Appointment

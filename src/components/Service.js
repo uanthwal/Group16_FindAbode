@@ -11,32 +11,33 @@ class Service extends Component {
           <div className="feature-box">
             <h3 className="feature-heading">Explore the world</h3>
             <p className="feature-box-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam,
-              ipsum sapiente aspernatur.
+              FindAbode is becoming a remarkable place to list and book
+              accommodation effortlessly, across Halifax and other regions of
+              Canada.
             </p>
           </div>
 
           <div className="feature-box">
-            <h3 className="feature-heading">Meet nature</h3>
+            <h3 className="feature-heading">Meet Ours</h3>
             <p className="feature-box-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam,
-              ipsum sapiente aspernatur.
+              Join our FindAbode family for quality and affordable services by
+              FindAbode platforms.
             </p>
           </div>
 
           <div className="feature-box">
             <h3 className="feature-heading">Find your way</h3>
             <p className="feature-box-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam,
-              ipsum sapiente aspernatur.
+              FindAbode is considered to be the future of Vacation/Rental
+              property management service platforms.
             </p>
           </div>
 
           <div className="feature-box">
-            <h3 className="feature-heading">Live a healthier life</h3>
+            <h3 className="feature-heading">Less Paid</h3>
             <p className="feature-box-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam,
-              ipsum sapiente aspernatur.
+              You can also feature your property listing starting from CA20$ a
+              month.
             </p>
           </div>
         </div>
