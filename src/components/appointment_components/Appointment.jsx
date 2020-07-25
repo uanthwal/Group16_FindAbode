@@ -16,7 +16,6 @@ class Appointment extends Component {
 
   async componentDidMount() {
     await axios
-      // .get(`http://localhost:5000/appointment/${this.props.match.params.email}`)
       .get(
         `https://project-group16.herokuapp.com/appointment/${this.props.match.params.email}`
       )
@@ -39,7 +38,7 @@ class Appointment extends Component {
   }
 
   handleCancel = (id) => {
-    axios.delete(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.APPOINTMENT + id);
+    axios.delete(`https://project-group16.herokuapp.com/appointment/${id}`);
     this.props.history.push({
       pathname: "/search-apartment",
     });
@@ -49,40 +48,46 @@ class Appointment extends Component {
     return (
       <>
         <div className="apart-main-container">
-          {this.state.apartments.map((item, index) => {
-            return (
-              <div key={index} className="apart-container">
-                <img
-                  src={item.images[0]}
-                  className="card-img"
-                  alt="aprts showcases"
-                />
-                <div className="search-apart-container">
-                  <p className="text-title">{item.name}</p>
-                  <p className="text-desc">
-                    {this.state.appointments[index].date}
-                    <br />
-                    <br />
-                    {this.state.appointments[index].time}
-                  </p>
-                  <p className="text-review">
-                    {item.price}
-                    <span className="text-tiny text-price">{item.rating}</span>
-                  </p>
+          {this.state.apartments.length !== 0 ? (
+            this.state.apartments.map((item, index) => {
+              return (
+                <div key={index} className="apart-container">
+                  <img
+                    src={item.images[0]}
+                    className="card-img"
+                    alt="aprts showcases"
+                  />
+                  <div className="search-apart-container">
+                    <p className="text-title">{item.name}</p>
+                    <p className="text-desc">
+                      {this.state.appointments[index].date}
+                      <br />
+                      <br />
+                      {this.state.appointments[index].time}
+                    </p>
+                    <p className="text-review">
+                      {item.price}
+                      <span className="text-tiny text-price">
+                        {item.rating}
+                      </span>
+                    </p>
+                  </div>
+                  <div>
+                    <button
+                      className="cancle"
+                      onClick={() =>
+                        this.handleCancel(this.state.appointments[index]._id)
+                      }
+                    >
+                      Cancel
+                    </button>
+                  </div>
                 </div>
-                <div>
-                  <button
-                    className="cancle"
-                    onClick={() =>
-                      this.handleCancel(this.state.appointments[index]._id)
-                    }
-                  >
-                    Cancel
-                  </button>
-                </div>
-              </div>
-            );
-          })}
+              );
+            })
+          ) : (
+            <h2 className="message">You dont have any appointment currently</h2>
+          )}
         </div>
         <Links />
         <Footer />
