@@ -1,5 +1,10 @@
+/**
+ * @author by Prerna Jain
+ */
 import React from 'react';
 import '../../css/survey/SurveyFinalPage.css'
+
+// function to indicate the end of the survey
 const finalPage = () => {
     return(
         <div className = "final-outer-box" style = {{color: "black"}}>
