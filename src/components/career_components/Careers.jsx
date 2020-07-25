@@ -1,3 +1,8 @@
+/**
+ * @author Ruminder Singh <ruminder.singh@dal.ca>
+ * @file It is main file for show different jobs openings at FindAbode.
+ */
+
 import React, { Component } from 'react';
 import axios from 'axios';
 
@@ -10,20 +15,7 @@ import { APP_URL_CONFIG } from '../../App.Urls';
 
 export default class Careers extends Component {
 	state = {
-		departments: [
-			// {
-			// 	key: 'it_dept',
-			// 	name: 'IT Department',
-			// 	classes: 'selected',
-			// 	selected: true
-			// },
-			// {
-			// 	key: 'sales_dept',
-			// 	name: 'Sales Department',
-			// 	classes: '',
-			// 	selected: false
-			// }
-		],
+		departments: [],
 		selectDept: -1,
 		sideBarVisible: false
 	};
@@ -34,7 +26,6 @@ export default class Careers extends Component {
 			console.log('Data received');
 			let departments = res.data;
 			let selectedDept = -1;
-			//console.log(departments);
 
 			let jobDepartment = [];
 			for (let i = 0; i < departments.length; i++) {

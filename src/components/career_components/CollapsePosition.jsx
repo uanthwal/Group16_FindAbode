@@ -1,3 +1,7 @@
+/**
+ * @author Ruminder Singh <ruminder.singh@dal.ca>
+ */
+
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
