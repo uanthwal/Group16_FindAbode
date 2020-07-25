@@ -22,7 +22,7 @@ class Links extends Component {
 							</Link>
 						</li>
 						<li>
-							<Link to="/blog" className="footer-link">
+							<Link to="/blogs" className="footer-link">
 								Blog
 							</Link>
 						</li>
