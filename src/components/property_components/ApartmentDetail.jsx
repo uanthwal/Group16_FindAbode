@@ -51,7 +51,7 @@ class ApartmentDetail extends Component {
     e.preventDefault();
     const { date, select, apartmentId } = this.state;
     const { email } = this.context;
-    if (date.toJSON().slice(0, 10) <= new Date().toJSON().slice(0, 10)) {
+    if (date <= new Date()) {
       alert("Can not book the appointment at that date");
     } else {
       await axios.post(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.APPOINTMENT, {
