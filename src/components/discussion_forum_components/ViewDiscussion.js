@@ -70,24 +70,25 @@ export default class ViewDiscussion extends Component {
   async handleSubmit(e) {
     e.preventDefault();
     //checking user login
-    let { login } = this.context;
-    const { email } = this.context;
+    const email = this.context.userCredentials("email");
     let usrdata = [];
-    if (login == false) {
+    if (!this.context.isUserLoggedIn()) {
       this.props.history.push({
         pathname: "/signin/",
       });
+      return;
     } else {
       if (this.state.newans != "") {
         let detail = {};
         const { data } = await axios.get(
-         APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.SIGNUP + email
+          APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.SIGNUP + email
         );
         detail = data[0];
         //sending data to backend
         axios
           .post(
-           APP_URL_CONFIG.BASE_URL +  APP_URL_CONFIG.DISCUSSION_FORUM +
+            APP_URL_CONFIG.BASE_URL +
+              APP_URL_CONFIG.DISCUSSION_FORUM +
               this.props.match.params.topic +
               "/addans",
             {

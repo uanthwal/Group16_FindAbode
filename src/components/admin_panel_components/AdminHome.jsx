@@ -6,6 +6,9 @@ import { APP_URL_CONFIG } from "../../App.Urls";
 import ApartmentCardComponent from "../property_components/ApartmentCard";
 import { UserContext } from "../../contexts/UserContext";
 
+// created by Parsad Upendra(upendra@dal.ca)
+// BANNER ID: B00838095
+
 class AdminHomeComponent extends Component {
   static contextType = UserContext;
   constructor(props) {
@@ -19,6 +22,8 @@ class AdminHomeComponent extends Component {
     this.onClickAddApartment = this.onClickAddApartment.bind(this);
   }
 
+
+
   getAllPlaces = async () => {
     await axios
       .post(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.GET_ALL_PLACES, {})
@@ -30,8 +35,7 @@ class AdminHomeComponent extends Component {
   };
 
   componentDidMount() {
-    let { login } = this.context;
-    if (login == false) {
+    if (!this.context.isUserLoggedIn()) {
       this.props.history.push({
         pathname: "/signin/",
       });

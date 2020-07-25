@@ -4,6 +4,9 @@ import "../../css/apartment/ApartmentCard.scss";
 import Axios from "axios";
 import { APP_URL_CONFIG } from "../../App.Urls";
 
+// created by Parsad Upendra(upendra@dal.ca)
+// BANNER ID: B00838095
+
 class ApartmentCardComponent extends Component {
   constructor(props) {
     super(props);
@@ -34,7 +37,7 @@ class ApartmentCardComponent extends Component {
 
   onClickEditPlace(id) {
     this.props.history.push({
-      pathname: "/edit-apartment/" + id,
+      pathname: "/manage-apartment/" + id,
     });
   }
 

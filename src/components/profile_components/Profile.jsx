@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
 import { UserContext } from "../../contexts/UserContext";
 import axios from "axios";
 import Links from "../../components/Links";
 import Footer from "../../components/Footer";
 import "../../css/Profile.css";
+import { APP_URL_CONFIG } from "../../App.Urls";
 
 class Profile extends Component {
   static contextType = UserContext;
@@ -25,11 +25,10 @@ class Profile extends Component {
   }
 
   async componentDidMount() {
-    const email = localStorage.getItem("email");
+    const email = this.context.userCredentials("email");
     const { data } = await axios.get(
-      "https://project-group16.herokuapp.com/signup/" + email
+      APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.SIGNUP + email
     );
-    // const { data } = await axios.get('http://localhost:5000/signup/' + email)
     this.setState({ detail: data[0] });
   }
 
@@ -60,10 +59,9 @@ class Profile extends Component {
       });
       const user = { username, password };
       await axios.post(
-        "https://project-group16.herokuapp.com/signup/" + email,
+        APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.SIGNUP + email,
         user
       );
-      // await axios.post('http://localhost:5000/signup/' + email, user)
     } else {
       this.setState({
         result:
@@ -74,11 +72,14 @@ class Profile extends Component {
   };
 
   onDelete = async () => {
-    localStorage.setItem("email", "");
-    const { email, credential } = this.context;
-    credential("");
-    await axios.delete("https://project-group16.herokuapp.com/signup/" + email);
-    // await axios.delete('http://localhost:5000/signup/' + email)
+    const email = this.context.userCredentials("email");
+    await axios
+      .delete(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.SIGNUP + email)
+      .then((res) => {
+        alert(res["data"["message"]]);
+        this.context.logoutUser();
+        this.props.history.push("/");
+      });
   };
 
   formValid = ({ formError, ...rest }) => {
@@ -93,10 +94,7 @@ class Profile extends Component {
   };
 
   onLogout = () => {
-    const { credential } = this.context;
-    credential("");
-    localStorage.setItem("email", "");
-    localStorage.setItem("login", false);
+    this.context.logoutUser();
   };
 
   render() {

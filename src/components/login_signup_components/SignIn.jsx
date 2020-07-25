@@ -54,7 +54,7 @@ class SignIn extends Component {
 
   onSubmit = async (e) => {
     e.preventDefault();
-    const { credential } = this.context;
+    const { setUserCredentials } = this.context;
     const { email, password } = this.state;
 
     if (this.formValid(this.state)) {
@@ -72,9 +72,7 @@ class SignIn extends Component {
                 password,
                 result: "",
               });
-              localStorage.setItem("email", email);
-              localStorage.setItem("login", true);
-              credential(email);
+              setUserCredentials(email, res.data[0]["userType"]);
               if (res.data[0]["userType"] && res.data[0]["userType"] === "A") {
                 this.props.history.push({
                   pathname: "/admin-home",

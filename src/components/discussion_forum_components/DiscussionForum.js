@@ -69,12 +69,12 @@ export default class DiscussionForum extends Component {
   async handleSubmit(e) {
     e.preventDefault();
     //checking user login
-    let { login } = this.context;
-    const { email } = this.context;
-    if (login === false) {
+    const email = this.context.userCredentials("email");
+    if (!this.context.isUserLoggedIn()) {
       this.props.history.push({
         pathname: "/signin/",
       });
+      return;
     } else {
       if (this.state.newques !== "") {
         let detail = {};
@@ -96,7 +96,7 @@ export default class DiscussionForum extends Component {
       }
     }
   }
-//render method to render the component
+  //render method to render the component
   render() {
     return (
       <div style={{ marginTop: 75 }}>

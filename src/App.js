@@ -9,7 +9,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import CreateBlog from "./components/CreateBlog";
 import "./App.css";
 import Navbar from "./components/Navbar";
-import UserContextProvider from "./contexts/UserContext";
+import UserContextProvider, { UserContext } from "./contexts/UserContext";
 import SearchApartment from "./components/property_components/SearchApartment";
 import SearchResults from "./components/property_components/ApartmentSearchResults";
 import Favourites from "./components/Favourites";
@@ -25,9 +25,10 @@ import Careers from "./components/career_components/Careers";
 import ApartmentDetail from "./components/property_components/ApartmentDetail";
 import AdminHomeComponent from "./components/admin_panel_components/AdminHome";
 import Apply from "./components/career_components/Apply";
-import EditApartmentComponent from "./components/admin_panel_components/EditApartment";
+import ApartmentManagementComponent from "./components/admin_panel_components/ApartmentManagement";
 
 class App extends Component {
+  static contextType = UserContext;
   render() {
     return (
       <>
@@ -61,13 +62,13 @@ class App extends Component {
             <Route exact path="/admin-home" component={AdminHomeComponent} />
             <Route
               exact
-              path="/edit-apartment/:id"
-              component={EditApartmentComponent}
+              path="/manage-apartment/:id"
+              component={ApartmentManagementComponent}
             />
             <Route
               exact
               path="/add-apartment"
-              component={EditApartmentComponent}
+              component={ApartmentManagementComponent}
             />
             <Route exact path="/job/apply" component={Apply} />
             <Redirect to="/" />

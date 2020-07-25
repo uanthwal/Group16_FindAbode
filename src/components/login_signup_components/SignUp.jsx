@@ -60,7 +60,7 @@ class SignUp extends Component {
 
   onSubmit = async (e) => {
     e.preventDefault();
-    const { credential } = this.context;
+    const { setUserCredentials } = this.context;
     let flag = false;
     const { username, email, password } = this.state;
 
@@ -74,9 +74,7 @@ class SignUp extends Component {
             });
           } else {
             flag = true;
-            localStorage.setItem("email", email);
-            localStorage.setItem("login", true);
-            credential(email);
+            setUserCredentials(email, "R");
             this.setState({
               result: "",
             });
@@ -95,7 +93,6 @@ class SignUp extends Component {
         email,
         password,
       };
-
       axios
         .post(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.SIGNUP_DETAILS, user)
         .then((res) => console.log(res.data));
@@ -104,7 +101,6 @@ class SignUp extends Component {
         email,
         password,
       });
-
       this.props.history.push({
         pathname: "/",
       });

@@ -50,7 +50,7 @@ class ApartmentDetail extends Component {
   handleTimeSpot = async (e) => {
     e.preventDefault();
     const { date, select, apartmentId } = this.state;
-    const { email } = this.context;
+    const email = this.context.userCredentials("email");
     if (date <= new Date()) {
       alert("Can not book the appointment at that date");
     } else {
@@ -88,7 +88,7 @@ class ApartmentDetail extends Component {
 
   render() {
     Modal.setAppElement("#root");
-    const { login } = this.context;
+    const login = this.context.isUserLoggedIn();
     const customStyles = {
       content: {
         top: "50%",

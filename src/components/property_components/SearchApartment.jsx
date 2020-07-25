@@ -5,6 +5,9 @@ import ApartmentCardComponent from "./ApartmentCard";
 import { APP_URL_CONFIG } from "../../App.Urls";
 import Axios from "axios";
 
+// created by Parsad Upendra(upendra@dal.ca)
+// BANNER ID: B00838095
+
 class SearchApartmentComponent extends Component {
   constructor(props) {
     super(props);

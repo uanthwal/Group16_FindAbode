@@ -34,7 +34,9 @@ router.route("/:email").delete((req, res) => {
   User.findOneAndDelete(
     { email: req.params.email },
     { useFindAndModify: false }
-  ).catch((err) => res.status(400).json("Error: " + err));
+  )
+    .then(() => res.json({ message: "User deleted successfully!" }))
+    .catch((err) => res.status(400).json("Error: " + err));
 });
 
 module.exports = router;
