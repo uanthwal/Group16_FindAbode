@@ -75,7 +75,6 @@ class SignIn extends Component {
               localStorage.setItem("email", email);
               localStorage.setItem("login", true);
               credential(email);
-              console.log("sign in");
               if (res.data[0]["userType"] && res.data[0]["userType"] === "A") {
                 this.props.history.push({
                   pathname: "/admin-home",

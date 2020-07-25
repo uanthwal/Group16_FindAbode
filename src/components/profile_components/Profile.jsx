@@ -25,7 +25,7 @@ class Profile extends Component {
   }
 
   async componentDidMount() {
-    const { email } = this.context;
+    const email = localStorage.getItem("email");
     const { data } = await axios.get(
       "https://project-group16.herokuapp.com/signup/" + email
     );
@@ -74,6 +74,7 @@ class Profile extends Component {
   };
 
   onDelete = async () => {
+    localStorage.setItem("email", "");
     const { email, credential } = this.context;
     credential("");
     await axios.delete("https://project-group16.herokuapp.com/signup/" + email);
@@ -94,7 +95,6 @@ class Profile extends Component {
   onLogout = () => {
     const { credential } = this.context;
     credential("");
-    console.log("sign out");
     localStorage.setItem("email", "");
     localStorage.setItem("login", false);
   };
