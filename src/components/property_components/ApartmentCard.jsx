@@ -1,11 +1,13 @@
+/**
+ * @author by Parsad Upendra(upendra@dal.ca)
+ * BANNER ID: B00838095
+ */
+
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import "../../css/apartment/ApartmentCard.scss";
 import Axios from "axios";
 import { APP_URL_CONFIG } from "../../App.Urls";
-
-// created by Parsad Upendra(upendra@dal.ca)
-// BANNER ID: B00838095
 
 class ApartmentCardComponent extends Component {
   constructor(props) {

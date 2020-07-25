@@ -1,13 +1,15 @@
-import React, { Component } from "react";
+/**
+ * @author by Parsad Upendra(upendra@dal.ca)
+ * BANNER ID: B00838095
+ */
+
+ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import axios from "axios";
 import "../../css/search/SearchResults.scss";
 import { APP_URL_CONFIG } from "../../App.Urls";
 import ApartmentCardComponent from "../property_components/ApartmentCard";
 import { UserContext } from "../../contexts/UserContext";
-
-// created by Parsad Upendra(upendra@dal.ca)
-// BANNER ID: B00838095
 
 class AdminHomeComponent extends Component {
   static contextType = UserContext;
