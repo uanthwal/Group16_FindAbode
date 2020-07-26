@@ -9,7 +9,7 @@ import CollapseQuestion from './CollapseQuestion';
 import axios from "axios";
 import {APP_URL_CONFIG} from "../../../App.Urls";
 
-//Class for FAQ  component
+//Class for FAQs  component
 export default class FAQs extends Component {
     constructor(props) {
         super(props);

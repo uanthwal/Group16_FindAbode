@@ -34,7 +34,7 @@ export var APP_URL_CONFIG = {
 };
 
 /**
- * This function was created to avoid changing the URLs while development
+ * This function was created to avoid changing the URLs while development.
  */
 
 export function getConfigs() {
