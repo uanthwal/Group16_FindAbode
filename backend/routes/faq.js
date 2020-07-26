@@ -6,7 +6,7 @@ const router = require("express").Router();
 let faqModel = require("../models/faq.model");
 
 // creating routes for faqs table to query the db
-router.route("/").get((req, res) => {
+router.route("/get-faq-list").get((req, res) => {
 
     let resp_data = [];
     faqModel.find({}, function (err, data) {

@@ -24,8 +24,7 @@ export default class FAQs extends Component {
     getFAQs = async () => {
         await axios
             .get(
-                APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.FAQ,
-                {}
+                APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.FAQ
             )
             .then((res) => {
                 this.setState({

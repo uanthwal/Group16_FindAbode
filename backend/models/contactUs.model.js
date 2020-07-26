@@ -3,7 +3,7 @@
  * BANNER ID: B00847127
  */
 const mongoose = require("mongoose");
-//creating contactus table schema
+//creating contactUs table schema
 const contactSchema = new mongoose.Schema({
     f_name: {
         type: String,
