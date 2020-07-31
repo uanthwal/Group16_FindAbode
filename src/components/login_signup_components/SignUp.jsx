@@ -65,22 +65,28 @@ class SignUp extends Component {
   onSubmit = async (e) => {
     e.preventDefault();
     const { setUserCredentials } = this.context;
-    let flag = false;
     const { username, email, password } = this.state;
-
+    let payload = {
+      username: username,
+      password: password,
+      email: email,
+    };
     if (this.formValid(this.state)) {
       await axios
-        .get(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.SIGNUP + email)
+        .post(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.USER_SIGNUP, payload)
         .then((res) => {
-          if (res.data.length !== 0) {
+          if (res.data.code === 101) {
             this.setState({
-              result: "This email address has been taken",
+              result: res.data.message,
             });
           } else {
-            flag = true;
             setUserCredentials(email, "R");
             this.setState({
               result: "",
+            });
+            alert(res.data.message);
+            this.props.history.push({
+              pathname: "/",
             });
           }
         });
@@ -88,25 +94,6 @@ class SignUp extends Component {
       this.setState({
         result:
           "Please fill out all the entry and make sure you meet all the requirement",
-      });
-    }
-
-    if (flag) {
-      const user = {
-        username,
-        email,
-        password,
-      };
-      axios
-        .post(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.SIGNUP_DETAILS, user)
-        .then((res) => console.log(res.data));
-      this.setState({
-        username,
-        email,
-        password,
-      });
-      this.props.history.push({
-        pathname: "/",
       });
     }
   };

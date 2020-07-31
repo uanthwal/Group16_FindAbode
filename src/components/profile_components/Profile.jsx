@@ -36,10 +36,20 @@ class Profile extends Component {
       return;
     }
     const email = this.context.userCredentials("email");
-    const { data } = await axios.get(
-      APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.SIGNUP + email
-    );
-    this.setState({ detail: data[0] });
+    await axios
+      .post(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.GET_USER_INFO, {
+        email: email,
+      })
+      .then((res) => {
+        if (!res.data || res.data.code == 104) {
+          this.props.history.push({
+            pathname: "/signin/",
+          });
+          return;
+        } else {
+          this.setState({ detail: res.data.data });
+        }
+      });
   }
 
   onChange = (e) => {
@@ -63,19 +73,26 @@ class Profile extends Component {
   onUpdate = async (e, email, username, password) => {
     e.preventDefault();
     if (this.formValid(this.state)) {
-      this.setState({
-        result: "Update Successful!",
-        green: true,
-      });
       const user = { username, password };
-      await axios.post(
-        APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.SIGNUP + email,
-        user
-      );
+      let payload = {
+        email: email,
+        username: user.username,
+        password: user.password,
+      };
+      await axios
+        .post(
+          APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.UPDATE_USER_INFO,
+          payload
+        )
+        .then((res) => {
+          this.setState({
+            result: res.data.message,
+            green: true,
+          });
+        });
     } else {
       this.setState({
-        result:
-          "Please fill out all the entry and make sure you meet all the requirement",
+        result: "Please enter the new user name or password!",
         green: false,
       });
     }
@@ -84,23 +101,38 @@ class Profile extends Component {
   onDelete = async () => {
     const email = this.context.userCredentials("email");
     await axios
-      .delete(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.SIGNUP + email)
+      .delete(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.DELETE_USER + email)
       .then((res) => {
-        alert(res["data"["message"]]);
+        alert(res.data.message);
         this.context.logoutUser();
         this.props.history.push("/");
       });
   };
 
   formValid = ({ formError, ...rest }) => {
-    let valid = true;
-    Object.values(formError).forEach((val) => {
-      val.length > 0 && (valid = false);
+    this.setState({
+      result: "",
+      green: false,
     });
-    Object.values(rest).forEach((val) => {
-      val === undefined && (valid = false);
-    });
-    return valid;
+    if (
+      (rest.username == "" ||
+        rest.username == null ||
+        rest.username == undefined) &&
+      (rest.password == "" ||
+        rest.password == null ||
+        rest.password == undefined)
+    ) {
+      return false;
+    }
+    return true;
+    // let valid = true;
+    // Object.values(formError).forEach((val) => {
+
+    // });
+    // Object.values(rest).forEach((val) => {
+    //   val === undefined && (valid = false);
+    // });
+    // return valid;
   };
 
   onLogout = () => {
@@ -127,7 +159,7 @@ class Profile extends Component {
                   {result}
                 </span>
               )}
-              <label htmlFor="email">Account</label>
+              <label htmlFor="email">Email</label>
               <input
                 className="input-field"
                 type="email"
@@ -136,7 +168,7 @@ class Profile extends Component {
                 value={detail.email}
                 readOnly
               />
-              <label htmlFor="username">Enter New Username</label>
+              <label htmlFor="username">Name</label>
               <input
                 className={
                   formError.username.length > 0
@@ -154,7 +186,7 @@ class Profile extends Component {
               {formError.username.length > 0 && (
                 <span className="error-message">{formError.username}</span>
               )}
-              <label htmlFor="password">Enter New Password</label>
+              <label htmlFor="password">Password</label>
               <input
                 className={
                   formError.password.length > 0
@@ -164,7 +196,7 @@ class Profile extends Component {
                 type="password"
                 name="password"
                 id="password"
-                placeholder={detail.password}
+                placeholder="********"
                 value={password || ""}
                 onChange={this.onChange}
                 noValidate

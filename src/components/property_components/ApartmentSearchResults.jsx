@@ -1,7 +1,7 @@
 /**
  * @author Parsad Upendra(upendra@dal.ca)
  * BANNER ID: B00838095
-*/
+ */
 
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
@@ -47,7 +47,7 @@ class SearchResultComponent extends Component {
       this.getSearchResults();
     }
   }
-  
+
   render() {
     return (
       <div className="search-r-container">
@@ -55,11 +55,14 @@ class SearchResultComponent extends Component {
           Search Results for "{this.state.searchText}""
         </div>
         <div className="grid-row">
-        {this.state.searchResults.map((element) => (
-        <ApartmentCardComponent cardLoadReqFrom="R" cardContent={element} key={element._id}/>
-        ))}
+          {this.state.searchResults.map((element) => (
+            <ApartmentCardComponent
+              cardLoadReqFrom="R"
+              cardContent={element}
+              key={element._id}
+            />
+          ))}
         </div>
-        
       </div>
     );
   }

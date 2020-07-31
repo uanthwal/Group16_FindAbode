@@ -1,13 +1,14 @@
 //Author: Simranbanu Roshansha Diwan (B00833562)
 
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const questionSchema = new mongoose.Schema({
   topic: {
     type: String,
     required: true,
-    unique:true,
-  },email: {
+    unique: true,
+  },
+  email: {
     type: String,
     required: true,
   },
@@ -17,6 +18,6 @@ const questionSchema = new mongoose.Schema({
   },
 });
 
-const Questionforum = mongoose.model('Questionforum', questionSchema);
+const Questionforum = mongoose.model("Questionforum", questionSchema);
 
 module.exports = Questionforum;

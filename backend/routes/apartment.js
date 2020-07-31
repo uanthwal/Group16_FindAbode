@@ -175,7 +175,10 @@ router.route("/delete").post((req, res) => {
         data: {},
       });
     } else {
-      MostExploredPlaces.remove({'apartment_id':apartment_id}, function(err, data) {
+      MostExploredPlaces.remove({ apartment_id: apartment_id }, function (
+        err,
+        data
+      ) {
         console.log(data);
         res.send({
           code: 200,

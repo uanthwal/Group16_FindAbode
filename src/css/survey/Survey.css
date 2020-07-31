@@ -1,27 +1,26 @@
 /**
  * @author by Prerna Jain
  */
-.outer-form{
-    padding-top: 70px;
-    align-items: center;
+.outer-form {
+  padding-top: 70px;
+  align-items: center;
 }
 
-.question-box{
-   margin: 20%;
-   margin-top: 2%;
-   padding-left: 5%;
-    border: 1px solid black;
-    display: flex;
+.question-box {
+  margin: 20%;
+  margin-top: 2%;
+  padding-left: 5%;
+  border: 1px solid black;
+  display: flex;
   /* justify-content: center; */
 }
 
-.button-question:hover{
-    background-color: #036cddc0;
+.button-question:hover {
+  background-color: #036cddc0;
 }
-.button-question{
-    background-color:#007bff;
-    color: white;
-    border-color: #007bff;
-    border-radius: .25rem;
+.button-question {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+  border-radius: 0.25rem;
 }
-

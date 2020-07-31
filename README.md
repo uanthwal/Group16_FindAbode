@@ -1,7 +1,7 @@
-# Project 
+# Project
 
-* Date Created: 13 06 2020
-* Last Modification Date: 13 06 2020
+- Date Created: 13 06 2020
+- Last Modification Date: 13 06 2020
 
 ## Authors
 

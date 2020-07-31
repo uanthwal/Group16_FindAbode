@@ -10,8 +10,9 @@ const emailRegex = RegExp(
 
 /**
  * React Class Component to management user sign in
- * @author Ruize Nie
+ * @author Ruize Nie, Parsad Upendra
  */
+
 class SignIn extends Component {
   static contextType = UserContext;
   constructor(props) {
@@ -60,35 +61,37 @@ class SignIn extends Component {
     e.preventDefault();
     const { setUserCredentials } = this.context;
     const { email, password } = this.state;
+    let payload = {
+      password: password,
+      email: email,
+    };
 
     if (this.formValid(this.state)) {
       await axios
-        .get(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.SIGNUP + email)
+        .post(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.USER_SIGNIN, payload)
         .then((res) => {
-          if (res.data.length === 0) {
+          if (res.data.code === 102 || res.data.code === 103) {
             this.setState({
-              result: "This email doesn't exist",
+              result: res.data.message,
             });
           } else {
-            if (password === res.data[0].password) {
-              this.setState({
-                email,
-                password,
-                result: "",
+            if (!res.data.data) {
+              alert("Something went wrong. Please try again later.");
+              return;
+            }
+            this.setState({
+              result: "",
+            });
+            let userType = res.data.data["userType"];
+            let username = res.data.data["username"];
+            setUserCredentials(email, userType, username);
+            if (userType && userType === "A") {
+              this.props.history.push({
+                pathname: "/admin-home",
               });
-              setUserCredentials(email, res.data[0]["userType"]);
-              if (res.data[0]["userType"] && res.data[0]["userType"] === "A") {
-                this.props.history.push({
-                  pathname: "/admin-home",
-                });
-              } else {
-                this.props.history.push({
-                  pathname: "/",
-                });
-              }
             } else {
-              this.setState({
-                result: "The password doesn't match",
+              this.props.history.push({
+                pathname: "/",
               });
             }
           }

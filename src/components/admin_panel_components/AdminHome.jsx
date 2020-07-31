@@ -47,7 +47,7 @@ class AdminHomeComponent extends Component {
 
   // Method to redirect the user to enable addition of new place
   onChangeSearchIp() {
-    if (this.state.searchIp.value.trim() != "") {
+    if (this.state.searchIp.value.trim() !== "") {
       let tempSearchTxt = this.state.searchIp.value;
       let filteredApartments = this.state.placesDataCopy.filter(function (
         element

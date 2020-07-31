@@ -3,14 +3,14 @@ import React, { createContext, Component } from "react";
 export const UserContext = createContext();
 
 class UserContextProvider extends Component {
-  
   state = {
     isUserLoggedIn: false,
   };
 
-  setUserCredentials = (email, userType) => {
+  setUserCredentials = (email, userType, username) => {
     localStorage.setItem("email", email);
     localStorage.setItem("userType", userType);
+    localStorage.setItem("username", username);
     this.setState({ isUserLoggedIn: this.isUserLoggedIn() });
   };
 
@@ -22,8 +22,10 @@ class UserContextProvider extends Component {
   userCredentials(type) {
     let uType = localStorage.getItem("userType");
     let email = localStorage.getItem("email");
-    if (type == "email") return email;
-    if (type == "uType") return uType;
+    let username = localStorage.getItem("username");
+    if (type === "email") return email;
+    if (type === "uType") return uType;
+    if (type === "username") return username;
   }
 
   isUserLoggedIn() {

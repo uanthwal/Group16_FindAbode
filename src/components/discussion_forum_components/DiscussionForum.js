@@ -77,20 +77,17 @@ export default class DiscussionForum extends Component {
       return;
     } else {
       if (this.state.newques !== "") {
-        let detail = {};
-        const { data } = await axios.get(
-          APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.SIGNUP + email
-        );
-        detail = data[0];
+        const username = this.context.userCredentials("username");
         //sending data to the backend
         axios
           .post(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.ADD_TOPIC, {
             topic: this.state.newques,
             email: email,
-            user: detail.username,
+            user: username,
           })
-          .then((res) => console.log(res.data));
-        window.location.reload();
+          .then((res) => {
+            window.location.reload();
+          });
       } else {
         alert("Please write your response.");
       }

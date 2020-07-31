@@ -1,7 +1,7 @@
 /**
  * @author Parsad Upendra(upendra@dal.ca)
  * BANNER ID: B00838095
-*/
+ */
 
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";

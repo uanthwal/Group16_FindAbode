@@ -7,11 +7,11 @@ const blogSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  p1:{
+  p1: {
     type: String,
     required: true,
   },
-  p2:{
+  p2: {
     type: String,
     required: true,
   },

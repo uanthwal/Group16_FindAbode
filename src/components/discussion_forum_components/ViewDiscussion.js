@@ -71,7 +71,7 @@ export default class ViewDiscussion extends Component {
     e.preventDefault();
     //checking user login
     const email = this.context.userCredentials("email");
-    let usrdata = [];
+    const username = this.context.userCredentials("username");
     if (!this.context.isUserLoggedIn()) {
       this.props.history.push({
         pathname: "/signin/",
@@ -79,12 +79,6 @@ export default class ViewDiscussion extends Component {
       return;
     } else {
       if (this.state.newans != "") {
-        let detail = {};
-        const { data } = await axios.get(
-          APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.SIGNUP + email
-        );
-        detail = data[0];
-        //sending data to backend
         axios
           .post(
             APP_URL_CONFIG.BASE_URL +
@@ -94,11 +88,12 @@ export default class ViewDiscussion extends Component {
             {
               ans: this.state.newans,
               email: email,
-              user: detail.username,
+              user: username,
             }
           )
-          .then((res) => console.log(res.data));
-        window.location.reload();
+          .then((res) => {
+            window.location.reload();
+          });
       } else {
         alert("Please write your response.");
       }

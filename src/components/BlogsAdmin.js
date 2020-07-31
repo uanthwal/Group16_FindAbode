@@ -8,7 +8,6 @@ import axios from "axios";
 import blogimg from "../images/landingpage_sub.jpg";
 import { UserContext } from "../contexts/UserContext";
 
-
 //resuable blogs component which is iterated as per number of blogs while rendering
 const Blog = (props) => (
   <div>

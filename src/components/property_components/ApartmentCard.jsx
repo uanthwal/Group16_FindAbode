@@ -1,7 +1,7 @@
 /**
  * @author Parsad Upendra(upendra@dal.ca)
  * BANNER ID: B00838095
-*/
+ */
 
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
@@ -26,7 +26,7 @@ class ApartmentCardComponent extends Component {
       APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.DELETE_APARTMENT,
       { apartment_id: id }
     ).then((res) => {
-      alert(res['data']['message']);
+      alert(res["data"]["message"]);
       this.props.onDeleteHandler();
     });
   };
@@ -86,7 +86,8 @@ class ApartmentCardComponent extends Component {
                 >
                   <i className="fa fa-edit"></i>
                 </button>
-                <button className="delete"
+                <button
+                  className="delete"
                   onClick={this.onClickDeleteIcon.bind(
                     this,
                     this.state.cardContent._id

@@ -3,9 +3,9 @@
  * BANNER ID: B00847127
  */
 .selected {
-	background-color: white;
+  background-color: white;
 }
 
 li {
-	cursor: pointer;
+  cursor: pointer;
 }

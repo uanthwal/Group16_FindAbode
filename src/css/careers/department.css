@@ -4,9 +4,9 @@ email: ruminder.singh@dal.ca
 ----------------------------------------------------------*/
 
 .selected {
-	background-color: white;
+  background-color: white;
 }
 
 li {
-	cursor: pointer;
+  cursor: pointer;
 }
