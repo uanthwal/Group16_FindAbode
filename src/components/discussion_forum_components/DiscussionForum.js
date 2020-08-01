@@ -73,6 +73,7 @@ export default class DiscussionForum extends Component {
     if (!this.context.isUserLoggedIn()) {
       this.props.history.push({
         pathname: "/signin/",
+        search: "?r=" + window.location.pathname,
       });
       return;
     } else {

@@ -85,14 +85,40 @@ class SignIn extends Component {
             let userType = res.data.data["userType"];
             let username = res.data.data["username"];
             setUserCredentials(email, userType, username);
-            if (userType && userType === "A") {
-              this.props.history.push({
-                pathname: "/admin-home",
-              });
+            debugger;
+            let redirectTo = this.props.location.search;
+            redirectTo =
+              redirectTo !== undefined ? redirectTo.split("=")[1] : null;
+            if (
+              null === redirectTo ||
+              undefined === redirectTo ||
+              redirectTo === ""
+            ) {
+              if (userType && userType === "A") {
+                this.props.history.push({
+                  pathname: "/admin-home",
+                });
+              } else {
+                this.props.history.push({
+                  pathname: "/",
+                });
+              }
             } else {
-              this.props.history.push({
-                pathname: "/",
-              });
+              if (this.isAdminPage(redirectTo)) {
+                if (userType && userType === "A") {
+                  this.props.history.push({
+                    pathname: redirectTo,
+                  });
+                } else {
+                  this.props.history.push({
+                    pathname: "/",
+                  });
+                }
+              } else {
+                this.props.history.push({
+                  pathname: redirectTo,
+                });
+              }
             }
           }
         });
@@ -103,6 +129,20 @@ class SignIn extends Component {
       });
     }
   };
+
+  isAdminPage(page) {
+    let pagesAccessibleToAdmin = [
+      "admin-home",
+      "blogadmin",
+      "createblog",
+      "editblog",
+      "manage-apartment",
+      "add-apartment",
+      "/job/apply",
+      "/admin/job",
+    ];
+    return pagesAccessibleToAdmin.indexOf(page) > -1 ? true : false;
+  }
 
   render() {
     const { email, password, result, formError } = this.state;

@@ -60,6 +60,7 @@ class ApartmentManagementComponent extends Component {
     if (!this.context.isUserLoggedIn()) {
       this.props.history.push({
         pathname: "/signin/",
+        search: "?r=admin-home",
       });
       return;
     }

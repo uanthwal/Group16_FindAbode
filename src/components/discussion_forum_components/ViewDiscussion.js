@@ -75,6 +75,7 @@ export default class ViewDiscussion extends Component {
     if (!this.context.isUserLoggedIn()) {
       this.props.history.push({
         pathname: "/signin/",
+        search: "?r=" + window.location.pathname,
       });
       return;
     } else {
