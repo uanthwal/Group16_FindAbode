@@ -99,7 +99,8 @@ export default class DiscussionForum extends Component {
     return (
       <div style={{ marginTop: 75 }}>
         <h3 className="text-center">Discussions</h3>
-        <table className="table">
+        <div className="m-3">
+        <table className="table ">
           <thead className="thead-light">
             <tr>
               <th>Topic</th>
@@ -108,6 +109,7 @@ export default class DiscussionForum extends Component {
           </thead>
           <tbody>{this.questionList()}</tbody>
         </table>
+        </div>
         <div className="m-5">
           <form onSubmit={this.handleSubmit}>
             <div>

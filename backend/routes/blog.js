@@ -7,7 +7,6 @@ let Blog = require("../models/blog.model");
 router.route("/").get((req, res) => {
   Blog.find({})
     .then((blog) => {
-      console.log(blog);
       res.json(blog);
     })
     .catch((err) => res.status(400).json("Error: " + err));
@@ -46,7 +45,6 @@ router.route("/modifyblog").post((req, res) => {
 
 //deleting an existing blog
 router.route("/deleteblog").post((req, res) => {
-  console.log(req.body.topic);
   Blog.findOneAndDelete(
     { topic: req.body.topic },
     { useFindAndModify: false }
