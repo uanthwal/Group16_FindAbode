@@ -1,0 +1,92 @@
+/**
+ * @author Parsad Upendra(upendra@dal.ca)
+ * BANNER ID: B00838095
+ */
+@media screen and (min-width: 760px) {
+  .edit-container {
+    margin: 8% auto;
+    width: 50%;
+  }
+  .edit-container .info-block {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 8px auto;
+  }
+  .edit-container .info-block .first-blck {
+    -ms-flex-preferred-size: 30%;
+        flex-basis: 30%;
+    display: inline-block;
+    font-weight: 600;
+  }
+  .edit-container .info-block .cntnt-center {
+    text-align: center;
+    -ms-flex-preferred-size: 100% !important;
+        flex-basis: 100% !important;
+  }
+  .edit-container .info-block .second-blck {
+    -ms-flex-preferred-size: 70%;
+        flex-basis: 70%;
+    display: inline-block;
+  }
+  .edit-container .info-block .second-blck input {
+    width: 60%;
+    padding: 8px 10px;
+  }
+  .edit-container .info-block .second-blck textarea {
+    width: 60%;
+    padding: 8px 10px;
+    height: 118px;
+    resize: none;
+  }
+  .edit-container .info-block .second-blck .img-display {
+    height: 100px;
+    width: 100px;
+    padding: 5px;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 414px) {
+  .edit-container {
+    margin: 90px auto;
+    padding: 5%;
+  }
+  .edit-container .info-block {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 8px auto;
+  }
+  .edit-container .info-block .first-blck {
+    -ms-flex-preferred-size: 30%;
+        flex-basis: 30%;
+    display: inline-block;
+    font-weight: 600;
+  }
+  .edit-container .info-block .cntnt-center {
+    text-align: center;
+    -ms-flex-preferred-size: 100% !important;
+        flex-basis: 100% !important;
+  }
+  .edit-container .info-block .second-blck {
+    -ms-flex-preferred-size: 70%;
+        flex-basis: 70%;
+    display: inline-block;
+  }
+  .edit-container .info-block .second-blck input {
+    width: 100%;
+    padding: 8px 10px;
+  }
+  .edit-container .info-block .second-blck textarea {
+    width: 100%;
+    padding: 8px 10px;
+    height: 118px;
+    resize: none;
+  }
+  .edit-container .info-block .second-blck .img-display {
+    height: 100px;
+    width: 100px;
+    padding: 5px;
+  }
+}
+/*# sourceMappingURL=Admin.css.map */

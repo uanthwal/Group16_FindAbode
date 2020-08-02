@@ -1,0 +1,84 @@
+/**
+ * @author Parsad Upendra(upendra@dal.ca)
+ * BANNER ID: B00838095
+*/
+@media screen and (min-width: 760px) {
+  .search-r-container {
+    margin: 5%;
+  }
+  .search-r-container .action-btn {
+    text-align: center;
+  }
+  .search-r-container .search-r-title {
+    text-align: center;
+    font-size: 24px;
+    color: black;
+  }
+  .search-r-container .search-results-section {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  .search-r-container .search-results-section .search-r-txt-header {
+    margin-top: 120px;
+    display: block;
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+  }
+  .search-r-container .search-results-section .search-r-txt-header input {
+    width: 50%;
+    padding: 8px 15px;
+  }
+  .search-r-container .grid-row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin: 0px 5%;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 414px) {
+  .search-r-container {
+    margin: 80px 5%;
+  }
+  .search-r-container .action-btn {
+    text-align: center;
+  }
+  .search-r-container .search-r-title {
+    text-align: center;
+    font-size: 20px;
+    color: black;
+  }
+  .search-r-container .search-results-section .search-r-txt-header {
+    display: block;
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+  }
+  .search-r-container .search-results-section .search-r-txt-header input {
+    width: 100%;
+    padding: 8px 10px;
+  }
+  .search-r-container .grid-row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin: 0px;
+  }
+}
+/*# sourceMappingURL=SearchResults.css.map */
