@@ -17,29 +17,32 @@ class Footer extends Component {
               </Link>
             </li>
             <li>
-              <Link to="" className="footer-link">
-                Privacy & cookies
+              <Link to="/faq" className="footer-link">
+                FAQ
               </Link>
             </li>
             <li>
-              <Link to="" className="footer-link">
-                Terms of use
+              <Link to="/blogs" className="footer-link">
+                Blogs
               </Link>
             </li>
             <li>
-              <Link to="" className="footer-link">
-                Safety & eco
+              <Link to="/about" className="footer-link">
+                About
               </Link>
             </li>
             <li>
-              <Link to="" className="footer-link">
-                About our ads
+              <Link to="/survey" className="footer-link">
+                Survey
               </Link>
             </li>
             <li>
-              <Link to="" className="footer-link">
-                &copy; FindAbode 2020
+              <Link to="/discussionforum1" className="footer-link">
+                Discussion Forum
               </Link>
+            </li>
+            <li>
+              <div className="footer-link">&copy; FindAbode 2020</div>
             </li>
           </ul>
         </div>

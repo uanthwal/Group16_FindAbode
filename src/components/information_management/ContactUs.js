@@ -235,7 +235,6 @@ class ContactUs extends Component {
           </div>
           <br />
         </div>
-        <Links />
         <Footer />
       </>
     );

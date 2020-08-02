@@ -86,7 +86,6 @@ export default class NeedHelp extends Component {
             {querySection}
           </div>
         </div>
-        <Links />
         <Footer />
       </div>
     );

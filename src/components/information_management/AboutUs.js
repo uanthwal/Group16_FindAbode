@@ -174,7 +174,6 @@ class AboutUs extends Component {
             </p>
           </div>
         </div>
-        <Links />
         <Footer />
       </div>
     );

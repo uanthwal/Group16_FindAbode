@@ -100,15 +100,15 @@ export default class DiscussionForum extends Component {
       <div style={{ marginTop: 75 }}>
         <h3 className="text-center">Discussions</h3>
         <div className="m-3">
-        <table className="table ">
-          <thead className="thead-light">
-            <tr>
-              <th>Topic</th>
-              <th>User</th>
-            </tr>
-          </thead>
-          <tbody>{this.questionList()}</tbody>
-        </table>
+          <table className="table ">
+            <thead className="thead-light">
+              <tr>
+                <th>Topic</th>
+                <th>User</th>
+              </tr>
+            </thead>
+            <tbody>{this.questionList()}</tbody>
+          </table>
         </div>
         <div className="m-5">
           <form onSubmit={this.handleSubmit}>
@@ -126,7 +126,6 @@ export default class DiscussionForum extends Component {
         </div>
         <links />
         <footer />
-        <Links />
         <Footer />
       </div>
     );

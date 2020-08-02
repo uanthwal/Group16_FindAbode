@@ -66,7 +66,6 @@ class Blogs extends Component {
         <h2 className="text-center">Blogs</h2>
         <br />
         <div>{this.blogList()}</div>
-        <Links />
         <Footer />
       </div>
     );

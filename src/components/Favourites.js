@@ -114,7 +114,6 @@ class Favourites extends Component {
             })}
           </div>
         </div>
-        <Links />
         <Footer />
       </div>
     );
