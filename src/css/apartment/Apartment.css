@@ -92,8 +92,8 @@
 }
 .property-name {
   font-size: 26px;
-  font-weight: 600;
-  line-height: 30px;
+  font-weight:  600;
+  line-height:  30px;
 }
 .property-name-details {
   font-size: 1.75rem;
@@ -119,6 +119,7 @@
   align-items: center;
   margin-top: 8px;
   min-width: 0px;
+
 }
 
 .occupancy_list {
@@ -132,7 +133,7 @@
   align-items: center;
 }
 
-.rating-symbol {
+.rating-symbol{
   font-size: 18px;
   color: darkred;
   margin-right: 4px;
@@ -148,7 +149,7 @@
   margin-left: 315px;
 }
 
-.rating-symbol-data {
+.rating-symbol-data{
   margin-right: 4px;
   font-size: 18px;
   color: darkred;
