@@ -52,7 +52,7 @@ export function getConfigs() {
     };
   } else {
     return {
-      BASE_URL: "https://project-group16.herokuapp.com",
+      BASE_URL: "https://tutorial16-group16.herokuapp.com",
     };
   }
 }
