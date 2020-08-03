@@ -28,6 +28,7 @@ import Apply from "./components/career_components/Apply";
 import ApartmentManagementComponent from "./components/admin_panel_components/ApartmentManagement";
 import Survey from "./components/survey_form_components/SurveyForm";
 import AdminJob from "./components/career_components/AdminJob";
+import Rating from "./components/rating_component/Rating";
 
 class App extends Component {
   static contextType = UserContext;
@@ -75,6 +76,7 @@ class App extends Component {
             />
             <Route exact path="/job/apply" component={Apply} />
             <Route exact path="/admin/job" component={AdminJob} />
+            <Route exact path="/rating" component={Rating}/>
             <Redirect to="/" />
           </Switch>
         </UserContextProvider>
