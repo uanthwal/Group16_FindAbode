@@ -140,10 +140,10 @@
   font-family: Airmoji_Standalone;
 }
 
-.rating-symbol-position {
+/* .rating-symbol-position {
   font-size: 1.25rem;
   margin-left: 315px;
-}
+} */
 
 .rating-symbol-data{
   margin-right: 4px;

@@ -1,0 +1,193 @@
+@media screen and (min-width: 760px) {
+  .detailed-view-container {
+    margin: 100px auto;
+    width: 80%;
+    .apart-desc-view {
+      .apt-desc {
+        margin: 15px auto;
+      }
+    }
+    .view-title {
+      font-size: 20px;
+      display: block;
+      font-weight: 600;
+    }
+    .apart-title {
+      text-align: center;
+    }
+    .property-glance {
+      text-align: center;
+      margin: 2%;
+      .glance-item {
+        margin: 1%;
+        i {
+          margin: 0.5%;
+        }
+      }
+    }
+    .slider-calendar-container {
+      display: flex;
+    }
+    .aprt-highlights {
+      margin: 2% auto;
+      text-align: left;
+      .highlight-item {
+        margin: 1%;
+        i {
+          margin: 0.5%;
+        }
+      }
+    }
+    .add-to-fav-view {
+      margin: 2% auto;
+    }
+    .amenities-view {
+      margin: 15px auto;
+      ul {
+        list-style: none;
+        padding-left: 0px;
+        margin: 0;
+      }
+    }
+    .comments-view {
+      margin: 15px auto;
+      ul {
+        list-style: none;
+        padding-left: 0px;
+        margin: 0;
+        li {
+          margin: 0.5% auto;
+        }
+      }
+    }
+  }
+  .ratings-view {
+    .rating-item {
+      display: flex;
+      margin: 1% auto;
+      .rating-title {
+        flex: 1;
+      }
+      .rating-bar-section {
+        flex: 1 1;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .rating-bar {
+          flex-basis: 85%;
+          background: rgb(139, 187, 178);
+          height: 3px;
+          position: relative;
+        }
+        .rating-value {
+          flex-basis: 10%;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 0px) and (max-width: 414px) {
+  .detailed-view-container {
+    margin: 100px auto;
+    width: 96%;
+    .ratings-view {
+      .rating-item {
+        display: flex;
+        margin: 1% auto;
+        .rating-title {
+          flex: 1;
+        }
+        .rating-bar-section {
+          flex: 1 1;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .rating-bar {
+            flex-basis: 70%;
+            background: rgb(139, 187, 178);
+            height: 3px;
+            position: relative;
+          }
+          .rating-value {
+            flex-basis: 20%;
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+    .carousel {
+      width: 100%;
+    }
+    .book-card {
+      height: 450px;
+      width: 98%;
+      margin: 1%;
+      border: 1px solid #dfe1e5;
+      box-shadow: 0 5px 5px rgba(0, 0, 0, 0.09);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      background-color: #f3f3f3;
+    }
+    .apart-desc-view {
+      .apt-desc {
+        margin: 15px auto;
+      }
+    }
+    .view-title {
+      font-size: 20px;
+      display: block;
+      font-weight: 600;
+    }
+    .apart-title {
+      text-align: center;
+    }
+    .property-glance {
+      text-align: center;
+      margin: 3% 1%;
+      .glance-item {
+        margin: 1%;
+        i {
+          margin: 0.5%;
+        }
+      }
+    }
+    .slider-calendar-container {
+      display: flex;
+      flex-flow: row wrap;
+    }
+    .aprt-highlights {
+      margin: 2% auto;
+      text-align: left;
+      .highlight-item {
+        margin: 1%;
+        i {
+          margin: 0.5%;
+        }
+      }
+    }
+    .add-to-fav-view {
+      margin: 2% auto;
+    }
+    .amenities-view {
+      margin: 15px auto;
+      ul {
+        list-style: none;
+        padding-left: 0px;
+        margin: 0;
+      }
+    }
+    .comments-view {
+      margin: 15px auto;
+      ul {
+        list-style: none;
+        padding-left: 0px;
+        margin: 0;
+      }
+    }
+  }
+}
