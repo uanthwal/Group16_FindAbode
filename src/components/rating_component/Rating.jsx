@@ -11,16 +11,17 @@ import '../../css/rating/rating.css';
 export default class Rating extends Component {
 	state = {
 		applicationSubmitted: false
-	}
+	};
 	handleSubmit = async (event) => {
 		event.preventDefault();
 		const data = new FormData(event.target);
 		const query = new URLSearchParams(this.props.location.search);
 		let apartmentId = data.get('apartment_id');
-		if (query.get('apartment_id') != null) {
-			apartmentId = query.get('apartment_id');
+		if (query.get('apartment_id') == null) {
+			alert('You are not eligible to fill this survey or kindly check the link sent to you');
+			return;
 		}
-		alert(apartmentId);
+		apartmentId = query.get('apartment_id');
 		await axios
 			.post(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.SAVE_RATING, {
 				cleanliness: data.get('cleanliness'),
@@ -28,20 +29,20 @@ export default class Rating extends Component {
 				communication: data.get('communication'),
 				comment: data.get('comment'),
 				accuracy: data.get('accuracy'),
-				location: data.get('location'),
+				location: data.get('location')
 			})
 			.then((response) => {
 				if (response.status === 200) {
 					this.setState({ applicationSubmitted: true });
 				} else {
-					alert("Error occured. Please try again");
+					alert('Error occured. Please try again');
 				}
 			});
 	};
 	render() {
 		let ratingView;
 		if (this.state.applicationSubmitted) {
-			ratingView = <h3>Form submitted succesfully</h3>
+			ratingView = <h3>Form submitted succesfully</h3>;
 		} else {
 			ratingView = <form onSubmit={this.handleSubmit}>
 						<h3>Rate the visited property</h3>
@@ -107,9 +108,7 @@ export default class Rating extends Component {
 		}
 		return (
 			<div className="ratingPage">
-				<div className="inner">
-					{ratingView}
-				</div>
+				<div className="inner">{ratingView}</div>
 			</div>
 		);
 	}
