@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import "../css/Footer.css";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import '../css/Footer.css';
 
 class Links extends Component {
-  render() {
-    return (
-      <section className="links">
-        <div className="links-inner">
+	render() {
+		return (
+			<section className="links">
+				{/* <div className="links-inner">
           <ul>
             <li>
               <h2>Company</h2>
@@ -83,9 +83,9 @@ class Links extends Component {
               </Link>
             </li>
           </ul>
-        </div>
-      </section>
-    );
-  }
+        </div> */}
+			</section>
+		);
+	}
 }
 export default Links;
