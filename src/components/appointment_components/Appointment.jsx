@@ -16,8 +16,10 @@ class Appointment extends Component {
 
   async componentDidMount() {
     await axios
-      .get(
-        `https://project-group16.herokuapp.com/appointment/${this.props.match.params.email}`
+      .post(
+        `${APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.GET_APPOINTMENTS}`, {
+          email:`${this.props.match.params.email}`
+        }
       )
       .then((res) => {
         this.setState({ appointments: res.data["data"] });
@@ -38,7 +40,7 @@ class Appointment extends Component {
   }
 
   handleCancel = (id) => {
-    axios.delete(`https://project-group16.herokuapp.com/appointment/${id}`);
+    axios.delete(`${APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.DELETE_APPOINTMENT}${id}`);
     this.props.history.push({
       pathname: "/search-apartment",
     });

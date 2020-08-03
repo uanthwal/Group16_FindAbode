@@ -20,12 +20,10 @@ export default class Apply extends Component {
 
   handleSubmit = async (event) => {
     event.preventDefault();
-    console.log("Checking");
     const query = new URLSearchParams(this.props.location.search);
     let jobId = query.get("jobId");
     const data = new FormData(event.target);
     let jsonData = new FormData();
-    console.log(this.state.selectedFile);
     jsonData.append("file", this.state.selectedFile);
     jsonData.append("name", data.get("name"));
     jsonData.append("email", data.get("email"));
@@ -45,19 +43,16 @@ export default class Apply extends Component {
         },
       })
       .then((response) => {
-        console.log(response.status);
         if (response.status === 202) {
           this.setState({ errorMsg: "You have already applied for this job" });
         } else {
           this.setState({ applicationSubmitted: true });
         }
-        console.log("Saved");
       });
   };
 
   onChangeHandler = (event) => {
     let file = event.target.files[0];
-    console.log(file);
     if (file["size"] > 4000000) {
       alert("File size must be less than 4MB");
       event.target.value = null;
@@ -84,7 +79,6 @@ export default class Apply extends Component {
   };
   render() {
     const query = new URLSearchParams(this.props.location.search);
-    let jobId = query.get("jobId");
     let title = query.get("title");
     if (this.state.errorMsg !== null) {
       alert(this.state.errorMsg);
@@ -156,7 +150,7 @@ export default class Apply extends Component {
                       required
                       title="Uplpad your resume"
                       name="resume"
-                      class="form-control"
+                      className="form-control"
                       onChange={this.onChangeHandler}
                       className="form-control"
                     />
@@ -211,9 +205,9 @@ export default class Apply extends Component {
                       />
                     </div>
                     <div className="form-group col-md-6">
-                      <div class="input-group mb-2">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">$</div>
+                      <div className="input-group mb-2">
+                        <div className="input-group-prepend">
+                          <div className="input-group-text">$</div>
                         </div>
                         <input
                           type="number"

@@ -18,9 +18,7 @@ export default class OpenPosition extends Component {
   };
 
   getDepartmentJobs = async () => {
-    console.log(
-      "Rendering Open positions with props id" + this.props.selectedDept
-    );
+   
     await axios
       .get(
         APP_URL_CONFIG.BASE_URL +
@@ -30,7 +28,6 @@ export default class OpenPosition extends Component {
         {}
       )
       .then((res) => {
-        console.log("Data received for department" + res.data);
         let jobList = res.data;
         if (jobList.length != null && jobList.length > 0) {
           let jobDetails = [];
@@ -57,15 +54,13 @@ export default class OpenPosition extends Component {
   render() {
     let dept = this.state.prevDept;
     let prevDept = this.props.selectedDept;
-    if (prevDept != dept) {
+    if (prevDept !== dept) {
       this.getDepartmentJobs();
       this.setState(() => {
         return { prevDept: this.props.selectedDept };
       });
     }
-    const show = this.state.open ? "show" : "";
     const positionList = this.state.positionList;
-    console.log(positionList);
     return (
       <div className="openings">
         <link

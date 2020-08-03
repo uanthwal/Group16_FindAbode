@@ -124,7 +124,6 @@ router.route('/get-apartment-details').post((req, res) => {
 				const newSearch = new MostExploredPlaces({ apartment_id });
 				newSearch
 					.save()
-					.then(() => console.log('Search recorded!'))
 					.catch((err) => res.status(400).json('Error: ' + err));
 			}
 			Rating.find({ apartment_id: apartment_id })
@@ -176,9 +175,6 @@ router.route('/get-apartment-details').post((req, res) => {
 							(location['1'] + location['2'] + location['3'] + location['4'] + location['5']);
 						locationRating = parseInt(locationRating * 100) / 100;
 						let comments = rating_result['comments'];
-						console.log('Commentss ' + JSON.stringify(comments));
-						console.log('location ' + locationRating);
-						//resp_data['location'] = locationRating;
 						resp_data.comments = JSON.stringify(comments);
 						let rating_data = {};
 
@@ -187,7 +183,6 @@ router.route('/get-apartment-details').post((req, res) => {
 						rating_data.accuracy = accuracyRating;
 						rating_data.cleanliness = cleanlinessRating;
 						rating_data.communication = communicationRating;
-						console.log('Response data is resp_data' + JSON.stringify(rating_data));
 						res.send({
 							code: 200,
 							data: resp_data,
@@ -205,7 +200,6 @@ router.route('/get-apartment-details').post((req, res) => {
 						code: 200,
 						data: resp_data
 					});
-					console.log('Error occured in fetching ratings ' + err);
 				});
 		}
 	}).catch((err) => res.status(400).json('Error: ' + err));
@@ -248,7 +242,6 @@ router.route('/delete').post((req, res) => {
 			});
 		} else {
 			MostExploredPlaces.remove({ apartment_id: apartment_id }, function(err, data) {
-				console.log(data);
 				res.send({
 					code: 200,
 					data: resp_data,

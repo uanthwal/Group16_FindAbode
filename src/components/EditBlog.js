@@ -1,7 +1,7 @@
 //Author: Simranbanu Roshansha Diwan (B00833562)
 
 import React, { Component } from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import axios from "axios";
 import { APP_URL_CONFIG } from "../App.Urls";
 import { UserContext } from "../contexts/UserContext";
@@ -40,7 +40,7 @@ export default class EditBlog extends Component {
       .post(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.DELETE_BLOG, {
         topic: this.state.topic,
       })
-      .then((res) => console.log(res.data));
+      .then((res) => {});
     alert("Blog has been deleted successfully");
     setTimeout(() => {
       this.setState({ allBlogs: "temp" });
@@ -68,21 +68,15 @@ export default class EditBlog extends Component {
           p1: response.data[0].p1,
           p2: response.data[0].p2,
         });
-        console.log(response.data);
-        let a = this.state.p1;
-        console.log(a);
       })
       .catch((error) => {
-        console.log(error);
       });
   }
 
   //Handle submit method for submitting updates to the backend and update content in the database
   handleSubmit = (e) => {
     e.preventDefault();
-    if (this.state.p1 != "" && this.state.p2 != "" && this.state.topic != "") {
-      console.log("aaaaaaàa");
-
+    if (this.state.p1 !== "" && this.state.p2 !== "" && this.state.topic !== "") {
       axios
         .post(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.EDIT_BLOG, {
           topic: this.state.topic,
@@ -90,9 +84,8 @@ export default class EditBlog extends Component {
           p2: this.state.p2,
         })
         .then((res) => {
-          console.log(res.data);
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {});
 
       setTimeout(() => {
         this.setState({ allBlogs: "temp" });

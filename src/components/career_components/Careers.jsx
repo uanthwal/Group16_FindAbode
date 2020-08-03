@@ -24,11 +24,7 @@ export default class Careers extends Component {
     await axios
       .get(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.JOB_DEPARTMENTS, {})
       .then((res) => {
-        console.log(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.JOB_DEPARTMENTS);
-        console.log("Data received");
         let departments = res.data;
-        let selectedDept = -1;
-
         let jobDepartment = [];
         for (let i = 0; i < departments.length; i++) {
           jobDepartment[i] = {
@@ -38,7 +34,6 @@ export default class Careers extends Component {
             name: departments[i].name,
           };
         }
-
         this.setState({
           departments: jobDepartment,
         });
@@ -56,7 +51,6 @@ export default class Careers extends Component {
           {}
         )
         .then((res) => {
-          console.log("Data received for department");
         });
     }
   };
@@ -69,13 +63,6 @@ export default class Careers extends Component {
     const departmentList = this.state.departments;
     const selectedDept = deptKey;
     for (let i = 0; i < departmentList.length; i++) {
-      console.log(
-        departmentList[i].classes +
-          " " +
-          departmentList[i].key +
-          " " +
-          departmentList[i].name
-      );
       if (departmentList[i].key === deptKey) {
         departmentList[i].selected = true;
         departmentList[i].classes = "selected";
@@ -87,7 +74,6 @@ export default class Careers extends Component {
     this.setState(() => {
       return { departments: departmentList, selectDept: selectedDept };
     });
-    console.log("Selected Dept is " + this.state.selectDept);
   };
 
   render() {

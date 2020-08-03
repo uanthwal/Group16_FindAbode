@@ -22,7 +22,6 @@ export default class AdminJob extends Component {
   };
 
   render() {
-    let deptList = this.state.departments;
 
     return (
       <div style={{ paddingTop: 65 }} className="careerPage">

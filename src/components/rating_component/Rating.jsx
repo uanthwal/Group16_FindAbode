@@ -14,7 +14,6 @@ export default class Rating extends Component {
 	};
 	handleSubmit = async (event) => {
 		event.preventDefault();
-		console.log('Checking');
 		const data = new FormData(event.target);
 		const query = new URLSearchParams(this.props.location.search);
 		let apartmentId = data.get('apartment_id');
@@ -33,13 +32,11 @@ export default class Rating extends Component {
 				location: data.get('location')
 			})
 			.then((response) => {
-				console.log(response.status);
 				if (response.status === 200) {
 					this.setState({ applicationSubmitted: true });
 				} else {
 					alert('Error occured. Please try again');
 				}
-				console.log('Saved');
 			});
 	};
 	render() {
@@ -47,68 +44,67 @@ export default class Rating extends Component {
 		if (this.state.applicationSubmitted) {
 			ratingView = <h3>Form submitted succesfully</h3>;
 		} else {
-			ratingView = (
-				<form onSubmit={this.handleSubmit}>
-					<h3>Rate the visited property</h3>
-					<p>
-						Kindly rate the property on different parameters 1 being lowest rating and 5 is maximum rating
-					</p>
-					<input type="hidden" id="apartment_id" name="apartment_id" value="5f162e2294e0f6eff8e61da9" />
-					<div class="form-group">
-						<label>Cleaniness</label>
-						<select className="form-control" id="cleanliness" name="cleanliness" required>
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option selected="selected" value="5">
-								5
-							</option>
-						</select>
-					</div>
-					<div class="form-group">
-						<label>Communication</label>
-						<select className="form-control" id="communication" name="communication" required>
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option selected="selected" value="5">
-								5
-							</option>
-						</select>
-					</div>
-					<div class="form-group">
-						<label>Location</label>
-						<select className="form-control" id="location" name="location" required>
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option selected="selected" value="5">
-								5
-							</option>
-						</select>
-					</div>
-					<div class="form-group">
-						<label>Accuracy of data posted on the post</label>
-						<select className="form-control" id="accuracy" name="accuracy" required>
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option selected="selected" value="5">
-								5
-							</option>
-						</select>
-					</div>
-					<div class="form-group">
-						<label>Comments you want to post on this property page on FindAbode</label>
-						<textarea class="form-control" id="comment" name="comment" rows="3" />
-					</div>
-					<button>Submit</button>
-				</form>
-			);
+			ratingView = <form onSubmit={this.handleSubmit}>
+						<h3>Rate the visited property</h3>
+						<p>
+							Kindly rate the property on different parameters 1 being lowest rating and 5 is maximum
+							rating
+						</p>
+						<input type="hidden" id="apartment_id" name="apartment_id" value='5f162e2294e0f6eff8e61da9'/>
+						<div className="form-group">
+							<label>Cleaniness</label>
+							<select className="form-control" id="cleanliness" name="cleanliness" required>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option selected="selected" value="5">
+									5
+								</option>
+							</select>
+						</div>
+						<div className="form-group">
+							<label>Communication</label>
+							<select className="form-control" id="communication" name="communication" required>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option selected="selected" value="5">
+									5
+								</option>
+							</select>
+						</div>
+						<div className="form-group">
+							<label>Location</label>
+							<select className="form-control" id="location" name="location" required>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option selected="selected" value="5">
+									5
+								</option>
+							</select>
+						</div>
+						<div className="form-group">
+							<label>Accuracy of data posted on the post</label>
+							<select className="form-control" id="accuracy" name="accuracy" required>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option selected="selected" value="5">
+									5
+								</option>
+							</select>
+						</div>
+						<div className="form-group">
+							<label>Comments you want to post on this property page on FindAbode</label>
+							<textarea className="form-control" id="comment" name="comment" rows="3" />
+						</div>
+						<button>Submit</button>
+					</form>
 		}
 		return (
 			<div className="ratingPage">

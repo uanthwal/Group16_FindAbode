@@ -56,7 +56,7 @@ class Favourites extends Component {
                     <div className="heading-page">
                         <h1>Favourites</h1>
                     </div>
-                    {this.state.apartment_list.length == 0 ? (
+                    {this.state.apartment_list.length === 0 ? (
                         <center><h3 className="message" style={{ paddingTop: 40 }}>You do not have any apartments added in favourites yet!</h3></center>
                     ) : (
                             <div className="fav-containers">
