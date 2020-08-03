@@ -1,7 +1,7 @@
 //Author: Simranbanu Roshansha Diwan (B00833562)
 
 import React, { Component } from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import axios from "axios";
 import { APP_URL_CONFIG } from "../App.Urls";
 import { UserContext } from "../contexts/UserContext";
@@ -47,18 +47,17 @@ export default class CreateBlog extends Component {
   async handleSubmit(e) {
     e.preventDefault();
 
-    if (this.state.p1 != "" && this.state.p2 != "" && this.state.topic != "") {
+    if (this.state.p1 !== "" && this.state.p2 !== "" && this.state.topic !== "") {
       axios
         .post(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.ADD_BLOG, {
           topic: this.state.topic,
           p1: this.state.p1,
           p2: this.state.p2,
         })
-        .then((res) => console.log(res.data));
+        .then((res) => {});
       setTimeout(() => {
         this.setState({ allBlogs: "temp" });
       }, 1000);
-      console.log(this.state.allBlogs);
     } else {
       alert("Please fill all the fields");
     }

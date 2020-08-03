@@ -41,7 +41,7 @@ class Profile extends Component {
         email: email,
       })
       .then((res) => {
-        if (!res.data || res.data.code == 104) {
+        if (!res.data || res.data.code === 104) {
           this.props.history.push({
             pathname: "/signin/",
           });
@@ -115,12 +115,12 @@ class Profile extends Component {
       green: false,
     });
     if (
-      (rest.username == "" ||
-        rest.username == null ||
-        rest.username == undefined) &&
-      (rest.password == "" ||
-        rest.password == null ||
-        rest.password == undefined)
+      (rest.username === "" ||
+        rest.username === null ||
+        rest.username === undefined) &&
+      (rest.password === "" ||
+        rest.password === null ||
+        rest.password === undefined)
     ) {
       return false;
     }

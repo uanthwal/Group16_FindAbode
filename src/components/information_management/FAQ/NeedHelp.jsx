@@ -6,7 +6,6 @@ import React, { Component } from "react";
 import "../../../css/help/faq.css";
 import HelpOptions from "./HelpOptions";
 import FAQs from "./FAQs";
-import Links from "../../Links";
 import Footer from "../../Footer";
 
 // Main Component which performs FAQ section selection
@@ -29,13 +28,6 @@ export default class NeedHelp extends Component {
     const faqSections = this.state.faq_sections;
     const selectedDept = deptKey;
     for (let i = 0; i < faqSections.length; i++) {
-      console.log(
-        faqSections[i].classes +
-          " " +
-          faqSections[i].key +
-          " " +
-          faqSections[i].name
-      );
       if (faqSections[i].key === deptKey) {
         faqSections[i].selected = true;
         faqSections[i].classes = "selected";

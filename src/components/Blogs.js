@@ -2,10 +2,7 @@
 import React, { Component } from "react";
 import { APP_URL_CONFIG } from "../App.Urls";
 import axios from "axios";
-
 import blogimg from "../images/landingpage_sub.jpg";
-
-import Links from "./Links";
 import Footer from "./Footer";
 
 //resuable blogs component which is iterated as per number of blogs while rendering
@@ -48,7 +45,6 @@ class Blogs extends Component {
         this.setState({ blogs: response.data });
       })
       .catch((error) => {
-        console.log(error);
       });
   }
 

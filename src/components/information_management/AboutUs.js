@@ -3,10 +3,7 @@
  * BANNER ID: B00847127
  */
 import React, { Component } from "react";
-
 import AboutUsImg from "../../images/AboutUs.jpg";
-
-import Links from "../Links";
 import Footer from "../Footer";
 
 //Class for AboutUs component
@@ -23,7 +20,7 @@ class AboutUs extends Component {
             className="card-img-top mx-auto rounded d-block"
             src={AboutUsImg}
             style={{ width: "90%" }}
-            alt="profile image"
+            alt={AboutUsImg}
           />
           <div className="card-body">
             <h2 className="card-title text-center">

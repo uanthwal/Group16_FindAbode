@@ -3,7 +3,6 @@
  * BANNER ID: B00847127
  */
 import React, { Component } from "react";
-import Links from "../Links";
 import Footer from "../Footer";
 import axios from "axios";
 import { APP_URL_CONFIG } from "../../App.Urls";
@@ -56,8 +55,6 @@ class ContactUs extends Component {
     e.preventDefault();
     const { f_name, l_name, email, query } = this.state;
     if (formValid(this.state)) {
-      console.log("The form was submitted with the following data:");
-      console.log(this.state);
 
       let contactInfo = {
         f_name: this.state.firstname,
@@ -69,7 +66,7 @@ class ContactUs extends Component {
       //Method to send a post request by sending all the details fetched by user from front-end to the backend
       axios
         .post(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.CONTACT_US, contactInfo)
-        .then((res) => console.log(res.data));
+        .then((res) => {});
       this.setState({
         f_name,
         l_name,
@@ -209,8 +206,7 @@ class ContactUs extends Component {
             <div className="text-center">
               <button
                 type="submit"
-                className="buttonform"
-                className="btn btn-primary mr-5"
+                className="buttonform btn btn-primary mr-5"
               >
                 Submit
               </button>

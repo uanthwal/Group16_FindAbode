@@ -14,7 +14,6 @@ export default class Rating extends Component {
 	}
 	handleSubmit = async (event) => {
 		event.preventDefault();
-		console.log('Checking');
 		const data = new FormData(event.target);
 		const query = new URLSearchParams(this.props.location.search);
 		let apartmentId = data.get('apartment_id');
@@ -32,13 +31,11 @@ export default class Rating extends Component {
 				location: data.get('location'),
 			})
 			.then((response) => {
-				console.log(response.status);
 				if (response.status === 200) {
 					this.setState({ applicationSubmitted: true });
 				} else {
 					alert("Error occured. Please try again");
 				}
-				console.log('Saved');
 			});
 	};
 	render() {
@@ -53,7 +50,7 @@ export default class Rating extends Component {
 							rating
 						</p>
 						<input type="hidden" id="apartment_id" name="apartment_id" value='5f162e2294e0f6eff8e61da9'/>
-						<div class="form-group">
+						<div className="form-group">
 							<label>Cleaniness</label>
 							<select className="form-control" id="cleanliness" name="cleanliness" required>
 								<option value="1">1</option>
@@ -65,7 +62,7 @@ export default class Rating extends Component {
 								</option>
 							</select>
 						</div>
-						<div class="form-group">
+						<div className="form-group">
 							<label>Communication</label>
 							<select className="form-control" id="communication" name="communication" required>
 								<option value="1">1</option>
@@ -77,7 +74,7 @@ export default class Rating extends Component {
 								</option>
 							</select>
 						</div>
-						<div class="form-group">
+						<div className="form-group">
 							<label>Location</label>
 							<select className="form-control" id="location" name="location" required>
 								<option value="1">1</option>
@@ -89,7 +86,7 @@ export default class Rating extends Component {
 								</option>
 							</select>
 						</div>
-						<div class="form-group">
+						<div className="form-group">
 							<label>Accuracy of data posted on the post</label>
 							<select className="form-control" id="accuracy" name="accuracy" required>
 								<option value="1">1</option>
@@ -101,9 +98,9 @@ export default class Rating extends Component {
 								</option>
 							</select>
 						</div>
-						<div class="form-group">
+						<div className="form-group">
 							<label>Comments you want to post on this property page on FindAbode</label>
-							<textarea class="form-control" id="comment" name="comment" rows="3" />
+							<textarea className="form-control" id="comment" name="comment" rows="3" />
 						</div>
 						<button>Submit</button>
 					</form>

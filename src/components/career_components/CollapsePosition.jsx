@@ -25,7 +25,6 @@ export default class CollapsePosition extends Component {
     let jobId = this.props.jobId;
     let jobTitle = title + " (JobId: " + jobId + " )";
     let jobDesc = this.props.content.split(".");
-    console.log(jobDesc[0]);
     let jobRequirements = jobDesc.map((desc) => <li>{desc}</li>);
     return (
       <div className="card">

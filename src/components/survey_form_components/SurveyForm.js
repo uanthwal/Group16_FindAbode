@@ -37,7 +37,6 @@ class Survey extends Component {
         });
       })
       .catch((err) => {
-        console.log(err);
       });
   }
 
@@ -119,7 +118,7 @@ class Survey extends Component {
                     {" " + this.state.questions[this.state.i].choice3}
                   </label>
                 </div>
-                {this.state.selectedOption != "" ? (
+                {this.state.selectedOption !== "" ? (
                   <button className="button-question" type="submit" >
                     Next
                   </button>
