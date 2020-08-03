@@ -292,7 +292,7 @@ class ApartmentDetail extends Component {
                 </span>
               </div>
               <div className="add-to-fav-view">
-                <button onClick={(event) => this.addToFavourites(event)}>
+                <button style={{ outline: "none" }} onClick={(event) => this.addToFavourites(event)}>
                   Add to Favourites
                 </button>
               </div>
