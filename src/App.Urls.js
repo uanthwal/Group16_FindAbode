@@ -34,6 +34,7 @@ export var APP_URL_CONFIG = {
   ADD_JOB: "/jobdetails/add",
   SURVEY_QUESTION: "/surveyQuestions/question",
   SURVEY_ANSWER: "/surveyAnswers/response",
+  SAVE_RATING: "/rating/save",
 };
 
 /**

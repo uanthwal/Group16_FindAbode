@@ -24,6 +24,8 @@ const jobDeptRouter = require(__dirname +
   "/backend/routes/careers/jobdepartments.js");
 const jobsRouter = require(__dirname + "/backend/routes/careers/jobs.js");
 
+const ratingRouter = require(__dirname + "/backend/routes/ratings/rating.js");
+
 const uri = process.env.ATLAS_URI;
 mongoose.connect(uri, {
   useUnifiedTopology: true,
@@ -47,6 +49,7 @@ app.use("/jobdetails", jobsRouter);
 app.use("/faq", faqsRouter);
 app.use("/surveyQuestions", surveyQuestionRouter);
 app.use("/surveyAnswers", surveyAnswerRouter);
+app.use("/rating", ratingRouter);
 
 app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname + "/build/index.html"));
