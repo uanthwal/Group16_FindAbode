@@ -85,7 +85,6 @@ class SignIn extends Component {
             let userType = res.data.data["userType"];
             let username = res.data.data["username"];
             setUserCredentials(email, userType, username);
-            debugger;
             let redirectTo = this.props.location.search;
             redirectTo =
               redirectTo !== undefined ? redirectTo.split("=")[1] : null;

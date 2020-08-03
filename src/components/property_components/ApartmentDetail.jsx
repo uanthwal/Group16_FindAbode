@@ -40,7 +40,6 @@ class ApartmentDetail extends Component {
     if (login) {
       this.openModal();
     } else {
-      debugger;
       this.props.history.push({
         pathname: "/signin",
         search: "?r=" + window.location.pathname,

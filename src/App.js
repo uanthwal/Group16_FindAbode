@@ -29,10 +29,22 @@ import Survey from "./components/survey_form_components/SurveyForm";
 import AdminJob from "./components/career_components/AdminJob";
 import Rating from "./components/rating_component/Rating";
 import Favourites from "./components/favourites_components/Favourites";
+import Axios from "axios";
 
 class App extends Component {
   static contextType = UserContext;
+  initializeInterceptor() {
+    Axios.interceptors.request.use((config) => {
+      document.getElementById("loader").className="loaderview";
+      return config;
+    });
+    Axios.interceptors.response.use((config) => {
+      document.getElementById("loader").className="";
+      return config;
+    });
+  }
   render() {
+    this.initializeInterceptor();
     return (
       <>
         <UserContextProvider>
@@ -76,7 +88,7 @@ class App extends Component {
             />
             <Route exact path="/job/apply" component={Apply} />
             <Route exact path="/admin/job" component={AdminJob} />
-            <Route exact path="/rating" component={Rating}/>
+            <Route exact path="/rating" component={Rating} />
             <Redirect to="/" />
           </Switch>
         </UserContextProvider>

@@ -6,6 +6,19 @@ body {
   padding: 0px;
   overflow-x: hidden;
 }
+.loaderview {
+  background: white;
+  /* opacity: 01; */
+  background-repeat: no-repeat;
+  z-index: 9999999999999;
+  background-image: url(../src/images/loader.gif);
+  background-attachment: fixed;
+  background-position: center;
+  /* z-index: -1; */
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+}
 * {
   margin: 0;
   padding: 0;
