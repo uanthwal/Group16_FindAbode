@@ -34,14 +34,16 @@
 
 @media screen and (max-width: 500px) {
   .section-features {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0px;
+  }
+  .service-provide {
+    padding-top: 50px;
   }
   .feature-box {
     background-color: rgba(255, 255, 255, 0.8);
     font-size: 24px;
-    margin-left: -130px;
-    padding: -40px;
     margin-bottom: 30px;
     text-align: center;
     border-radius: 3px;

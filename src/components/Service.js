@@ -6,7 +6,6 @@ class Service extends Component {
     return (
       <section className="features">
         <h1 className="timeline service-provide">SERVICES PROVIDED</h1>
-        <br />
         <div className="section-features">
           <div className="feature-box">
             <h3 className="feature-heading">Explore the world</h3>

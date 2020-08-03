@@ -41,9 +41,6 @@ class Footer extends Component {
                 Discussion Forum
               </Link>
             </li>
-            <li>
-              <div className="footer-link">&copy; FindAbode 2020</div>
-            </li>
           </ul>
         </div>
       </footer>
