@@ -115,6 +115,11 @@ class Navbar extends Component {
                     </Link>
                   </li>
                 ) : null}
+                <li className="nav-item">
+                      <Link className="link" to={`/favourites`}>
+                        Favourites
+                    </Link>
+                    </li>
                 <Link className="link sign-up" to="/profile">
                   <button>Profile</button>
                 </Link>

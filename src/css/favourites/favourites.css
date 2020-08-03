@@ -1,0 +1,97 @@
+/**
+ * @author by Prerna Jain
+ */
+ .outer-container {
+    margin: 10% 5%;
+    align-items: center;
+  }
+  .heading-page {
+    color: rgba(0, 136, 169, 1);
+    font-weight: bold;
+    margin-top: 45px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    line-height: 23px;
+  }
+  .fav-containers {
+    display: grid;
+    justify-content: space-between;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  @media screen and (max-width: 450px) {
+    .message-fav{
+      align-items: center;
+    }
+    .outer-container h1 {
+      margin: 30% 5%;
+      margin-bottom: 5%;
+    }
+    .fav-containers {
+      grid-template-columns: 1fr;
+    }
+    .card-img {
+      width: 80%;
+      height: 40%;
+    }
+    .heading-page {
+      margin-top: 10%;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    .card-container-fav {
+      height: 250px;
+    }
+  }
+
+  .card-container-fav {
+    margin-top: 50px;
+    margin: 30px;
+    overflow: hidden;
+    display: inline-block;
+    background-color: white;
+    max-width: 300px;
+    height: 500px;
+    text-align: left;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.089);
+    transition: transform 200ms ease-in-out;
+    cursor: pointer;
+    padding: 10 10px;
+  }
+  .card-container-fav:hover {
+    transform: scale(1.05);
+  }
+  .card-img {
+    width: 400px;
+    height: 270px;
+  }
+  .text-container {
+    padding: 20px;
+  }
+  .text-title {
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 24px;
+    text-transform: uppercase;
+    overflow: hidden;
+  }
+  .text-subtitles {
+    font-weight: 500;
+    margin-bottom: 0px;
+    font-size: 12px;
+  }
+  .text-tiny {
+    color: grey;
+    font-size: 12px;
+  }
+  .text-desc {
+    margin-bottom: 20px;
+  }
+  .text-review {
+    color: green;
+    font-weight: 500;
+  }
+  .message-fav{
+    align-items: center;
+  }

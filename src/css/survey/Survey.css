@@ -16,11 +16,20 @@
 }
 
 .button-question:hover {
-  background-color: #036cddc0;
+  background-color: #007bff;
 }
 .button-question {
   background-color: #007bff;
   color: white;
   border-color: #007bff;
   border-radius: 0.25rem;
+}
+
+.button-question-disabled {
+  background-color: gray;
+  opacity: 0.5;
+  color: black;
+  border-color: #007bff;
+  border-radius: 0.25rem;
+  /* pointer-events: none; */
 }

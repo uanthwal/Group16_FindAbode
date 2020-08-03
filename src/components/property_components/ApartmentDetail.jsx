@@ -103,6 +103,23 @@ class ApartmentDetail extends Component {
 
     static contextType = UserContext;
 
+    addToFavourites() {
+        console.log(typeof (this.state.apartmentId));
+        if (this.context.isUserLoggedIn()) {
+        axios.post(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.ADD_FAVOURITE, {
+            email: this.context.userCredentials("email"),
+            apartmentId: this.state.apartmentId
+        }).then(res => {
+            alert(res.data.message);
+        });
+        } else {
+        this.props.history.push({
+            pathname: "/signin",
+            search: "?r=" + window.location.pathname,
+        });
+        }
+        
+    }
     render() {
         Modal.setAppElement("#root");
         const login = this.context.isUserLoggedIn();
@@ -287,7 +304,7 @@ class ApartmentDetail extends Component {
                   </span>
                                 </div>
                             </div>
-                            <button className="fav-btn">Add to Favourites</button>
+                            <button className="fav-btn" style={{outline:"none"}} onClick={(event) => this.addToFavourites(event)}>Add to Favourites</button>
                             <div className="single-room-info">
                                 <div className="desc">
                                     <h3>details</h3>

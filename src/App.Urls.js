@@ -35,6 +35,9 @@ export var APP_URL_CONFIG = {
   SURVEY_QUESTION: "/surveyQuestions/question",
   SURVEY_ANSWER: "/surveyAnswers/response",
   SAVE_RATING: "/rating/save",
+  ADD_FAVOURITE: "/favourites/add-to-favourites",
+  GET_FAVOURITES_FOR_USER: "/favourites/get-favourites",
+  REMOVE_FROM_FAVOURITES:"/favourites/remove"
 };
 
 /**

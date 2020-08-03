@@ -12,7 +12,6 @@ import Navbar from "./components/Navbar";
 import UserContextProvider, { UserContext } from "./contexts/UserContext";
 import SearchApartment from "./components/property_components/SearchApartment";
 import SearchResults from "./components/property_components/ApartmentSearchResults";
-import Favourites from "./components/Favourites";
 import EditBlog from "./components/EditBlog";
 import DiscussionForum from "./components/discussion_forum_components/DiscussionForum";
 import ViewDiscussion from "./components/discussion_forum_components/ViewDiscussion";
@@ -29,6 +28,7 @@ import ApartmentManagementComponent from "./components/admin_panel_components/Ap
 import Survey from "./components/survey_form_components/SurveyForm";
 import AdminJob from "./components/career_components/AdminJob";
 import Rating from "./components/rating_component/Rating";
+import Favourites from "./components/favourites_components/Favourites";
 
 class App extends Component {
   static contextType = UserContext;
@@ -48,7 +48,7 @@ class App extends Component {
             <Route exact path="/search-apartment" component={SearchApartment} />
             <Route exact path="/search-results" component={SearchResults} />
             <Route exact path="/blogs" component={Blogs} />
-            <Route exact path="/favourite" component={Favourites} />
+            <Route exact path="/favourites" component={Favourites} />
             <Route exact path="/about" component={AboutUs} />
             <Route exact path="/contact" component={ContactUs} />
             <Route exact path="/faq" component={NeedHelp} />

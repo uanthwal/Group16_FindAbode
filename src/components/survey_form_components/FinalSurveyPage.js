@@ -3,6 +3,8 @@
  */
 import React from "react";
 import "../../css/survey/SurveyFinalPage.css";
+import Links from "../Links";
+import Footer from "../Footer";
 
 // function to indicate the end of the survey
 const finalPage = () => {

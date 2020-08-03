@@ -18,6 +18,7 @@ const surveyQuestionRouter = require(__dirname +
   "/backend/routes/surveyQuestions.js");
 const surveyAnswerRouter = require(__dirname +
   "/backend/routes/surveyQuestions.js");
+  const favouritesRouter = require(__dirname + '/backend/routes/favourites.js');
 
 //Career Routes
 const jobDeptRouter = require(__dirname +
@@ -50,6 +51,7 @@ app.use("/faq", faqsRouter);
 app.use("/surveyQuestions", surveyQuestionRouter);
 app.use("/surveyAnswers", surveyAnswerRouter);
 app.use("/rating", ratingRouter);
+app.use('/favourites', favouritesRouter);
 
 app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname + "/build/index.html"));

@@ -6,6 +6,8 @@ import Axios from "axios";
 import "../../css/survey/Survey.css";
 import { APP_URL_CONFIG } from "../../App.Urls";
 import Finalpage from "./FinalSurveyPage";
+import Links from "../Links";
+import Footer from "../Footer";
 
 class Survey extends Component {
   constructor(props) {
@@ -33,8 +35,6 @@ class Survey extends Component {
         this.setState({
           questions: res.data,
         });
-        console.log(res.data);
-        console.log("data is:" + this.state.questions);
       })
       .catch((err) => {
         console.log(err);
@@ -88,7 +88,7 @@ class Survey extends Component {
                       }
                       onChange={this.onValueChange}
                     />
-                    {this.state.questions[this.state.i].choice1}
+                    {" " + this.state.questions[this.state.i].choice1}
                   </label>
                 </div>
                 <div className="radio">
@@ -102,7 +102,7 @@ class Survey extends Component {
                       }
                       onChange={this.onValueChange}
                     />
-                    {this.state.questions[this.state.i].choice2}
+                    {" " + this.state.questions[this.state.i].choice2}
                   </label>
                 </div>
                 <div className="radio">
@@ -116,15 +116,15 @@ class Survey extends Component {
                       }
                       onChange={this.onValueChange}
                     />
-                    {this.state.questions[this.state.i].choice3}
+                    {" " + this.state.questions[this.state.i].choice3}
                   </label>
                 </div>
                 {this.state.selectedOption != "" ? (
-                  <button className="button-question" type="submit">
+                  <button className="button-question" type="submit" >
                     Next
                   </button>
                 ) : (
-                  <button className="button-question" type="submit" disabled>
+                  <button title="Please select an option" className="button-question-disabled" type="submit" disabled>
                     Next
                   </button>
                 )}
@@ -134,6 +134,8 @@ class Survey extends Component {
         ) : (
           <Finalpage />
         )}
+        <Links />
+				<Footer />
       </div>
     );
   }
