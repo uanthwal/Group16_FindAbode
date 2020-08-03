@@ -3,7 +3,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import Links from "../../components/Links";
 import Footer from "../../components/Footer";
 import { UserContext } from "../../contexts/UserContext";
 import { APP_URL_CONFIG } from "../../App.Urls";
@@ -42,7 +41,6 @@ export default class DiscussionForum extends Component {
         this.setState({ questions: response.data });
       })
       .catch((error) => {
-        console.log(error);
       });
   }
 

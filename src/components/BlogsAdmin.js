@@ -16,7 +16,7 @@ const Blog = (props) => (
         className="card-img-top mx-auto rounded d-block"
         src={blogimg}
         style={{ width: "70%" }}
-        alt="profile image"
+        alt={blogimg}
       />
       <div className="card-body">
         <h2 className="card-title text-center">
@@ -59,16 +59,13 @@ class BlogsAdmin extends Component {
       .get(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.ALL_BLOGS)
       .then((response) => {
         this.setState({ blogs: response.data });
-        console.log(response.data);
       })
       .catch((error) => {
-        console.log(error);
       });
   }
 
   //Creating a list of blogs
   blogList() {
-    console.log(this.state.blogs);
     return this.state.blogs.map((currentblog) => {
       return <Blog blog={currentblog} key={currentblog.topic} />;
     });

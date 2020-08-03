@@ -1,7 +1,5 @@
 //Author: Simranbanu Roshansha Diwan (B00833562)
-
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { UserContext } from "../../contexts/UserContext";
 import axios from "axios";
 import Links from "../../components/Links";
@@ -45,7 +43,6 @@ export default class ViewDiscussion extends Component {
         });
       })
       .catch((error) => {
-        console.log(error);
       });
   }
 
@@ -79,7 +76,7 @@ export default class ViewDiscussion extends Component {
       });
       return;
     } else {
-      if (this.state.newans != "") {
+      if (this.state.newans !== "") {
         axios
           .post(
             APP_URL_CONFIG.BASE_URL +

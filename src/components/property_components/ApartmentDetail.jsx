@@ -61,7 +61,7 @@ class ApartmentDetail extends Component {
         if (date <= new Date()) {
             alert("Can not book the appointment at that date");
         } else {
-            await axios.post(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.APPOINTMENT, {
+            await axios.post(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.BOOK_APPOINTMENT, {
                 email,
                 apartmentId,
                 date: date.toJSON().slice(0, 10),
@@ -81,8 +81,6 @@ class ApartmentDetail extends Component {
                 }
             )
             .then((res) => {
-                console.log(res.data);
-                console.log(res.data['rating']);
                 if (res.data['rating'] !== null || res.data['rating'] !== '') {
                     this.setState({
                         apartmentDetails: res.data["data"],
@@ -104,7 +102,6 @@ class ApartmentDetail extends Component {
     static contextType = UserContext;
 
     addToFavourites() {
-        console.log(typeof (this.state.apartmentId));
         if (this.context.isUserLoggedIn()) {
         axios.post(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.ADD_FAVOURITE, {
             email: this.context.userCredentials("email"),
@@ -200,20 +197,19 @@ class ApartmentDetail extends Component {
                                         </div>
                                         {this.state.apartmentDetails.images.map((item, key) => {
                                             if (key > 0) {
-                                                // return (<div className={`carousel-item ${this.checkIfActive(key)}`} key={key}>
                                                 return (
                                                     <div className="carousel-item" key={key}>
                                                         <img
                                                             className="d-block w-100 h-100"
                                                             src={item}
-                                                            alt={`Image ${key}`}
+                                                            alt={`${item}`}
                                                             title={`Image ${key}`}
                                                             data-target="#carouselExampleIndicators"
                                                             data-slide-to={key}
                                                         />
                                                     </div>
                                                 );
-                                            }
+                                            } 
                                         })}
                                     </div>
                                     <a

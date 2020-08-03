@@ -11,7 +11,9 @@ export var APP_URL_CONFIG = {
   DELETE_USER: "/user/",
   UPDATE_USER_INFO: "/user/update-user-info",
   GET_USER_INFO: "/user/info",
-  APPOINTMENT: "/appointment",
+  GET_APPOINTMENTS: "/appointment/get-appointments",
+  BOOK_APPOINTMENT:"/appointment/book-appointment",
+  DELETE_APPOINTMENT:"/appointment/delete/",
   DISCUSSION_FORUM: "/discussionforum/",
   ADD_TOPIC: "/discussionforum/addtopic/",
   VIEW_DISCUSSION: "/discussionforum/",
@@ -37,7 +39,7 @@ export var APP_URL_CONFIG = {
   SAVE_RATING: "/rating/save",
   ADD_FAVOURITE: "/favourites/add-to-favourites",
   GET_FAVOURITES_FOR_USER: "/favourites/get-favourites",
-  REMOVE_FROM_FAVOURITES:"/favourites/remove"
+  REMOVE_FROM_FAVOURITES:"/favourites/remove",
 };
 
 /**
@@ -52,7 +54,7 @@ export function getConfigs() {
     };
   } else {
     return {
-      BASE_URL: "https://project-group16.herokuapp.com",
+      BASE_URL: "https://tutorial16-group16.herokuapp.com",
     };
   }
 }

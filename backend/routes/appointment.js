@@ -6,15 +6,15 @@ const nodemailer = require("nodemailer");
  * Express API for appointment management
  * @author Ruize Nie
  */
-router.route("/:id").delete((req, res) => {
+router.route("/delete/:id").delete((req, res) => {
   Appointment.findOneAndDelete(
     { _id: req.params.id },
     { useFindAndModify: false }
   ).catch((err) => res.status(400).json("Error: " + err));
 });
 
-router.route("/:email").get((req, res) => {
-  const email = req.params.email;
+router.route("/get-appointments").post((req, res) => {
+  const email = req.body.email;
   var resp_data = [];
   Appointment.find(
     {
@@ -39,7 +39,7 @@ router.route("/:email").get((req, res) => {
   );
 });
 
-router.route("/").post(async (req, res) => {
+router.route("/book-appointment").post(async (req, res) => {
   const email = req.body.email;
   const apartmentId = req.body.apartmentId;
   const date = req.body.date;
@@ -77,9 +77,7 @@ router.route("/").post(async (req, res) => {
 
   await transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
-      console.log(error);
     } else {
-      console.log("Email sent: " + info.response);
     }
   });
 
