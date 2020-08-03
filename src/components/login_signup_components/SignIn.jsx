@@ -153,18 +153,6 @@ class SignIn extends Component {
           <div className="sign-container">
             <form onSubmit={this.onSubmit} className="sign-form" noValidate>
               <h2>Sign in to FindAbode</h2>
-              <div className="social-container">
-                <Link to="" className="facebook">
-                  <i className="fab fa-facebook-f" />
-                </Link>
-                <Link to="" className="google">
-                  <i className="fab fa-google-plus-g" />
-                </Link>
-                <Link to="" className="linkedin">
-                  <i className="fab fa-linkedin-in" />
-                </Link>
-              </div>
-              <hr className="divider" />
               {result.length > 0 && (
                 <span className="error-message">{result}</span>
               )}
