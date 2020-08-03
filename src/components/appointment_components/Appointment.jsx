@@ -86,7 +86,7 @@ class Appointment extends Component {
               );
             })
           ) : (
-            <h2 className="message">You dont have any appointment currently</h2>
+            <h2 className="message">You do not have any appointments currently!</h2>
           )}
         </div>
         <Links />

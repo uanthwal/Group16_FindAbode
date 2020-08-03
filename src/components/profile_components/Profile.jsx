@@ -205,7 +205,7 @@ class Profile extends Component {
                 <span className="error-message">{formError.password}</span>
               )}
               <div className="update-container">
-                <input className="button update" type="submit" value="Update" />
+                <input className="button update" style={{ outline: "none" }} type="submit" value="Update" />
               </div>
             </form>
           </div>
@@ -215,10 +215,10 @@ class Profile extends Component {
               className="logout link sign-up"
               to="/"
             >
-              <button>Logout Account</button>
+              <button style={{ outline: "none" }}>Logout Account</button>
             </Link>
             <Link onClick={this.onDelete} to="/" className="link sign-up">
-              <button>Delete Account</button>
+              <button style={{ outline: "none" }}>Delete Account</button>
             </Link>
           </div>
         </div>

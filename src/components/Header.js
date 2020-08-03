@@ -17,7 +17,7 @@ class Header extends Component {
             and find the best place to stay.
           </p>
           <Link to="/about">
-            <button className="common-btn">Read More</button>
+            <button className="common-btn" style={{ outline: "none" }}>Read More</button>
           </Link>
         </div>
         <img className="launch" src={launch} alt="launch page" />

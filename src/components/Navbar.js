@@ -104,7 +104,7 @@ class Navbar extends Component {
             )}
             {!isUserLoggedIn ? (
               <Link className="link sign-up" to="/signup">
-                <button>Sign Up</button>
+                <button style={{ outline: "none" }}>Sign Up</button>
               </Link>
             ) : (
               <>
@@ -121,7 +121,7 @@ class Navbar extends Component {
                     </Link>
                     </li>
                 <Link className="link sign-up" to="/profile">
-                  <button>Profile</button>
+                  <button style={{ outline: "none" }}>Profile</button>
                 </Link>
               </>
             )}

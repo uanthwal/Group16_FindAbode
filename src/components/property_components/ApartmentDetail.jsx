@@ -247,7 +247,7 @@ class ApartmentDetail extends Component {
                                         value={this.state.date}
                                     />
                                     <button
-                                        className="book-btn"
+                                        className="book-btn" style={{ outline: "none" }}
                                         onClick={() => this.handleBookAppointment(login)}
                                     >
                                         Book Appointment

@@ -64,7 +64,7 @@ class ApartmentCitiesComponent extends Component {
           })}
         </div>
         <Link to="/search-apartment">
-          <button className="view-more">View More</button>
+          <button className="view-more" style={{ outline: "none" }}>View More</button>
         </Link>
       </section>
     );
