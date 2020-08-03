@@ -21,7 +21,7 @@ export default class Rating extends Component {
 			alert('You are not eligible to fill this survey or kindly check the link sent to you');
 			return;
 		}
-
+		apartmentId = query.get('apartment_id');
 		await axios
 			.post(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.SAVE_RATING, {
 				cleanliness: data.get('cleanliness'),
